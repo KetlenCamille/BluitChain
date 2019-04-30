@@ -1,0 +1,40 @@
+﻿@using BlutChain.Models
+@model List<TipoSanguineo>
+
+@{
+    DateTime data = ViewBag.Data;
+}
+
+<div>
+    <h2>Gerenciamento de Tipos Sanguíneos</h2>
+
+    <table class="table table-hover table-striped"
+           style="margin-top:30px">
+        <tr>
+            <th>Tipo Sanguíneo</th>
+            <th></th>
+            <th></th>
+        </tr>
+        @foreach (TipoSanguineo tipoSanguineo in Model)
+        {
+            <tr>
+                <td>@tipoSanguineo.GrupoSanguineo @tipoSanguineo.FatorRH</td>
+                
+                   <td> @Html.ActionLink("Remover", "RemoverTipoSanguineo", "TipoSanguineo",
+                       new { id = tipoSanguineo.IdTipoSanguineo }, null)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Alterar", "AlterarTipoSanguineo", "TipoSanguineo",
+                       new { id = tipoSanguineo.IdTipoSanguineo }, null)
+                </td>
+            </tr>
+        }
+    </table>
+
+    <p>Dados atualizados às: <b> @data </b></p>
+
+</div>
+
+
+

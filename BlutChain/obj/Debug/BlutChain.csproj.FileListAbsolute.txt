@@ -274,3 +274,4 @@ C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.csproj.CoreC
 C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.csproj.CopyComplete
 C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.dll
 C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.pdb
+C:\Users\Aluno\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.AtualizaçãoBanco.resources
