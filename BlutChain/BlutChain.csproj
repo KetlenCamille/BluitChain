@@ -173,6 +173,7 @@
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DAL\HemobancoDAO.cs" />
     <Compile Include="DAL\SingletonContext.cs" />
+    <Compile Include="DAL\TipoSanguineoDAO.cs" />
     <Compile Include="DAL\UsuarioDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
