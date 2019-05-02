@@ -1,4 +1,5 @@
 ﻿using BlutChain.DAL;
+using BlutChain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,22 @@ namespace BlutChain.Controllers
         {
             ViewBag.Data = DateTime.Now;
             return View(TipoSanguineoDAO.ListarTodos());
+        }
+
+        public ActionResult CadastrarTipoSanguineo()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CadastrarTipoSanguineo(TipoSanguineo tipoSanguineo)
+        {
+            if(TipoSanguineoDAO.CadastrarTipoSanguineo(tipoSanguineo))
+            {
+                return RedirectToAction("Index", "TipoSanguineo");
+            }
+
+            return View(tipoSanguineo);
         }
     }
 }

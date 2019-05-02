@@ -10,7 +10,7 @@ namespace BlutChain.DAL
     {
         private static Context context = SingletonContext.GetInstance();
 
-        private static bool CadastrarTipoSanguineo(TipoSanguineo tipoSanguineo)
+        public static bool CadastrarTipoSanguineo(TipoSanguineo tipoSanguineo)
         {
             if(tipoSanguineo != null)
             {
