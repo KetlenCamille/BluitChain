@@ -36,9 +36,42 @@ namespace BlutChain.Controllers
             {
                 return RedirectToAction("Index", "Usuario");
             }
-            ModelState.AddModelError("", "Esse usuário já existe!");
+            ModelState.AddModelError("", "Esse usuário já existe ou o CPF está inválido!");
             return View(usuario);
-
         }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult AlterarUsuario(Usuario usuarioAlterado)
+        {
+            Usuario usuarioOriginal = UsuarioDAO.BuscarUsuarioPorId(usuarioAlterado.IdUsuario);
+
+            usuarioOriginal.NomeUsuario = usuarioAlterado.NomeUsuario;
+            usuarioOriginal.CPFUsuario = usuarioAlterado.CPFUsuario;
+            usuarioOriginal.DataNascimentoUsuario = usuarioAlterado.DataNascimentoUsuario;
+            usuarioOriginal.SexoUsuario = usuarioAlterado.SexoUsuario;
+            usuarioOriginal.EmailUsuario = usuarioAlterado.EmailUsuario;
+            usuarioOriginal.PesoUsuario = usuarioAlterado.PesoUsuario;
+            usuarioOriginal.TipoSanguineoUsuario = usuarioAlterado.TipoSanguineoUsuario;
+            usuarioOriginal.TelefoneUsuario = usuarioAlterado.TelefoneUsuario;
+            
+            if (ModelState.IsValid)
+            {
+                UsuarioDAO.AlterarUsuario(usuarioOriginal);
+                return RedirectToAction("Index");
+
+            }
+            else
+            {
+                return View(usuarioOriginal);
+            }
+        }
+
+        public ActionResult ExcluirUsuario(int id)
+        {
+            UsuarioDAO.ExcluirUsuario(id);
+            return RedirectToAction("Index");
+        }
+
     }
 }

@@ -24,8 +24,8 @@ namespace BlutChain.Models
         public String NomeFantasiaHemobanco { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório!")]
-        [MinLength(14, ErrorMessage = "O campo deve ter no minimo 14 caracteres!")]
-        [MaxLength(14, ErrorMessage = "O campo deve ter no máximo 14 caracteres!")]
+        [MinLength(14, ErrorMessage = "O campo deve ter 14 caracteres!")]
+        [MaxLength(14, ErrorMessage = "O campo deve ter 14 caracteres!")]
         [Display(Name = "CNPJ")]
         public String CNPJHemobanco { get; set; }
 
