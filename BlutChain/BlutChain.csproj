@@ -187,6 +187,10 @@
     <Compile Include="Migrations\201904301407132_AtualizaçãoBanco.Designer.cs">
       <DependentUpon>201904301407132_AtualizaçãoBanco.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905050218474_Update.cs" />
+    <Compile Include="Migrations\201905050218474_Update.Designer.cs">
+      <DependentUpon>201905050218474_Update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Doacao.cs" />
     <Compile Include="Models\Endereco.cs" />
@@ -290,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904301407132_AtualizaçãoBanco.resx">
       <DependentUpon>201904301407132_AtualizaçãoBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905050218474_Update.resx">
+      <DependentUpon>201905050218474_Update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -16,6 +16,8 @@ namespace BlutChain.DAL
             {
                 context.TipoSanguineos.Add(tipoSanguineo);
                 context.SaveChanges();
+
+                return true;
             }
             return false;
         }

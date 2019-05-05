@@ -19,18 +19,19 @@
         </tr>
         @foreach (TipoSanguineo tipoSanguineo in Model)
         {
-            <tr>
-                <td>@tipoSanguineo.GrupoSanguineo @tipoSanguineo.FatorRH</td>
-                
-                   <td> @Html.ActionLink("Remover", "RemoverTipoSanguineo", "TipoSanguineo",
-                       new { id = tipoSanguineo.IdTipoSanguineo }, null)
-                </td>
+        <tr>
+            <td>@tipoSanguineo.GrupoSanguineo @tipoSanguineo.FatorRH</td>
 
-                <td>
-                    @Html.ActionLink("Alterar", "AlterarTipoSanguineo", "TipoSanguineo",
-                       new { id = tipoSanguineo.IdTipoSanguineo }, null)
-                </td>
-            </tr>
+            <td>
+                @Html.ActionLink("Alterar", "AlterarTipoSanguineo", "TipoSanguineo",
+                   new { id = tipoSanguineo.IdTipoSanguineo }, null)
+            </td>
+
+            <td>
+                @Html.ActionLink("Remover", "RemoverTipoSanguineo", "TipoSanguineo",
+                new { id = tipoSanguineo.IdTipoSanguineo }, null)
+            </td>
+        </tr>
         }
     </table>
 
