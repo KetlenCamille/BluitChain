@@ -46,5 +46,10 @@ namespace BlutChain.DAL
         {
             return context.TipoSanguineos.Find(IDtipoSanguineo);
         }
+
+        public static TipoSanguineo BuscarTipoSanguineoPorNome(string grupoSanguineo, string fatorRH)
+        {
+            return context.TipoSanguineos.FirstOrDefault(x => x.FatorRH.ToLower().Contains(fatorRH.ToLower()) && x.GrupoSanguineo.ToLower().Contains(grupoSanguineo.ToLower()));
+        }
     }
 }

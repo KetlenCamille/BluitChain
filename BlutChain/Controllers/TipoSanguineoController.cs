@@ -25,11 +25,13 @@ namespace BlutChain.Controllers
         [HttpPost]
         public ActionResult CadastrarTipoSanguineo(TipoSanguineo tipoSanguineo)
         {
-            if(TipoSanguineoDAO.CadastrarTipoSanguineo(tipoSanguineo))
+            if(TipoSanguineoDAO.BuscarTipoSanguineoPorNome(tipoSanguineo.GrupoSanguineo, tipoSanguineo.FatorRH) == null)
             {
-                return RedirectToAction("Index", "TipoSanguineo");
+                if (TipoSanguineoDAO.CadastrarTipoSanguineo(tipoSanguineo))
+                {
+                    return RedirectToAction("Index", "TipoSanguineo");
+                }
             }
-
             return View(tipoSanguineo);
         }
 
