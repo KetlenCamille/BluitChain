@@ -32,6 +32,8 @@ namespace BlutChain.Controllers
                     return RedirectToAction("Index", "TipoSanguineo");
                 }
             }
+            //Apresentar Mensagem de Erro
+
             return View(tipoSanguineo);
         }
 
@@ -39,6 +41,29 @@ namespace BlutChain.Controllers
         {
             TipoSanguineoDAO.ExcluirTipoSanguineo(TipoSanguineoDAO.BuscarTipoSanguineoPorID(id));
             return RedirectToAction("Index", "TipoSanguineo");
+        }
+
+        public ActionResult AlterarTipoSanguineo(int id)
+        {
+            return View(TipoSanguineoDAO.BuscarTipoSanguineoPorID(id));
+        }
+
+        [HttpPost]
+        public ActionResult AlterarTipoSanguineo(TipoSanguineo tipoSanguineoAlterado)
+        {
+            TipoSanguineo tipoSanguineoOriginal = TipoSanguineoDAO.BuscarTipoSanguineoPorID(tipoSanguineoAlterado.IdTipoSanguineo);
+
+            tipoSanguineoOriginal.FatorRH = tipoSanguineoAlterado.FatorRH;
+            tipoSanguineoOriginal.GrupoSanguineo = tipoSanguineoAlterado.GrupoSanguineo;
+
+            if(TipoSanguineoDAO.AlterarTipoSanguineo(tipoSanguineoOriginal))
+            {
+                return RedirectToAction("Index", "TipoSanguineo");
+            }
+
+            //Adicionar mensagem de Erro
+
+            return View(tipoSanguineoOriginal);
         }
     }
 }

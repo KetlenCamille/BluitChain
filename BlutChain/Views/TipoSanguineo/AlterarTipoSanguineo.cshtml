@@ -1,0 +1,42 @@
+﻿@using BlutChain.Models
+@model TipoSanguineo
+
+<div>
+    @using (Html.BeginForm("AlterarTipoSanguineo", "TipoSanguineo", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+    {
+    <fieldset>
+        <legend>Alterar Tipo Sanguíneo</legend>
+
+        @Html.HiddenFor(model => model.IdTipoSanguineo)
+
+        @Html.Label("Grupo Sanguíneo:",
+               new { @class = "control-label col-sm-2" })
+       
+        <br>
+        @Html.DropDownList("GrupoSanguineo", new List<SelectListItem>
+        {
+            new SelectListItem{ Text = "A", Value = "A"},
+            new SelectListItem{ Text = "B", Value = "B"},
+            new SelectListItem{ Text = "AB", Value = "AB"},
+            new SelectListItem{ Text = "O", Value = "O"}
+        }, "Selecione o Grupo Sanguíneo")
+        <br>
+        <br>
+        <b>Fator RH: </b>
+        <br />
+        @Html.DropDownList("FatorRH", new List<SelectListItem>
+        {
+            new SelectListItem{ Text = "+", Value = "+"},
+            new SelectListItem{ Text = "-", Value = "-"}
+        }, "Selecione o Fator RH")
+    </fieldset>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" value="Salvar"
+                       class="btn btn-primary">
+            </div>
+        </div>
+    }
+</div>
+

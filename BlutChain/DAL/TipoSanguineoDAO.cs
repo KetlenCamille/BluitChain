@@ -27,13 +27,16 @@ namespace BlutChain.DAL
             return context.TipoSanguineos.ToList();
         }
 
-        public static void AlterarTipoSanguineo (TipoSanguineo tipoSanguineo)
+        public static bool AlterarTipoSanguineo (TipoSanguineo tipoSanguineo)
         {
-            if(tipoSanguineo != null)
+            if(context.TipoSanguineos.FirstOrDefault(x => x.GrupoSanguineo.Equals(tipoSanguineo.GrupoSanguineo) &&  x.FatorRH.Equals(tipoSanguineo.FatorRH) && x.IdTipoSanguineo != tipoSanguineo.IdTipoSanguineo) == null)
             {
                 context.Entry(tipoSanguineo).State = System.Data.Entity.EntityState.Modified;
                 context.SaveChanges();
+
+                return true;
             }
+            return false;
         }
 
         public static void ExcluirTipoSanguineo(TipoSanguineo tipoSanguineo)
