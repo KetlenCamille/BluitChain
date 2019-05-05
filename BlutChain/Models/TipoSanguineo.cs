@@ -13,8 +13,8 @@ namespace BlutChain.Models
         [Key]
         public int IdTipoSanguineo { get; set; }
 
-        public char GrupoSanguineo { get; set; }
+        public String GrupoSanguineo { get; set; }
 
-        public char FatorRH { get; set; }
+        public String FatorRH { get; set; }
     }
 }
