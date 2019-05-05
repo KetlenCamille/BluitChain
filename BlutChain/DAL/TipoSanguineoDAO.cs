@@ -39,6 +39,7 @@ namespace BlutChain.DAL
         public static void ExcluirTipoSanguineo(TipoSanguineo tipoSanguineo)
         {
             context.TipoSanguineos.Remove(BuscarTipoSanguineoPorID(tipoSanguineo.IdTipoSanguineo));
+            context.SaveChanges();
         }
 
         public static TipoSanguineo BuscarTipoSanguineoPorID(int IDtipoSanguineo)

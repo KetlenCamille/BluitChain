@@ -32,5 +32,11 @@ namespace BlutChain.Controllers
 
             return View(tipoSanguineo);
         }
+
+        public ActionResult RemoverTipoSanguineo(int id)
+        {
+            TipoSanguineoDAO.ExcluirTipoSanguineo(TipoSanguineoDAO.BuscarTipoSanguineoPorID(id));
+            return RedirectToAction("Index", "TipoSanguineo");
+        }
     }
 }
