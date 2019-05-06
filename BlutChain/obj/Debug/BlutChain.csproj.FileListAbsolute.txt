@@ -374,3 +374,10 @@ C:\Users\mirel\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.A
 C:\Users\mirel\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.Update.resources
 C:\Users\mirel\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.ModificacaoTipoSanguineo.resources
 C:\Users\mirel\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.Telefone.resources
+C:\Users\Aluno\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.Update.resources
+C:\Users\Aluno\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.ModificacaoTipoSanguineo.resources
+C:\Users\Aluno\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.Telefone.resources
+C:\Users\Aluno\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.atttelefone.resources
+C:\Users\Aluno\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.atttelefone2.resources
+C:\Users\Aluno\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.atttelefone3.resources
+C:\Users\Aluno\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.attUsuarioSexo.resources

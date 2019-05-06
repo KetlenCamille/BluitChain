@@ -28,10 +28,19 @@ namespace BlutChain.DAL
             return context.Telefones.ToList();
         }
 
-        public static void AlterarTelefone(Telefone telefone)
+        public static bool AlterarTelefone(Telefone telefone)
         {
+            if(telefone != null)
+            {
                 context.Entry(telefone).State = System.Data.Entity.EntityState.Modified;
                 context.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+                
         }
 
         public static void ExcluirTelefone(Telefone telefone)

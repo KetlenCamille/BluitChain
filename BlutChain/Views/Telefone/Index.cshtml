@@ -13,14 +13,15 @@
     <table class="table table-hover table-striped"
            style="margin-top:30px">
         <tr>
-            <th>Telefone</th>
-            <th></th>
+            <th>Tipo</th>
+            <th>Número</th>
             <th></th>
         </tr>
         @foreach (Telefone telefone in Model)
         {
             <tr>
-                <td>@telefone.Tipo @telefone.Numero</td>
+                <td>@telefone.Tipo </td>
+                <td>@telefone.Numero</td>
 
                 <td>
                     @Html.ActionLink("Alterar", "AlterarTelefone", "Telefone",

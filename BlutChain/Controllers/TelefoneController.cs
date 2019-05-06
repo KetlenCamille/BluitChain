@@ -52,16 +52,16 @@ namespace BlutChain.Controllers
             telefoneOriginal.Tipo = telefoneAlterado.Tipo;
             telefoneOriginal.Numero = telefoneAlterado.Numero;
 
-            if (ModelState.IsValid)
+            if (TelefoneDAO.AlterarTelefone(telefoneOriginal))
             {
-                TelefoneDAO.AlterarTelefone(telefoneOriginal);
                 return RedirectToAction("Index");
-
             }
             else
             {
+                ModelState.AddModelError("", "Erro ao alterar telefone!");
                 return View(telefoneOriginal);
             }
+            
         }
     }
 }

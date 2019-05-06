@@ -25,8 +25,10 @@ namespace BlutChain.Models
         public String CPFUsuario { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório!")]
+        [Display(Name = "Data de Nascimento")]
         public DateTime DataNascimentoUsuario { get; set; }
 
+        [Display(Name = "Sexo do Usuário")]
         [Required(ErrorMessage = "Campo Obrigatório!")]
         public String SexoUsuario { get; set; }
 
@@ -34,6 +36,7 @@ namespace BlutChain.Models
         [EmailAddress(ErrorMessage = "E-mail inválido!")]
         public String EmailUsuario { get; set; }
 
+        [Display(Name = "Peso do Usuário")]
         [Required(ErrorMessage = "Campo Obrigatório!")]
         public int PesoUsuario { get; set; }
 

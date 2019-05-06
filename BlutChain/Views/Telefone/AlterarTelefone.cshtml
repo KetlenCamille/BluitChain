@@ -4,37 +4,30 @@
 <div>
     @using (Html.BeginForm("AlterarTelefone", "Telefone", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
     {
-        <fieldset>
-            <legend>Alterar Telefone</legend>
+    <fieldset>
+        <legend>Alterar Telefone</legend>
 
-            @Html.HiddenFor(model => model.IdTelefone)
+        @Html.HiddenFor(model => model.IdTelefone)
 
-            @Html.Label("Tipo:",
-                   new { @class = "control-label col-sm-2" })
-
-            <br>
-            <div class="form-group">
-                @Html.LabelFor(model => model.Numero, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownList("Tipo", new List<SelectListItem>
-                    {
-                        new SelectListItem{ Text = "Residencial", Value = "Residencial"},
-                        new SelectListItem{ Text = "Celular", Value = "Celular"},
-                    }, "Selecione o Tipo de Telefone")
-                </div>
+        <b>Tipo Telefone:</b>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.DropDownList("Tipo", new List<SelectListItem>
+                {
+                    new SelectListItem{ Text = "Residencial", Value = "Residencial"},
+                    new SelectListItem{ Text = "Celular", Value = "Celular"},
+                }, "Selecione", new { @class = "form-control" })
             </div>
-            <br>
-            <br>
-            <b>Número: </b>
-            <br />
-            <div class="form-group">
-                @Html.LabelFor(model => model.Numero, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Numero, new { htmlAttributes = new { @class = "form-control", @placeholder = "Número do Usuário" } })
-                    @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
-                </div>
+        </div>
+        <br />
+        <b>Número:</b>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Numero, new { htmlAttributes = new { @class = "form-control", @placeholder = "Número do Usuário" } })
+                @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
             </div>
-        </fieldset>
+        </div>
+    </fieldset>
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">

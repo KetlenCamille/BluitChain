@@ -201,6 +201,22 @@
     <Compile Include="Migrations\201905060209361_Telefone.Designer.cs">
       <DependentUpon>201905060209361_Telefone.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905061206206_atttelefone.cs" />
+    <Compile Include="Migrations\201905061206206_atttelefone.Designer.cs">
+      <DependentUpon>201905061206206_atttelefone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905061231343_atttelefone2.cs" />
+    <Compile Include="Migrations\201905061231343_atttelefone2.Designer.cs">
+      <DependentUpon>201905061231343_atttelefone2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905061259026_atttelefone3.cs" />
+    <Compile Include="Migrations\201905061259026_atttelefone3.Designer.cs">
+      <DependentUpon>201905061259026_atttelefone3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905061302135_attUsuarioSexo.cs" />
+    <Compile Include="Migrations\201905061302135_attUsuarioSexo.Designer.cs">
+      <DependentUpon>201905061302135_attUsuarioSexo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Doacao.cs" />
     <Compile Include="Models\Endereco.cs" />
@@ -317,6 +333,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905060209361_Telefone.resx">
       <DependentUpon>201905060209361_Telefone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905061206206_atttelefone.resx">
+      <DependentUpon>201905061206206_atttelefone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905061231343_atttelefone2.resx">
+      <DependentUpon>201905061231343_atttelefone2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905061259026_atttelefone3.resx">
+      <DependentUpon>201905061259026_atttelefone3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905061302135_attUsuarioSexo.resx">
+      <DependentUpon>201905061302135_attUsuarioSexo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

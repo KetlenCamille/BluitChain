@@ -32,9 +32,13 @@ namespace BlutChain.Controllers
         [HttpPost]
         public ActionResult CadastrarUsuario(Usuario usuario)
         {
-            if (UsuarioDAO.CadastrarUsuario(usuario))
+            if (ModelState.IsValid)
             {
-                return RedirectToAction("Index", "Usuario");
+                if (UsuarioDAO.CadastrarUsuario(usuario))
+                {
+                    ModelState.AddModelError("", "Usuário cadastrado com sucesso!");
+                    return RedirectToAction("Index", "Usuario");
+                }
             }
             ModelState.AddModelError("", "Esse usuário já existe ou o CPF está inválido!");
             return View(usuario);
@@ -52,8 +56,7 @@ namespace BlutChain.Controllers
             usuarioOriginal.SexoUsuario = usuarioAlterado.SexoUsuario;
             usuarioOriginal.EmailUsuario = usuarioAlterado.EmailUsuario;
             usuarioOriginal.PesoUsuario = usuarioAlterado.PesoUsuario;
-            usuarioOriginal.TipoSanguineoUsuario = usuarioAlterado.TipoSanguineoUsuario;
-            usuarioOriginal.TelefoneUsuario = usuarioAlterado.TelefoneUsuario;
+            
             
             if (ModelState.IsValid)
             {
