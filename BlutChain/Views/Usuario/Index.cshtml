@@ -28,36 +28,6 @@
         <th>
             @Html.DisplayNameFor(model => model.PesoUsuario)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TipoSanguineoUsuario.GrupoSanguineo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TipoSanguineoUsuario.FatorRH)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EnderecoUsuario.Rua)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EnderecoUsuario.Numero)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EnderecoUsuario.Bairro)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EnderecoUsuario.Cidade)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EnderecoUsuario.Estado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EnderecoUsuario.CEP)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TelefoneUsuario.Tipo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TelefoneUsuario.Numero)
-        </th>
     </tr>
 
     @foreach (var item in Model)
@@ -80,36 +50,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PesoUsuario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TipoSanguineoUsuario.GrupoSanguineo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TipoSanguineoUsuario.FatorRH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EnderecoUsuario.Rua)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EnderecoUsuario.Numero)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EnderecoUsuario.Bairro)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EnderecoUsuario.Cidade)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EnderecoUsuario.Estado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EnderecoUsuario.CEP)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TelefoneUsuario.Tipo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TelefoneUsuario.Numero)
         </td>
     </tr>
     }

@@ -28,7 +28,7 @@ namespace BlutChain.Models
         public DateTime DataNascimentoUsuario { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório!")]
-        public char SexoUsuario { get; set; }
+        public String SexoUsuario { get; set; }
 
         [Display(Name = "Email")]
         [EmailAddress(ErrorMessage = "E-mail inválido!")]

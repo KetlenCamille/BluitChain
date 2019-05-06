@@ -169,11 +169,13 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HemobancoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TelefoneController.cs" />
     <Compile Include="Controllers\TipoSanguineoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DAL\HemobancoDAO.cs" />
     <Compile Include="DAL\SingletonContext.cs" />
+    <Compile Include="DAL\TelefoneDAO.cs" />
     <Compile Include="DAL\TipoSanguineoDAO.cs" />
     <Compile Include="DAL\UsuarioDAO.cs" />
     <Compile Include="Global.asax.cs">
@@ -194,6 +196,10 @@
     <Compile Include="Migrations\201905050239393_ModificacaoTipoSanguineo.cs" />
     <Compile Include="Migrations\201905050239393_ModificacaoTipoSanguineo.Designer.cs">
       <DependentUpon>201905050239393_ModificacaoTipoSanguineo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905060209361_Telefone.cs" />
+    <Compile Include="Migrations\201905060209361_Telefone.Designer.cs">
+      <DependentUpon>201905060209361_Telefone.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Doacao.cs" />
@@ -260,6 +266,9 @@
     <Content Include="Views\TipoSanguineo\Index.cshtml" />
     <Content Include="Views\TipoSanguineo\CadastrarTipoSanguineo.cshtml" />
     <Content Include="Views\TipoSanguineo\AlterarTipoSanguineo.cshtml" />
+    <Content Include="Views\Telefone\CadastrarTelefone.cshtml" />
+    <Content Include="Views\Telefone\AlterarTelefone.cshtml" />
+    <Content Include="Views\Telefone\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -305,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905050239393_ModificacaoTipoSanguineo.resx">
       <DependentUpon>201905050239393_ModificacaoTipoSanguineo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905060209361_Telefone.resx">
+      <DependentUpon>201905060209361_Telefone.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
