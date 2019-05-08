@@ -167,13 +167,17 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\EnderecoController.cs" />
     <Compile Include="Controllers\HemobancoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TelefoneController.cs" />
     <Compile Include="Controllers\TipoSanguineoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DAL\EnderecoDAO.cs" />
     <Compile Include="DAL\HemobancoDAO.cs" />
     <Compile Include="DAL\SingletonContext.cs" />
+    <Compile Include="DAL\TelefoneDAO.cs" />
     <Compile Include="DAL\TipoSanguineoDAO.cs" />
     <Compile Include="DAL\UsuarioDAO.cs" />
     <Compile Include="Global.asax.cs">
@@ -194,6 +198,26 @@
     <Compile Include="Migrations\201905050239393_ModificacaoTipoSanguineo.cs" />
     <Compile Include="Migrations\201905050239393_ModificacaoTipoSanguineo.Designer.cs">
       <DependentUpon>201905050239393_ModificacaoTipoSanguineo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905060209361_Telefone.cs" />
+    <Compile Include="Migrations\201905060209361_Telefone.Designer.cs">
+      <DependentUpon>201905060209361_Telefone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905061206206_atttelefone.cs" />
+    <Compile Include="Migrations\201905061206206_atttelefone.Designer.cs">
+      <DependentUpon>201905061206206_atttelefone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905061231343_atttelefone2.cs" />
+    <Compile Include="Migrations\201905061231343_atttelefone2.Designer.cs">
+      <DependentUpon>201905061231343_atttelefone2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905061259026_atttelefone3.cs" />
+    <Compile Include="Migrations\201905061259026_atttelefone3.Designer.cs">
+      <DependentUpon>201905061259026_atttelefone3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905061302135_attUsuarioSexo.cs" />
+    <Compile Include="Migrations\201905061302135_attUsuarioSexo.Designer.cs">
+      <DependentUpon>201905061302135_attUsuarioSexo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Doacao.cs" />
@@ -260,6 +284,12 @@
     <Content Include="Views\TipoSanguineo\Index.cshtml" />
     <Content Include="Views\TipoSanguineo\CadastrarTipoSanguineo.cshtml" />
     <Content Include="Views\TipoSanguineo\AlterarTipoSanguineo.cshtml" />
+    <Content Include="Views\Telefone\CadastrarTelefone.cshtml" />
+    <Content Include="Views\Telefone\AlterarTelefone.cshtml" />
+    <Content Include="Views\Telefone\Index.cshtml" />
+    <Content Include="Views\Endereco\CadastrarEndereco.cshtml" />
+    <Content Include="Views\Endereco\AlterarEndereco.cshtml" />
+    <Content Include="Views\Endereco\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -305,6 +335,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905050239393_ModificacaoTipoSanguineo.resx">
       <DependentUpon>201905050239393_ModificacaoTipoSanguineo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905060209361_Telefone.resx">
+      <DependentUpon>201905060209361_Telefone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905061206206_atttelefone.resx">
+      <DependentUpon>201905061206206_atttelefone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905061231343_atttelefone2.resx">
+      <DependentUpon>201905061231343_atttelefone2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905061259026_atttelefone3.resx">
+      <DependentUpon>201905061259026_atttelefone3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905061302135_attUsuarioSexo.resx">
+      <DependentUpon>201905061302135_attUsuarioSexo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
