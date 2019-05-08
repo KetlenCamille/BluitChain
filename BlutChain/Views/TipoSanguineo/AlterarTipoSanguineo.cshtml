@@ -9,9 +9,7 @@
 
         @Html.HiddenFor(model => model.IdTipoSanguineo)
 
-        @Html.Label("Grupo Sanguíneo:",
-               new { @class = "control-label col-sm-2" })
-       
+        <b>@Html.DisplayNameFor(model => model.GrupoSanguineo):</b>
         <br>
         @Html.DropDownList("GrupoSanguineo", new List<SelectListItem>
         {
@@ -22,7 +20,7 @@
         }, "Selecione o Grupo Sanguíneo")
         <br>
         <br>
-        <b>Fator RH: </b>
+        <b>@Html.DisplayNameFor(model => model.FatorRH): </b>
         <br />
         @Html.DropDownList("FatorRH", new List<SelectListItem>
         {

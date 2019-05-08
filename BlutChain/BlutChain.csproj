@@ -219,6 +219,10 @@
     <Compile Include="Migrations\201905061302135_attUsuarioSexo.Designer.cs">
       <DependentUpon>201905061302135_attUsuarioSexo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905080122155_DataAnottationTipoSanguineo.cs" />
+    <Compile Include="Migrations\201905080122155_DataAnottationTipoSanguineo.Designer.cs">
+      <DependentUpon>201905080122155_DataAnottationTipoSanguineo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Doacao.cs" />
     <Compile Include="Models\Endereco.cs" />
@@ -350,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905061302135_attUsuarioSexo.resx">
       <DependentUpon>201905061302135_attUsuarioSexo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905080122155_DataAnottationTipoSanguineo.resx">
+      <DependentUpon>201905080122155_DataAnottationTipoSanguineo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

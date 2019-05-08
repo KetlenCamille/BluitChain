@@ -5,7 +5,7 @@
     <fieldset>
         <legend>Cadastrar Tipo Sanguíneo</legend>
 
-        <b>Grupo Sanguíneo: </b>
+        <b>@Html.DisplayNameFor(model =>  model.GrupoSanguineo):</b>
         <br>
         @Html.DropDownList("GrupoSanguineo", new List<SelectListItem>
         {
@@ -16,7 +16,7 @@
         }, "Selecione o Grupo Sanguíneo")
         <br>
         <br>
-        <b>Fator RH: </b>
+        <b>@Html.DisplayNameFor(model => model.FatorRH): </b>
         <br />
         @Html.DropDownList("FatorRH", new List<SelectListItem>
         {
