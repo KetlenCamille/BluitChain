@@ -227,6 +227,10 @@
     <Compile Include="Migrations\201905131133120_UpdateDatabase.Designer.cs">
       <DependentUpon>201905131133120_UpdateDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905131253010_UpdateDatabase1.cs" />
+    <Compile Include="Migrations\201905131253010_UpdateDatabase1.Designer.cs">
+      <DependentUpon>201905131253010_UpdateDatabase1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Agendamento.cs" />
     <Compile Include="Models\Doacao.cs" />
@@ -365,6 +369,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905131133120_UpdateDatabase.resx">
       <DependentUpon>201905131133120_UpdateDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905131253010_UpdateDatabase1.resx">
+      <DependentUpon>201905131253010_UpdateDatabase1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

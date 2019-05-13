@@ -13,8 +13,8 @@ namespace BlutChain.Models
 
         public DateTime HorarioAgendamento { get; set; }
 
-        public Usuario IdUsuario { get; set; }
+        public Usuario UsuarioAgendamento { get; set; }
 
-        public Hemobanco IdHemobanco { get; set; }
+        public Hemobanco HemobancoAgendamento { get; set; }
     }
 }
