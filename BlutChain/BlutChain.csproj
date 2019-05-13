@@ -223,7 +223,12 @@
     <Compile Include="Migrations\201905080122155_DataAnottationTipoSanguineo.Designer.cs">
       <DependentUpon>201905080122155_DataAnottationTipoSanguineo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905131133120_UpdateDatabase.cs" />
+    <Compile Include="Migrations\201905131133120_UpdateDatabase.Designer.cs">
+      <DependentUpon>201905131133120_UpdateDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Agendamento.cs" />
     <Compile Include="Models\Doacao.cs" />
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Hemobanco.cs" />
@@ -357,6 +362,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905080122155_DataAnottationTipoSanguineo.resx">
       <DependentUpon>201905080122155_DataAnottationTipoSanguineo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905131133120_UpdateDatabase.resx">
+      <DependentUpon>201905131133120_UpdateDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
