@@ -13,12 +13,16 @@ namespace BlutChain.Models
         [Key]
         public int IdAgendamento { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         public DateTime DataAgendamento { get; set; }
 
+        [Display(Name = "Horário")]
         public DateTime HorarioAgendamento { get; set; }
 
+        [Display(Name = "Usuário")]
         public Usuario UsuarioAgendamento { get; set; }
 
+        [Display(Name = "Hemobanco")]
         public Hemobanco HemobancoAgendamento { get; set; }
     }
 }

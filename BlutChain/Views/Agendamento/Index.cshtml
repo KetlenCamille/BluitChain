@@ -33,10 +33,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.DataAgendamento.ToShortDateString())
+            @Html.DisplayFor(modelItem => item.DataAgendamento)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.HorarioAgendamento.ToShortTimeString())
+            @Html.DisplayFor(modelItem => item.HorarioAgendamento)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.HemobancoAgendamento.NomeFantasiaHemobanco)
