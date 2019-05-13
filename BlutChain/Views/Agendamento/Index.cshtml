@@ -19,10 +19,13 @@
             @Html.DisplayNameFor(model => model.HorarioAgendamento)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.HemobancoAgendamento.NomeFantasiaHemobanco)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.UsuarioAgendamento.NomeUsuario)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.HemobancoAgendamento.NomeFantasiaHemobanco)
+            @Html.DisplayNameFor(model => model.UsuarioAgendamento.CPFUsuario)
         </th>
         <th></th>
     </tr>
@@ -30,16 +33,19 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.DataAgendamento)
+            @Html.DisplayFor(modelItem => item.DataAgendamento.ToShortDateString())
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.HorarioAgendamento)
+            @Html.DisplayFor(modelItem => item.HorarioAgendamento.ToShortTimeString())
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.HemobancoAgendamento.NomeFantasiaHemobanco)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.UsuarioAgendamento.NomeUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsuarioAgendamento.CPFUsuario)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.IdAgendamento }) |
