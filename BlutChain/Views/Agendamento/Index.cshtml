@@ -8,7 +8,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Registrar Agendamento", "RegistrarAgendamento")
 </p>
 <table class="table">
     <tr>
@@ -17,6 +17,12 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.HorarioAgendamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UsuarioAgendamento.NomeUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HemobancoAgendamento.NomeFantasiaHemobanco)
         </th>
         <th></th>
     </tr>
@@ -30,9 +36,15 @@
             @Html.DisplayFor(modelItem => item.HorarioAgendamento)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdAgendamento }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdAgendamento }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdAgendamento })
+            @Html.DisplayFor(modelItem => item.HemobancoAgendamento.NomeFantasiaHemobanco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsuarioAgendamento.NomeUsuario)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.IdAgendamento }) |
+            @Html.ActionLink("Details", "Details", new { id = item.IdAgendamento }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.IdAgendamento })
         </td>
     </tr>
 }

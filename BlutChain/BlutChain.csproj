@@ -309,9 +309,8 @@
     <Content Include="Views\Endereco\CadastrarEndereco.cshtml" />
     <Content Include="Views\Endereco\AlterarEndereco.cshtml" />
     <Content Include="Views\Endereco\Index.cshtml" />
-    <Content Include="Views\Agendamento\Create.cshtml" />
+    <Content Include="Views\Agendamento\RegistrarAgendamento.cshtml" />
     <Content Include="Views\Agendamento\Delete.cshtml" />
-    <Content Include="Views\Agendamento\Details.cshtml" />
     <Content Include="Views\Agendamento\Edit.cshtml" />
     <Content Include="Views\Agendamento\Index.cshtml" />
   </ItemGroup>
