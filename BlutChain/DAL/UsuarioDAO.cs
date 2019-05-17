@@ -17,7 +17,7 @@ namespace BlutChain.DAL
         {
             if(ValidaCPF(usuario.CPFUsuario))
             {
-                if (BuscarUsuarioPorCPF(usuario) == false)
+                if (BuscarUsuarioPorCPF(usuario))
                 {
                     context.Usuarios.Add(usuario);
                     context.SaveChanges();
@@ -38,7 +38,7 @@ namespace BlutChain.DAL
         // Buscar Usuário Por CPF
         public static bool BuscarUsuarioPorCPF(Usuario usuario)
         {
-            if (context.Usuarios.FirstOrDefault(x => x.CPFUsuario.Equals(usuario.CPFUsuario)) != null)
+            if (context.Usuarios.FirstOrDefault(x => x.CPFUsuario.Equals(usuario.CPFUsuario)) == null)
             {
                 return true;
             }

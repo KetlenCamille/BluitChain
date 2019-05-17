@@ -27,21 +27,24 @@ namespace BlutChain.Controllers
             {
                 ModelState.AddModelError("", TempData["Mensagem"].ToString());
             }
+            ViewBag.Telefones = new MultiSelectList(TelefoneDAO.ListarTodos(), "IdTelefone", "Numero");
             return View((Usuario)TempData["Usuario"]);
         }
 
         [HttpPost]
-        public ActionResult CadastrarUsuario(Usuario usuario)
+        public ActionResult CadastrarUsuario(Usuario usuario, int? Telefones)
         {
-            if (ModelState.IsValid)
-            {
+            ViewBag.Telefones = new MultiSelectList(TelefoneDAO.ListarTodos(), "IdTelefone", "Numero");
+            usuario.TelefoneUsuario = TelefoneDAO.BuscarTelefonePorID(Telefones);
+            /*if (ModelState.IsValid)
+            {*/
                 if (UsuarioDAO.CadastrarUsuario(usuario))
                 {
                     ModelState.AddModelError("", "Usuário cadastrado com sucesso!");
                     return RedirectToAction("Index", "Usuario");
                 }
-            }
-            ModelState.AddModelError("", "Esse usuário já existe ou o CPF está inválido!");
+           /* }
+            ModelState.AddModelError("", "Esse usuário já existe ou o CPF está inválido!");*/
             return View(usuario);
         }
 

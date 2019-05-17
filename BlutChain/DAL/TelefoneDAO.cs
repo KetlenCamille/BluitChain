@@ -49,7 +49,7 @@ namespace BlutChain.DAL
             context.SaveChanges();
         }
 
-        public static Telefone BuscarTelefonePorID(int IDtelefone)
+        public static Telefone BuscarTelefonePorID(int? IDtelefone)
         {
             return context.Telefones.Find(IDtelefone);
         }
