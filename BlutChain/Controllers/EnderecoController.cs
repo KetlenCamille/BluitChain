@@ -81,7 +81,7 @@ namespace BlutChain.Controllers
         {
             try
             {
-                string url = "viacep.com.br/ws/" + endereco.CEP + "/json/ ";
+                string url = "https://viacep.com.br/ws/" + endereco.CEP + "/json/ ";
 
                 WebClient client = new WebClient();
                 string json = client.DownloadString(url);

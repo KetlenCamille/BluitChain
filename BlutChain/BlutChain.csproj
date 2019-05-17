@@ -167,6 +167,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\Agendamento.cs" />
     <Compile Include="Controllers\EnderecoController.cs" />
     <Compile Include="Controllers\HemobancoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -174,6 +175,7 @@
     <Compile Include="Controllers\TipoSanguineoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DAL\AgendamentoDAO.cs" />
     <Compile Include="DAL\EnderecoDAO.cs" />
     <Compile Include="DAL\HemobancoDAO.cs" />
     <Compile Include="DAL\SingletonContext.cs" />
@@ -223,7 +225,20 @@
     <Compile Include="Migrations\201905080122155_DataAnottationTipoSanguineo.Designer.cs">
       <DependentUpon>201905080122155_DataAnottationTipoSanguineo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905131133120_UpdateDatabase.cs" />
+    <Compile Include="Migrations\201905131133120_UpdateDatabase.Designer.cs">
+      <DependentUpon>201905131133120_UpdateDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905131253010_UpdateDatabase1.cs" />
+    <Compile Include="Migrations\201905131253010_UpdateDatabase1.Designer.cs">
+      <DependentUpon>201905131253010_UpdateDatabase1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905131302390_AlterDatabase.cs" />
+    <Compile Include="Migrations\201905131302390_AlterDatabase.Designer.cs">
+      <DependentUpon>201905131302390_AlterDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Agendamento.cs" />
     <Compile Include="Models\Doacao.cs" />
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Hemobanco.cs" />
@@ -294,8 +309,10 @@
     <Content Include="Views\Endereco\CadastrarEndereco.cshtml" />
     <Content Include="Views\Endereco\AlterarEndereco.cshtml" />
     <Content Include="Views\Endereco\Index.cshtml" />
-    <Content Include="Views\Hemobanco\Index.cshtml" />
-    <Content Include="Views\Hemobanco\CadastrarHemobanco.cshtml" />
+    <Content Include="Views\Agendamento\RegistrarAgendamento.cshtml" />
+    <Content Include="Views\Agendamento\Delete.cshtml" />
+    <Content Include="Views\Agendamento\Edit.cshtml" />
+    <Content Include="Views\Agendamento\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -359,6 +376,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905080122155_DataAnottationTipoSanguineo.resx">
       <DependentUpon>201905080122155_DataAnottationTipoSanguineo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905131133120_UpdateDatabase.resx">
+      <DependentUpon>201905131133120_UpdateDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905131253010_UpdateDatabase1.resx">
+      <DependentUpon>201905131253010_UpdateDatabase1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905131302390_AlterDatabase.resx">
+      <DependentUpon>201905131302390_AlterDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
