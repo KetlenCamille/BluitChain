@@ -32,10 +32,17 @@ namespace BlutChain.Controllers
         }
 
         [HttpPost]
-        public ActionResult CadastrarUsuario(Usuario usuario, int? Telefones)
+        public ActionResult CadastrarUsuario(Usuario usuario, int? Telefones, TipoSanguineo tipoSanguineo)
         {
             ViewBag.Telefones = new MultiSelectList(TelefoneDAO.ListarTodos(), "IdTelefone", "Numero");
             usuario.TelefoneUsuario = TelefoneDAO.BuscarTelefonePorID(Telefones);
+            if(TipoSanguineoDAO.BuscarTipoSanguineoPorNome(tipoSanguineo.GrupoSanguineo, tipoSanguineo.FatorRH) == null)
+            {
+                TipoSanguineoDAO.CadastrarTipoSanguineo(tipoSanguineo);
+            }
+            //Resolver lógica!!!!!
+            //usuario.TipoSanguineoUsuario = TipoSanguineoDAO.BuscarTipoSanguineoPorID(tipoSanguineo.IdTipoSanguineo);
+
             /*if (ModelState.IsValid)
             {*/
                 if (UsuarioDAO.CadastrarUsuario(usuario))
