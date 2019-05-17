@@ -247,6 +247,7 @@
     <Compile Include="Models\TipoSanguineo.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Sessao.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -313,6 +314,7 @@
     <Content Include="Views\Agendamento\Delete.cshtml" />
     <Content Include="Views\Agendamento\Edit.cshtml" />
     <Content Include="Views\Agendamento\Index.cshtml" />
+    <Content Include="Views\Usuario\HistoricoDoacao.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -51,5 +51,10 @@ namespace BlutChain.DAL
             context.Agendamentos.Remove(BuscarAgendamentoPorID(agendamento.IdAgendamento));
             context.SaveChanges();
         }
+
+        public static List<Agendamento> HistoricoDoacaoPorUsuario(int usuarioId)
+        {
+            return context.Agendamentos.Include("Usuario").Where(x => x.UsuarioAgendamento.IdUsuario == usuarioId).ToList();
+        }
     }
 }

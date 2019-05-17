@@ -391,3 +391,6 @@ C:\Users\Aluno\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.D
 C:\Users\Aluno\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.UpdateDatabase.resources
 C:\Users\Aluno\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.UpdateDatabase1.resources
 C:\Users\Aluno\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.AlterDatabase.resources
+C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.UpdateDatabase.resources
+C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.UpdateDatabase1.resources
+C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.AlterDatabase.resources

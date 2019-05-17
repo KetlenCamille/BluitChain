@@ -1,5 +1,6 @@
 ﻿using BlutChain.DAL;
 using BlutChain.Models;
+using BlutChain.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -76,5 +77,10 @@ namespace BlutChain.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult HistoricoDoacao()
+        {
+            int idUsuarioSessao = Int32.Parse(Sessao.RetonarUsuarioId());
+            return View(AgendamentoDAO.HistoricoDoacaoPorUsuario(idUsuarioSessao));
+        }
     }
 }
