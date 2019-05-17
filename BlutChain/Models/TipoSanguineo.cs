@@ -13,8 +13,15 @@ namespace BlutChain.Models
         [Key]
         public int IdTipoSanguineo { get; set; }
 
+        [Required(ErrorMessage = "Campo Obrigatório!")]
+        [MaxLength(3, ErrorMessage = "Nescessário informar o Tipo Sanguíneo!")]
+        [Display(Name = "Tipo Sanguíneo")]
         public char GrupoSanguineo { get; set; }
 
+
+        [Required(ErrorMessage = "Campo Obrigatório!")]
+        [MaxLength(150, ErrorMessage = "Nescessário informar o Faotr Rh!")]
+        [Display(Name = "Fator Rh")]
         public char FatorRH { get; set; }
     }
 }

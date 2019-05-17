@@ -114,6 +114,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -137,6 +140,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\FontAwesomeBundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
@@ -203,6 +207,66 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ViewContent\assets\css\font-awesome.min.css" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\aids.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\ambulance.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\apple.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\atomic.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\bed.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\book.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\cardiogram.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\computer.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\dna.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\dropper.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\electrocardiogram.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\emergency-kit.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\eye.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\flag.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\flask.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\folder.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\heart.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\hospital-1.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\hospital-2.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\hospital-3.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\hospital-4.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\hospital.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\lungs.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\magnifying-glass.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\medical-kit.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\medicine-1.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\medicine-2.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\medicine-3.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\medicine.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\microscope.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\molecule.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\nurse-1.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\nurse.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\pills.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\placeholder.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\report-1.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\report.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\scalpel.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\science.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\smartphone.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\stethoscope.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\strip.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\syringe.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\tablets.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\test-tube.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\thermometer.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\tooth.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\transfusion.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\water.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Icones\x-rays.png" />
+    <Content Include="Content\ViewContent\assets\css\main.css" />
+    <Content Include="Content\ViewContent\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\ViewContent\assets\js\breakpoints.min.js" />
+    <Content Include="Content\ViewContent\assets\js\browser.min.js" />
+    <Content Include="Content\ViewContent\assets\js\jquery.dropotron.min.js" />
+    <Content Include="Content\ViewContent\assets\js\jquery.min.js" />
+    <Content Include="Content\ViewContent\assets\js\jquery.scrollex.min.js" />
+    <Content Include="Content\ViewContent\assets\js\main.js" />
+    <Content Include="Content\ViewContent\assets\js\util.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -227,12 +291,32 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.3.1.js" />
-    <Content Include="Scripts\jquery-3.3.1.min.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Content\ViewContent\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\ViewContent\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\ViewContent\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\ViewContent\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\ViewContent\assets\fonts\FontAwesome.otf" />
+    <Content Include="Content\ViewContent\assets\sass\libs\_breakpoints.scss" />
+    <Content Include="Content\ViewContent\assets\sass\libs\_functions.scss" />
+    <Content Include="Content\ViewContent\assets\sass\libs\_html-grid.scss" />
+    <Content Include="Content\ViewContent\assets\sass\libs\_mixins.scss" />
+    <Content Include="Content\ViewContent\assets\sass\libs\_vars.scss" />
+    <Content Include="Content\ViewContent\assets\sass\libs\_vendor.scss" />
+    <Content Include="Content\ViewContent\assets\sass\main.scss" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Content\ViewContent\assets\css\images\doação-de-sangue-832x520.jpg" />
+    <Content Include="Content\ViewContent\assets\css\images\overlay.png" />
+    <Content Include="Content\ViewContent\assets\css\images\banner.jpg" />
+    <Content Include="Content\ViewContent\assets\css\images\pic01.jpg" />
+    <Content Include="Content\ViewContent\assets\css\images\pic02.jpg" />
+    <Content Include="Content\ViewContent\assets\css\images\pic03.jpg" />
+    <Content Include="Content\ViewContent\assets\css\images\pic04.jpg" />
+    <Content Include="Content\ViewContent\assets\css\images\pic05.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -241,7 +325,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
-    <Content Include="Content\Site.css" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -254,6 +337,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Shared\Image\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -281,8 +365,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201904151353199_CreateDatabase.resx">
