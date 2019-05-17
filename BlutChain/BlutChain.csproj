@@ -294,6 +294,8 @@
     <Content Include="Views\Endereco\CadastrarEndereco.cshtml" />
     <Content Include="Views\Endereco\AlterarEndereco.cshtml" />
     <Content Include="Views\Endereco\Index.cshtml" />
+    <Content Include="Views\Hemobanco\Index.cshtml" />
+    <Content Include="Views\Hemobanco\CadastrarHemobanco.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
