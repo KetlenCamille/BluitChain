@@ -25,12 +25,45 @@ namespace BlutChain.Controllers
         [HttpPost]
         public ActionResult CadastrarTipoSanguineo(TipoSanguineo tipoSanguineo)
         {
-            if(TipoSanguineoDAO.CadastrarTipoSanguineo(tipoSanguineo))
+            if(TipoSanguineoDAO.BuscarTipoSanguineoPorNome(tipoSanguineo.GrupoSanguineo, tipoSanguineo.FatorRH) == null)
+            {
+                if (TipoSanguineoDAO.CadastrarTipoSanguineo(tipoSanguineo))
+                {
+                    return RedirectToAction("Index", "TipoSanguineo");
+                }
+            }
+            //Apresentar Mensagem de Erro
+
+            return View(tipoSanguineo);
+        }
+
+        public ActionResult RemoverTipoSanguineo(int id)
+        {
+            TipoSanguineoDAO.ExcluirTipoSanguineo(TipoSanguineoDAO.BuscarTipoSanguineoPorID(id));
+            return RedirectToAction("Index", "TipoSanguineo");
+        }
+
+        public ActionResult AlterarTipoSanguineo(int id)
+        {
+            return View(TipoSanguineoDAO.BuscarTipoSanguineoPorID(id));
+        }
+
+        [HttpPost]
+        public ActionResult AlterarTipoSanguineo(TipoSanguineo tipoSanguineoAlterado)
+        {
+            TipoSanguineo tipoSanguineoOriginal = TipoSanguineoDAO.BuscarTipoSanguineoPorID(tipoSanguineoAlterado.IdTipoSanguineo);
+
+            tipoSanguineoOriginal.FatorRH = tipoSanguineoAlterado.FatorRH;
+            tipoSanguineoOriginal.GrupoSanguineo = tipoSanguineoAlterado.GrupoSanguineo;
+
+            if(TipoSanguineoDAO.AlterarTipoSanguineo(tipoSanguineoOriginal))
             {
                 return RedirectToAction("Index", "TipoSanguineo");
             }
 
-            return View(tipoSanguineo);
+            //Adicionar mensagem de Erro
+
+            return View(tipoSanguineoOriginal);
         }
     }
 }

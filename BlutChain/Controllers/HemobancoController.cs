@@ -15,21 +15,23 @@ namespace BlutChain.Controllers
         // GET: Hemobanco
         public ActionResult Index()
         {
-            return View();
+            ViewBag.Data = DateTime.Now;
+            return View(HemobancoDAO.ListarTodosHemobancos());
         }
 
-        [Authorize]
-        public ActionResult CadastrarCliente()
+        //[Authorize]
+        public ActionResult CadastrarHemobanco()
         {
-
+            ViewBag.Telefones = TelefoneDAO.ListarTodos();
             return View();
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpPost]
-        public ActionResult CadastrarHemobanco([Bind(Include = "IdHemobanco, RazaoSocialHemobanco, NomeFantasiaHemobanco, CNPJHemobanco," +
-            "EmailHemobanco, EnderecoHemobanco, TelefoneHemobanco")] Hemobanco hemobanco)
+        public ActionResult CadastrarHemobanco(Hemobanco hemobanco, int? Telefones)
         {
+            /*[Bind(Include = "IdHemobanco, RazaoSocialHemobanco, NomeFantasiaHemobanco, CNPJHemobanco," +
+            "EmailHemobanco, EnderecoHemobanco, TelefoneHemobanco")] Hemobanco hemobanco*/
             if (ModelState.IsValid)
             {
                 if (HemobancoDAO.CadastrarHemobanco(hemobanco))
@@ -37,7 +39,7 @@ namespace BlutChain.Controllers
                     HemobancoDAO.CadastrarHemobanco(hemobanco);
                     return RedirectToAction("Index");
                 }
-                ModelState.AddModelError("", "Já existe um hemobanco com este CNPJ!");
+                ModelState.AddModelError("", "Já existe um hemobanco com este CNPJ ou o CNPJ está inválido!");
                 return View(hemobanco);
             }
             else
@@ -46,13 +48,13 @@ namespace BlutChain.Controllers
             }
         }
 
-        [Authorize]
+        //[Authorize]
         public ActionResult AlterarHemobanco(int id)
         {
             return View(HemobancoDAO.BuscarHemobancoPorID(id));
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         public ActionResult AlterarHemobanco(Hemobanco hemobancoAlterado)
         {

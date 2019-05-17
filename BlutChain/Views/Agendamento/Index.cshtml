@@ -1,0 +1,58 @@
+﻿@model IEnumerable<BlutChain.Models.Agendamento>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Registrar Agendamento", "RegistrarAgendamento")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DataAgendamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HorarioAgendamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HemobancoAgendamento.NomeFantasiaHemobanco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UsuarioAgendamento.NomeUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UsuarioAgendamento.CPFUsuario)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataAgendamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HorarioAgendamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HemobancoAgendamento.NomeFantasiaHemobanco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsuarioAgendamento.NomeUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsuarioAgendamento.CPFUsuario)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.IdAgendamento }) |
+            @Html.ActionLink("Details", "Details", new { id = item.IdAgendamento }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.IdAgendamento })
+        </td>
+    </tr>
+}
+
+</table>

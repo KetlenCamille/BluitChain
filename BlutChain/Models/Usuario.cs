@@ -13,53 +13,42 @@ namespace BlutChain.Models
         [Key]
         public int IdUsuario { get; set; }
 
-
-
         [Required(ErrorMessage = "Campo Obrigatório!")]
         [MaxLength(150, ErrorMessage = "O campo deve ter no máximo 150 caracteres!")]
         [Display(Name = "Nome")]
         public String NomeUsuario { get; set; }
 
-
         [Required(ErrorMessage = "Campo Obrigatório!")]
-        [MaxLength(150, ErrorMessage = "O campo deve conter 11 Numeros sem pontuação!")]
+        [MinLength(11, ErrorMessage = "O campo deve ter 11 caracteres!")]
+        [MaxLength(11, ErrorMessage = "O campo deve ter 11 caracteres!")]
         [Display(Name = "CPF")]
         public String CPFUsuario { get; set; }
 
-
         [Required(ErrorMessage = "Campo Obrigatório!")]
-        [MaxLength(150, ErrorMessage = "Nescessário informar a Data de Nascimento!")]
-        [Display(Name = "Nasc.")]
+        [Display(Name = "Data de Nascimento")]
         public DateTime DataNascimentoUsuario { get; set; }
 
+        [Display(Name = "Sexo do Usuário")]
         [Required(ErrorMessage = "Campo Obrigatório!")]
-        [MaxLength(150, ErrorMessage = "Nescessário informar uma opção!")]
-        [Display(Name = "Sexo")]
-        public char SexoUsuario { get; set; }
+        public String SexoUsuario { get; set; }
 
-        [Required(ErrorMessage = "Campo Obrigatório!")]
-        [MaxLength(150, ErrorMessage = "Nescessário informar um e-mail para contato!")]
-        [Display(Name = "E-Mail")]
+        [Display(Name = "Email")]
+        [EmailAddress(ErrorMessage = "E-mail inválido!")]
         public String EmailUsuario { get; set; }
 
+        [Display(Name = "Peso do Usuário")]
         [Required(ErrorMessage = "Campo Obrigatório!")]
-        [MaxLength(150, ErrorMessage = "Informe seu peso para concluir o cadastro.")]
-        [Display(Name = "Peso Kg.")]
         public int PesoUsuario { get; set; }
 
-
         [Required(ErrorMessage = "Campo Obrigatório!")]
-        [MaxLength(150, ErrorMessage = "Nescessário informar o Tipo Sanguíneo!")]
-        [Display(Name = "Tipo Sanguíneo")]
         public TipoSanguineo TipoSanguineoUsuario { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório!")]
-        [MaxLength(150, ErrorMessage = "Nescessário informar o Endereço!")]
-        [Display(Name = "Endereço")]
         public Endereco EnderecoUsuario { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório!")]
-        [MaxLength(150, ErrorMessage = "Nescessário informar o Telefone!")]
+        [MinLength(8, ErrorMessage = "O campo deve ter no minimo 8 caracteres!")]
+        [MaxLength(15, ErrorMessage = "O campo deve ter no máximo 15 caracteres!")]
         [Display(Name = "Telefone")]
         public Telefone TelefoneUsuario { get; set; }
     }

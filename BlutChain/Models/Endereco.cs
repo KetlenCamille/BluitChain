@@ -13,36 +13,25 @@ namespace BlutChain.Models
         [Key]
         public int IdEndereco { get; set; }
 
-        [Required(ErrorMessage = "Campo Obrigatório!")]
-        [MaxLength(150, ErrorMessage = "Nescessário informar o Endereço!")]
         [Display(Name = "Rua")]
-        public String Rua { get; set; }
+        public String Logradouro { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório!")]
-        [MaxLength(150, ErrorMessage = "Nescessário informar o Número!")]
-        [Display(Name = "Número")]
+        [Display(Name = "Numero")]
         public int Numero { get; set; }
 
-        [Required(ErrorMessage = "Campo Obrigatório!")]
-        [MaxLength(150, ErrorMessage = "Nescessário informar o Bairro!")]
         [Display(Name = "Bairro")]
         public String Bairro { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório!")]
-        [MaxLength(150, ErrorMessage = "Nescessário informar o CEP!")]
+        [MaxLength(8, ErrorMessage = "O campo deve ter no máximo 8 caracteres!")]
         [Display(Name = "CEP")]
         public String CEP { get; set; }
 
-
-        [Required(ErrorMessage = "Campo Obrigatório!")]
-        [MaxLength(150, ErrorMessage = "Nescessário informar a Cidade!")]
         [Display(Name = "Cidade")]
-        public String Cidade { get; set; }
+        public String Localidade { get; set; }
 
-
-        [Required(ErrorMessage = "Campo Obrigatório!")]
-        [MaxLength(150, ErrorMessage = "Nescessário informar o Estado!")]
         [Display(Name = "Estado")]
-        public char Estado { get; set; }
+        public String Uf { get; set; }
     }
 }

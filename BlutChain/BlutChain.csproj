@@ -171,13 +171,19 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\Agendamento.cs" />
+    <Compile Include="Controllers\EnderecoController.cs" />
     <Compile Include="Controllers\HemobancoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TelefoneController.cs" />
     <Compile Include="Controllers\TipoSanguineoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DAL\AgendamentoDAO.cs" />
+    <Compile Include="DAL\EnderecoDAO.cs" />
     <Compile Include="DAL\HemobancoDAO.cs" />
     <Compile Include="DAL\SingletonContext.cs" />
+    <Compile Include="DAL\TelefoneDAO.cs" />
     <Compile Include="DAL\TipoSanguineoDAO.cs" />
     <Compile Include="DAL\UsuarioDAO.cs" />
     <Compile Include="Global.asax.cs">
@@ -191,7 +197,52 @@
     <Compile Include="Migrations\201904301407132_AtualizaçãoBanco.Designer.cs">
       <DependentUpon>201904301407132_AtualizaçãoBanco.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905050218474_Update.cs" />
+    <Compile Include="Migrations\201905050218474_Update.Designer.cs">
+      <DependentUpon>201905050218474_Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905050239393_ModificacaoTipoSanguineo.cs" />
+    <Compile Include="Migrations\201905050239393_ModificacaoTipoSanguineo.Designer.cs">
+      <DependentUpon>201905050239393_ModificacaoTipoSanguineo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905060209361_Telefone.cs" />
+    <Compile Include="Migrations\201905060209361_Telefone.Designer.cs">
+      <DependentUpon>201905060209361_Telefone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905061206206_atttelefone.cs" />
+    <Compile Include="Migrations\201905061206206_atttelefone.Designer.cs">
+      <DependentUpon>201905061206206_atttelefone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905061231343_atttelefone2.cs" />
+    <Compile Include="Migrations\201905061231343_atttelefone2.Designer.cs">
+      <DependentUpon>201905061231343_atttelefone2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905061259026_atttelefone3.cs" />
+    <Compile Include="Migrations\201905061259026_atttelefone3.Designer.cs">
+      <DependentUpon>201905061259026_atttelefone3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905061302135_attUsuarioSexo.cs" />
+    <Compile Include="Migrations\201905061302135_attUsuarioSexo.Designer.cs">
+      <DependentUpon>201905061302135_attUsuarioSexo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905080122155_DataAnottationTipoSanguineo.cs" />
+    <Compile Include="Migrations\201905080122155_DataAnottationTipoSanguineo.Designer.cs">
+      <DependentUpon>201905080122155_DataAnottationTipoSanguineo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905131133120_UpdateDatabase.cs" />
+    <Compile Include="Migrations\201905131133120_UpdateDatabase.Designer.cs">
+      <DependentUpon>201905131133120_UpdateDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905131253010_UpdateDatabase1.cs" />
+    <Compile Include="Migrations\201905131253010_UpdateDatabase1.Designer.cs">
+      <DependentUpon>201905131253010_UpdateDatabase1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905131302390_AlterDatabase.cs" />
+    <Compile Include="Migrations\201905131302390_AlterDatabase.Designer.cs">
+      <DependentUpon>201905131302390_AlterDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Agendamento.cs" />
     <Compile Include="Models\Doacao.cs" />
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Hemobanco.cs" />
@@ -200,6 +251,7 @@
     <Compile Include="Models\TipoSanguineo.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Sessao.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -334,6 +386,18 @@
     <Content Include="Views\Usuario\CadastrarUsuario.cshtml" />
     <Content Include="Views\TipoSanguineo\Index.cshtml" />
     <Content Include="Views\TipoSanguineo\CadastrarTipoSanguineo.cshtml" />
+    <Content Include="Views\TipoSanguineo\AlterarTipoSanguineo.cshtml" />
+    <Content Include="Views\Telefone\CadastrarTelefone.cshtml" />
+    <Content Include="Views\Telefone\AlterarTelefone.cshtml" />
+    <Content Include="Views\Telefone\Index.cshtml" />
+    <Content Include="Views\Endereco\CadastrarEndereco.cshtml" />
+    <Content Include="Views\Endereco\AlterarEndereco.cshtml" />
+    <Content Include="Views\Endereco\Index.cshtml" />
+    <Content Include="Views\Agendamento\RegistrarAgendamento.cshtml" />
+    <Content Include="Views\Agendamento\Delete.cshtml" />
+    <Content Include="Views\Agendamento\Edit.cshtml" />
+    <Content Include="Views\Agendamento\Index.cshtml" />
+    <Content Include="Views\Usuario\HistoricoDoacao.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -374,6 +438,39 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904301407132_AtualizaçãoBanco.resx">
       <DependentUpon>201904301407132_AtualizaçãoBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905050218474_Update.resx">
+      <DependentUpon>201905050218474_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905050239393_ModificacaoTipoSanguineo.resx">
+      <DependentUpon>201905050239393_ModificacaoTipoSanguineo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905060209361_Telefone.resx">
+      <DependentUpon>201905060209361_Telefone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905061206206_atttelefone.resx">
+      <DependentUpon>201905061206206_atttelefone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905061231343_atttelefone2.resx">
+      <DependentUpon>201905061231343_atttelefone2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905061259026_atttelefone3.resx">
+      <DependentUpon>201905061259026_atttelefone3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905061302135_attUsuarioSexo.resx">
+      <DependentUpon>201905061302135_attUsuarioSexo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905080122155_DataAnottationTipoSanguineo.resx">
+      <DependentUpon>201905080122155_DataAnottationTipoSanguineo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905131133120_UpdateDatabase.resx">
+      <DependentUpon>201905131133120_UpdateDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905131253010_UpdateDatabase1.resx">
+      <DependentUpon>201905131253010_UpdateDatabase1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905131302390_AlterDatabase.resx">
+      <DependentUpon>201905131302390_AlterDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
