@@ -140,5 +140,11 @@ namespace BlutChain.DAL
         {
             return context.Usuarios.Find(id);
         }
+
+        //Buscar usuário login
+        public static Usuario BuscarUsuarioLogin(string CPFCNPJ, string Senha)
+        {
+            return context.Usuarios.FirstOrDefault(x => x.CPFUsuario.Equals(CPFCNPJ) && x.Senha.Equals(Senha));
+        }
     }
 }

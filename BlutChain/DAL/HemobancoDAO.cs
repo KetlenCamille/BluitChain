@@ -138,5 +138,11 @@ namespace BlutChain.DAL
             }
         }
 
+        //Buscar hemobanco login
+        public static Hemobanco BuscarHemobancoLogin(string CPFCNPJ, string Senha)
+        {
+            return context.Hemobancos.FirstOrDefault(x => x.CNPJHemobanco.Equals(CPFCNPJ) && x.Senha.Equals(Senha));
+        }
+
     }
 }

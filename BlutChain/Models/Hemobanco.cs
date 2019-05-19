@@ -43,5 +43,15 @@ namespace BlutChain.Models
         [MaxLength(15, ErrorMessage = "O campo deve ter no máximo 15 caracteres!")]
         [Display(Name = "Telefone")]
         public Telefone TelefoneHemobanco { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]
+        [MinLength(6, ErrorMessage = "O campo deve ter no mínimo 6 caracteres!")]
+        [Display(Name = "Senha")]
+        public string Senha { get; set; }
+
+        [Compare("Senha", ErrorMessage = "Os campos não coincidem!")]
+        [Display(Name = "Confirmar senha")]
+        [NotMapped]
+        public string ConfirmacaoDaSenha { get; set; }
     }
 }

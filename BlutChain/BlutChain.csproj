@@ -175,6 +175,7 @@
     <Compile Include="Controllers\EnderecoController.cs" />
     <Compile Include="Controllers\HemobancoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\TelefoneController.cs" />
     <Compile Include="Controllers\TipoSanguineoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
@@ -398,6 +399,7 @@
     <Content Include="Views\Agendamento\Edit.cshtml" />
     <Content Include="Views\Agendamento\Index.cshtml" />
     <Content Include="Views\Usuario\HistoricoDoacao.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
