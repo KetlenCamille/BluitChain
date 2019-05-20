@@ -32,26 +32,28 @@ namespace BlutChain.Controllers
         }
 
         [HttpPost]
-        public ActionResult CadastrarUsuario(Usuario usuario, int? Telefones, TipoSanguineo tipoSanguineo)
+        public ActionResult CadastrarUsuario(Usuario usuario, int? telefones, TipoSanguineo tipoSanguineo)
         {
             ViewBag.Telefones = new MultiSelectList(TelefoneDAO.ListarTodos(), "IdTelefone", "Numero");
-            usuario.TelefoneUsuario = TelefoneDAO.BuscarTelefonePorID(Telefones);
+            usuario.TelefoneUsuario = TelefoneDAO.BuscarTelefonePorID(telefones);
             if(TipoSanguineoDAO.BuscarTipoSanguineoPorNome(tipoSanguineo.GrupoSanguineo, tipoSanguineo.FatorRH) == null)
             {
                 TipoSanguineoDAO.CadastrarTipoSanguineo(tipoSanguineo);
             }
-            //Resolver lógica!!!!!
-            //usuario.TipoSanguineoUsuario = TipoSanguineoDAO.BuscarTipoSanguineoPorID(tipoSanguineo.IdTipoSanguineo);
+            TipoSanguineo tpPesquisado = new TipoSanguineo();
+            tpPesquisado = TipoSanguineoDAO.BuscarTipoSanguineoPorNome(tipoSanguineo.GrupoSanguineo, tipoSanguineo.FatorRH);
+            usuario.TipoSanguineoUsuario = TipoSanguineoDAO.BuscarTipoSanguineoPorID(tpPesquisado.IdTipoSanguineo);
+       
 
-            /*if (ModelState.IsValid)
-            {*/
+            if (ModelState.IsValid)
+            {
                 if (UsuarioDAO.CadastrarUsuario(usuario))
                 {
                     ModelState.AddModelError("", "Usuário cadastrado com sucesso!");
                     return RedirectToAction("Index", "Usuario");
                 }
-           /* }
-            ModelState.AddModelError("", "Esse usuário já existe ou o CPF está inválido!");*/
+            }
+            ModelState.AddModelError("", "Esse usuário já existe ou o CPF está inválido!");
             return View(usuario);
         }
 
