@@ -242,6 +242,10 @@
     <Compile Include="Migrations\201905131302390_AlterDatabase.Designer.cs">
       <DependentUpon>201905131302390_AlterDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905201208253_Nome.cs" />
+    <Compile Include="Migrations\201905201208253_Nome.Designer.cs">
+      <DependentUpon>201905201208253_Nome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Agendamento.cs" />
     <Compile Include="Models\Doacao.cs" />
@@ -403,6 +407,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\NewFolder1\" />
     <Folder Include="Views\Shared\Image\" />
   </ItemGroup>
   <ItemGroup>
@@ -473,6 +478,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905131302390_AlterDatabase.resx">
       <DependentUpon>201905131302390_AlterDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905201208253_Nome.resx">
+      <DependentUpon>201905201208253_Nome.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -407,3 +407,4 @@ C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.D
 C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.UpdateDatabase.resources
 C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.UpdateDatabase1.resources
 C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.AlterDatabase.resources
+C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.Nome.resources
