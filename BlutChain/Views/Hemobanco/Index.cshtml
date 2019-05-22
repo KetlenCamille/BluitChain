@@ -18,25 +18,27 @@
         </tr>
         @foreach (Hemobanco hemobanco in Model)
         {
-        <tr>
-            <td>@hemobanco.RazaoSocialHemobanco</td>
-            <td>@hemobanco.NomeFantasiaHemobanco</td>
-            <td>@hemobanco.TelefoneHemobanco.Numero (@hemobanco.TelefoneHemobanco.Tipo)</td>
+            <tr>
+                <td>@hemobanco.RazaoSocialHemobanco</td>
+                <td>@hemobanco.NomeFantasiaHemobanco</td>
+                <td>@hemobanco.TelefoneHemobanco.Numero (@hemobanco.TelefoneHemobanco.Tipo)</td>
 
-            <td>
-                @Html.ActionLink("Alterar", "AlterarHemobanco", "Hemobanco",
-                   new { id = hemobanco.IdHemobanco }, null)
-            </td>
+                <td>
+                    @Html.ActionLink("Alterar", "AlterarHemobanco", "Hemobanco",
+                       new { id = hemobanco.IdHemobanco }, null)
+                </td>
 
-            <td>
-                @Html.ActionLink("Remover", "ExcluirHemobanco", "Hemobanco",
-                new { id = hemobanco.IdHemobanco }, null)
-            </td>
-        </tr>
+                <td>
+                    @Html.ActionLink("Remover", "ExcluirHemobanco", "Hemobanco",
+                    new { id = hemobanco.IdHemobanco }, null)
+                </td>
+            </tr>
         }
     </table>
 
     <p>Dados atualizados às: <b> @data </b></p>
 
 </div>
+
+
 

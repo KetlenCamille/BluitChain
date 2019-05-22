@@ -83,7 +83,6 @@ C:\Users\Aluno\source\repos\BlutChain\BlutChain\bin\Antlr3.Runtime.pdb
 C:\Users\Aluno\source\repos\BlutChain\BlutChain\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\Aluno\source\repos\BlutChain\BlutChain\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\Aluno\source\repos\BlutChain\BlutChain\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Aluno\source\repos\BlutChain\BlutChain\obj\Debug\BlutChain.csprojAssemblyReference.cache
 C:\Users\Aluno\source\repos\BlutChain\BlutChain\obj\Debug\BlutChain.csproj.CoreCompileInputs.cache
 C:\Users\Aluno\source\repos\BlutChain\BlutChain\obj\Debug\BlutChain.csproj.CopyComplete
 C:\Users\Aluno\source\repos\BlutChain\BlutChain\obj\Debug\BlutChain.dll
@@ -407,3 +406,5 @@ C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.D
 C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.UpdateDatabase.resources
 C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.UpdateDatabase1.resources
 C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.AlterDatabase.resources
+C:\Users\Aluno\Source\Repos\BlutChain\BlutChain\bin\WebActivatorEx.dll
+C:\Users\Aluno\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.MigrationUpdate.resources

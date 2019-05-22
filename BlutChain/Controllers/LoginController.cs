@@ -13,7 +13,7 @@ namespace BlutChain.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login([Bind(Include = "CPFCNPJ, Senha, usuario")] string CPFCNPJ, string Senha, int usuario)
+        public ActionResult Login([Bind(Include = "CPFCNPJ, Senha, usuario")] string CPFCNPJ, string Senha, int? usuario)
         {
             if (CPFCNPJ.Length > 0 && Senha.Length > 0 && (usuario == 1 || usuario == 2))
             {
@@ -36,6 +36,11 @@ namespace BlutChain.Controllers
                     }
                 }
             }
+            //if(usuario == null)
+            //{
+            //    ModelState.AddModelError("", "CPF/CNPJ ou senha inválidos");
+            //    return View();
+            //}
             ModelState.AddModelError("", "CPF/CNPJ ou senha inválidos");
             return View();
         }
