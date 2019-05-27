@@ -246,6 +246,10 @@
     <Compile Include="Migrations\201905201233065_MigrationUpdate.Designer.cs">
       <DependentUpon>201905201233065_MigrationUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905271321048_UpdateHemobanco.cs" />
+    <Compile Include="Migrations\201905271321048_UpdateHemobanco.Designer.cs">
+      <DependentUpon>201905271321048_UpdateHemobanco.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Agendamento.cs" />
     <Compile Include="Models\Doacao.cs" />
@@ -482,6 +486,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905201233065_MigrationUpdate.resx">
       <DependentUpon>201905201233065_MigrationUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905271321048_UpdateHemobanco.resx">
+      <DependentUpon>201905271321048_UpdateHemobanco.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

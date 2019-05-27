@@ -33,10 +33,26 @@ namespace BlutChain.Models
         [EmailAddress(ErrorMessage = "E-mail inválido!")]
         public String EmailHemobanco { get; set; }
 
+        [Display(Name = "Rua")]
+        public String Logradouro { get; set; }
+
         [Required(ErrorMessage = "Campo Obrigatório!")]
-        [MaxLength(200, ErrorMessage = "O campo deve ter no máximo 200 caracteres!")]
-        [Display(Name = "Endereço")]
-        public Endereco EnderecoHemobanco { get; set; }
+        [Display(Name = "Numero")]
+        public int Numero { get; set; }
+
+        [Display(Name = "Bairro")]
+        public String Bairro { get; set; }
+
+        [Required(ErrorMessage = "Campo Obrigatório!")]
+        [MaxLength(8, ErrorMessage = "O campo deve ter no máximo 8 caracteres!")]
+        [Display(Name = "CEP")]
+        public String CEP { get; set; }
+
+        [Display(Name = "Cidade")]
+        public String Localidade { get; set; }
+
+        [Display(Name = "Estado")]
+        public String Uf { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório!")]
         [MinLength(8, ErrorMessage = "O campo deve ter no minimo 8 caracteres!")]

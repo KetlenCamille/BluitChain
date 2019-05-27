@@ -1,10 +1,15 @@
-﻿using BlutChain.DAL;
-using BlutChain.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using BlutChain.DAL;
+using BlutChain.Models;
+using Newtonsoft.Json;
 
 namespace BlutChain.Controllers
 {
@@ -23,7 +28,7 @@ namespace BlutChain.Controllers
         public ActionResult CadastrarHemobanco()
         {
             ViewBag.Telefones = TelefoneDAO.ListarTodos();
-            return View();
+            return View((Hemobanco)TempData["Hemobanco"]);
         }
 
         //[Authorize]
@@ -64,7 +69,13 @@ namespace BlutChain.Controllers
             hemobancoOriginal.NomeFantasiaHemobanco = hemobancoAlterado.NomeFantasiaHemobanco;
             hemobancoOriginal.CNPJHemobanco = hemobancoAlterado.CNPJHemobanco;
             hemobancoOriginal.EmailHemobanco = hemobancoAlterado.EmailHemobanco;
-            hemobancoOriginal.EnderecoHemobanco = hemobancoAlterado.EnderecoHemobanco;
+            hemobancoOriginal.CEP = hemobancoAlterado.CEP;
+            hemobancoOriginal.Logradouro = hemobancoAlterado.Logradouro;
+            hemobancoOriginal.Numero = hemobancoAlterado.Numero;
+            hemobancoOriginal.Bairro = hemobancoAlterado.Bairro;
+            hemobancoOriginal.Localidade = hemobancoAlterado.Localidade;
+            hemobancoOriginal.Uf = hemobancoAlterado.Uf;
+            //hemobancoOriginal.EnderecoHemobanco = hemobancoAlterado.EnderecoHemobanco;
             hemobancoOriginal.EmailHemobanco = hemobancoAlterado.EmailHemobanco;
 
             if (ModelState.IsValid)
@@ -83,6 +94,32 @@ namespace BlutChain.Controllers
         {
             HemobancoDAO.ExcluirHemobanco(id);
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult PesquisarCEP(Hemobanco hemobanco)
+        {
+            try
+            {
+                string url = "https://viacep.com.br/ws/" + hemobanco.CEP + "/json/ ";
+
+                WebClient client = new WebClient();
+                string json = client.DownloadString(url);
+                // Converter string pra UTF-8
+                byte[] bytes = Encoding.Default.GetBytes(json);
+                json = Encoding.UTF8.GetString(bytes);
+                // Converter json para objeto
+                hemobanco = JsonConvert.DeserializeObject<Hemobanco>(json);
+
+                // Passar informação para qualquer action do controller
+                TempData["Hemobanco"] = hemobanco;
+            }
+            catch (Exception)
+            {
+                TempData["Mensagem"] = "CEP Inválido!";
+            }
+
+            return RedirectToAction("CadastrarHemobanco", "Hemobanco");
         }
 
     }
