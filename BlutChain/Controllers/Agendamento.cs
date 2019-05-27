@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using BlutChain.DAL;
 using BlutChain.Models;
+using BlutChain.Utils;
 
 namespace BlutChain.Controllers
 {
@@ -24,19 +25,32 @@ namespace BlutChain.Controllers
 
         public ActionResult RegistrarAgendamento()
         {
+            ViewBag.Hemobancos = new MultiSelectList(HemobancoDAO.ListarTodosHemobancos(), "IdHemobanco", "NomeFantasiaHemobanco");
             return View();
         }
+        
 
         [HttpPost]
-        public ActionResult RegistrarAgendamento([Bind(Include = "IdAgendamento,DataAgendamento,HorarioAgendamento, IdUsuario, IdHemobanco")] Agendamento agendamento)
+        public ActionResult RegistrarAgendamento([Bind(Include = "IdAgendamento,DataAgendamento,HorarioAgendamento, IdUsuario, IdHemobanco")] Agendamento agendamento, int? hemobancos)
         {
+            
+
+            ViewBag.Hemobancos = new MultiSelectList(HemobancoDAO.ListarTodosHemobancos(), "IdHemobanco", "NomeFantasiaHemobanco");
+            agendamento.HemobancoAgendamento = HemobancoDAO.BuscarHemobancoPorID(hemobancos);
+            agendamento.UsuarioAgendamento = UsuarioDAO.BuscarUsuarioPorId(int.Parse(Sessao.RetonarUsuarioId()));
             if (ModelState.IsValid)
             {
-                if (AgendamentoDAO.CadastrarAgendamento(agendamento))
-                {
-                    return RedirectToAction("Index", "Agendamento");
+                if (AgendamentoDAO.BuscarAgendamentoIgual(agendamento) != null) { 
+
+                    if (AgendamentoDAO.CadastrarAgendamento(agendamento))
+                    {
+                        return RedirectToAction("Index", "Agendamento");
+                    }
+                    ModelState.AddModelError("", "Erro ao registrar agendamento!");
+                    return View(agendamento);
+
                 }
-                ModelState.AddModelError("", "Erro ao registrar agendamento!");
+                ModelState.AddModelError("", "Esse horário não está disponível!");
                 return View(agendamento);
             }
             return View(agendamento);

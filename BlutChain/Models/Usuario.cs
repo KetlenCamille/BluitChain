@@ -44,9 +44,6 @@ namespace BlutChain.Models
         public TipoSanguineo TipoSanguineoUsuario { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório!")]
-        public Endereco EnderecoUsuario { get; set; }
-
-        [Required(ErrorMessage = "Campo Obrigatório!")]
         [MinLength(8, ErrorMessage = "O campo deve ter no minimo 8 caracteres!")]
         [MaxLength(15, ErrorMessage = "O campo deve ter no máximo 15 caracteres!")]
         [Display(Name = "Telefone")]
