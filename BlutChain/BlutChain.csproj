@@ -246,6 +246,10 @@
     <Compile Include="Migrations\201905201233065_MigrationUpdate.Designer.cs">
       <DependentUpon>201905201233065_MigrationUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905271356419_usuarioo.cs" />
+    <Compile Include="Migrations\201905271356419_usuarioo.Designer.cs">
+      <DependentUpon>201905271356419_usuarioo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Agendamento.cs" />
     <Compile Include="Models\Doacao.cs" />
@@ -482,6 +486,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905201233065_MigrationUpdate.resx">
       <DependentUpon>201905201233065_MigrationUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905271356419_usuarioo.resx">
+      <DependentUpon>201905271356419_usuarioo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

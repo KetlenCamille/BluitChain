@@ -514,3 +514,4 @@ C:\Users\Aluno\Source\Repos\BlutChain3\BlutChain\obj\Debug\BlutChain.csproj.Core
 C:\Users\Aluno\Source\Repos\BlutChain3\BlutChain\obj\Debug\BlutChain.csproj.CopyComplete
 C:\Users\Aluno\Source\Repos\BlutChain3\BlutChain\obj\Debug\BlutChain.dll
 C:\Users\Aluno\Source\Repos\BlutChain3\BlutChain\obj\Debug\BlutChain.pdb
+C:\Users\Aluno\Source\Repos\BlutChain3\BlutChain\obj\Debug\BlutChain.Migrations.usuarioo.resources
