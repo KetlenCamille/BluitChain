@@ -22,16 +22,19 @@ namespace BlutChain.Controllers
         //[Authorize]
         public ActionResult CadastrarHemobanco()
         {
-            ViewBag.Telefones = TelefoneDAO.ListarTodos();
+            ViewBag.Telefones = new MultiSelectList(TelefoneDAO.ListarTodos(), "IdTelefone", "Numero");
             return View();
         }
 
         //[Authorize]
         [HttpPost]
-        public ActionResult CadastrarHemobanco(Hemobanco hemobanco, int? Telefones)
+        public ActionResult CadastrarHemobanco(Hemobanco hemobanco, int? telefones, Endereco endereco)
         {
             /*[Bind(Include = "IdHemobanco, RazaoSocialHemobanco, NomeFantasiaHemobanco, CNPJHemobanco," +
             "EmailHemobanco, EnderecoHemobanco, TelefoneHemobanco")] Hemobanco hemobanco*/
+            ViewBag.Telefones = new MultiSelectList(TelefoneDAO.ListarTodos(), "IdTelefone", "Numero");
+            hemobanco.TelefoneHemobanco = TelefoneDAO.BuscarTelefonePorID(telefones);
+
             if (ModelState.IsValid)
             {
                 if (HemobancoDAO.CadastrarHemobanco(hemobanco))
