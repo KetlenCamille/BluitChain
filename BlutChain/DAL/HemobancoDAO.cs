@@ -67,7 +67,7 @@ namespace BlutChain.DAL
         }
 
         //Buscar CNPJ por Id
-        public static Hemobanco BuscarHemobancoPorID(int id)
+        public static Hemobanco BuscarHemobancoPorID(int? id)
         {
             return context.Hemobancos.Find(id);
         }

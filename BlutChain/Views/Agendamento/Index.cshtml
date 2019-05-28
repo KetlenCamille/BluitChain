@@ -24,9 +24,6 @@
         <th>
             @Html.DisplayNameFor(model => model.UsuarioAgendamento.NomeUsuario)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UsuarioAgendamento.CPFUsuario)
-        </th>
         <th></th>
     </tr>
 
@@ -43,9 +40,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.UsuarioAgendamento.NomeUsuario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UsuarioAgendamento.CPFUsuario)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.IdAgendamento }) |
