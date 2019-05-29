@@ -418,6 +418,7 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Hemobanco\Index.cshtml" />
     <Content Include="Views\Hemobanco\CadastrarHemobanco.cshtml" />
+    <Content Include="Views\Hemobanco\AlterarHemobanco.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
