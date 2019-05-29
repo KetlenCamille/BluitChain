@@ -258,6 +258,10 @@
     <Compile Include="Migrations\201905282359375_TipoTelefoneHemobanco.Designer.cs">
       <DependentUpon>201905282359375_TipoTelefoneHemobanco.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905291500494_updateUsuarioTelefone.cs" />
+    <Compile Include="Migrations\201905291500494_updateUsuarioTelefone.Designer.cs">
+      <DependentUpon>201905291500494_updateUsuarioTelefone.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Agendamento.cs" />
     <Compile Include="Models\Doacao.cs" />
@@ -504,6 +508,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905282359375_TipoTelefoneHemobanco.resx">
       <DependentUpon>201905282359375_TipoTelefoneHemobanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905291500494_updateUsuarioTelefone.resx">
+      <DependentUpon>201905291500494_updateUsuarioTelefone.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
