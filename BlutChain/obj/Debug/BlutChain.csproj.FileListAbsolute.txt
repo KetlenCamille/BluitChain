@@ -411,3 +411,5 @@ C:\Users\Aluno\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.M
 C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\bin\WebActivatorEx.dll
 C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.MigrationUpdate.resources
 C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.UpdateHemobanco.resources
+C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.UpdateMigration.resources
+C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.TipoTelefoneHemobanco.resources

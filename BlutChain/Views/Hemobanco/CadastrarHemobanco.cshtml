@@ -87,6 +87,26 @@
                 @Html.ValidationMessageFor(model => model.CNPJHemobanco, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        <br>
+        <b>Tipo Telefone: </b>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.DropDownList("TipoTelefoneHemobanco",  new List<SelectListItem>
+                {
+                    new SelectListItem{ Text = "Residencial", Value = "Residencial"},
+                    new SelectListItem{ Text = "Celular", Value = "Celular"}
+                 } , "Selecione", new { @class = "control-label col-md-2" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TelefoneHemobanco, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TelefoneHemobanco, new { htmlAttributes = new { @class = "form-control", @placeholder = "Telefone do Hemobanco" } })
+                @Html.ValidationMessageFor(model => model.TelefoneHemobanco, "", new { @class = "text-danger" })
+            </div>
+        </div>
     </div>
 
     <legend>Dados Login</legend>

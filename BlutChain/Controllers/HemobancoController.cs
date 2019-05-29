@@ -33,7 +33,7 @@ namespace BlutChain.Controllers
 
         //[Authorize]
         [HttpPost]
-        public ActionResult CadastrarHemobanco(Hemobanco hemobanco, int? Telefones)
+        public ActionResult CadastrarHemobanco(Hemobanco hemobanco)
         {
             /*[Bind(Include = "IdHemobanco, RazaoSocialHemobanco, NomeFantasiaHemobanco, CNPJHemobanco," +
             "EmailHemobanco, EnderecoHemobanco, TelefoneHemobanco")] Hemobanco hemobanco*/

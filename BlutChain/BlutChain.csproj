@@ -250,6 +250,14 @@
     <Compile Include="Migrations\201905240129323_UpdateHemobanco.Designer.cs">
       <DependentUpon>201905240129323_UpdateHemobanco.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905281329299_UpdateMigration.cs" />
+    <Compile Include="Migrations\201905281329299_UpdateMigration.Designer.cs">
+      <DependentUpon>201905281329299_UpdateMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905282359375_TipoTelefoneHemobanco.cs" />
+    <Compile Include="Migrations\201905282359375_TipoTelefoneHemobanco.Designer.cs">
+      <DependentUpon>201905282359375_TipoTelefoneHemobanco.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Agendamento.cs" />
     <Compile Include="Models\Doacao.cs" />
@@ -489,6 +497,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905240129323_UpdateHemobanco.resx">
       <DependentUpon>201905240129323_UpdateHemobanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905281329299_UpdateMigration.resx">
+      <DependentUpon>201905281329299_UpdateMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905282359375_TipoTelefoneHemobanco.resx">
+      <DependentUpon>201905282359375_TipoTelefoneHemobanco.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

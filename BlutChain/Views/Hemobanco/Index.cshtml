@@ -1,7 +1,7 @@
 ﻿@using BlutChain.Models
 @model List<Hemobanco>
 @{
-    data = ViewBag.Data;
+    DateTime data = ViewBag.Data;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -21,7 +21,7 @@
             <tr>
                 <td>@hemobanco.RazaoSocialHemobanco</td>
                 <td>@hemobanco.NomeFantasiaHemobanco</td>
-                <td>@hemobanco.TelefoneHemobanco.Numero (@hemobanco.TelefoneHemobanco.Tipo)</td>
+                <td>@hemobanco.TelefoneHemobanco (@hemobanco.TipoTelefoneHemobanco)</td>
 
                 <td>
                     @Html.ActionLink("Alterar", "AlterarHemobanco", "Hemobanco",

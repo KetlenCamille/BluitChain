@@ -17,7 +17,7 @@ namespace BlutChain.DAL
         {
             if(ValidaCPF(usuario.CPFUsuario))
             {
-                if (BuscarUsuarioPorCPF(usuario))
+                if (BuscarUsuarioPorCPF(usuario) == false)
                 {
                     context.Usuarios.Add(usuario);
                     context.SaveChanges();
