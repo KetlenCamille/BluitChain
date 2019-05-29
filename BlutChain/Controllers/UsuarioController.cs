@@ -27,15 +27,14 @@ namespace BlutChain.Controllers
             {
                 ModelState.AddModelError("", TempData["Mensagem"].ToString());
             }
-            ViewBag.Telefones = new MultiSelectList(TelefoneDAO.ListarTodos(), "IdTelefone", "Numero");
+
             return View((Usuario)TempData["Usuario"]);
         }
 
         [HttpPost]
-        public ActionResult CadastrarUsuario(Usuario usuario, int? telefones, TipoSanguineo tipoSanguineo)
+        public ActionResult CadastrarUsuario(Usuario usuario, TipoSanguineo tipoSanguineo)
         {
-            ViewBag.Telefones = new MultiSelectList(TelefoneDAO.ListarTodos(), "IdTelefone", "Numero");
-            usuario.TelefoneUsuario = TelefoneDAO.BuscarTelefonePorID(telefones);
+
             if(TipoSanguineoDAO.BuscarTipoSanguineoPorNome(tipoSanguineo.GrupoSanguineo, tipoSanguineo.FatorRH) == null)
             {
                 TipoSanguineoDAO.CadastrarTipoSanguineo(tipoSanguineo);

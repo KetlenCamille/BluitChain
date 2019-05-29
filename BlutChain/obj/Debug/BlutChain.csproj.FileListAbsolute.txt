@@ -359,7 +359,6 @@ C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\bin\Antlr3.Runtime.pdb
 C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.csprojAssemblyReference.cache
 C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.CreateDatabase.resources
 C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.AtualizaçãoBanco.resources
 C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.csproj.GenerateResource.cache
