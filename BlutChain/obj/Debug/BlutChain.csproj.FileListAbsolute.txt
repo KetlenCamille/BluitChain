@@ -414,3 +414,17 @@ C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.
 C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.TipoTelefoneHemobanco.resources
 C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.csprojAssemblyReference.cache
 C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.updateUsuarioTelefone.resources
+C:\Users\mirel\Source\Repos\BlutChain\BlutChain\bin\WebActivatorEx.dll
+C:\Users\mirel\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.atttelefone.resources
+C:\Users\mirel\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.atttelefone2.resources
+C:\Users\mirel\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.atttelefone3.resources
+C:\Users\mirel\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.attUsuarioSexo.resources
+C:\Users\mirel\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.DataAnottationTipoSanguineo.resources
+C:\Users\mirel\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.UpdateDatabase.resources
+C:\Users\mirel\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.UpdateDatabase1.resources
+C:\Users\mirel\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.AlterDatabase.resources
+C:\Users\mirel\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.MigrationUpdate.resources
+C:\Users\mirel\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.UpdateHemobanco.resources
+C:\Users\mirel\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.UpdateMigration.resources
+C:\Users\mirel\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.TipoTelefoneHemobanco.resources
+C:\Users\mirel\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.updateUsuarioTelefone.resources
