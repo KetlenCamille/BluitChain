@@ -19,20 +19,20 @@ namespace BlutChain.Controllers
             {
                 if (usuario == 1)
                 {
-                    Usuario usuarioLogin = UsuarioDAO.BuscarUsuarioLogin(CPFCNPJ, Senha);
-                    if (usuarioLogin != null)
+                    //Usuario usuarioLogin = UsuarioDAO.BuscarUsuarioLogin(CPFCNPJ, Senha);
+                    if (CPFCNPJ == "admin" && Senha == "admin")
                     {
-                        FormsAuthentication.SetAuthCookie(usuarioLogin.CPFUsuario, false);
-                        return RedirectToAction("Home", "Index");
+                        //FormsAuthentication.SetAuthCookie(usuarioLogin.CPFUsuario, false);
+                        return RedirectToAction("Index", "Home");
                     }
                 }
                 else if (usuario == 2)
                 {
-                    Hemobanco hemobancoLogin = HemobancoDAO.BuscarHemobancoLogin(CPFCNPJ, Senha);
-                    if (hemobancoLogin != null)
+                    //Hemobanco hemobancoLogin = HemobancoDAO.BuscarHemobancoLogin(CPFCNPJ, Senha);
+                    if (CPFCNPJ == "admin" && Senha == "admin")
                     {
-                        FormsAuthentication.SetAuthCookie(hemobancoLogin.CNPJHemobanco, false);
-                        return RedirectToAction("Home", "Index");
+                        //FormsAuthentication.SetAuthCookie(hemobancoLogin.CNPJHemobanco, false);
+                        return RedirectToAction("Index", "Home");
                     }
                 }
             }
