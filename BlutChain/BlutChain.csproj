@@ -182,6 +182,7 @@
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DAL\AgendamentoDAO.cs" />
+    <Compile Include="DAL\DoacaoDAO.cs" />
     <Compile Include="DAL\EnderecoDAO.cs" />
     <Compile Include="DAL\HemobancoDAO.cs" />
     <Compile Include="DAL\SingletonContext.cs" />
@@ -262,6 +263,10 @@
     <Compile Include="Migrations\201905291500494_updateUsuarioTelefone.cs" />
     <Compile Include="Migrations\201905291500494_updateUsuarioTelefone.Designer.cs">
       <DependentUpon>201905291500494_updateUsuarioTelefone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906021949573_doacao.cs" />
+    <Compile Include="Migrations\201906021949573_doacao.Designer.cs">
+      <DependentUpon>201906021949573_doacao.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Agendamento.cs" />
@@ -425,6 +430,7 @@
     <Content Include="Views\Hemobanco\CadastrarHemobanco.cshtml" />
     <Content Include="Views\Hemobanco\AlterarHemobanco.cshtml" />
     <Content Include="Views\Doacao\Index.cshtml" />
+    <Content Include="Views\Doacao\RegistrarDoacao.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -513,6 +519,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905291500494_updateUsuarioTelefone.resx">
       <DependentUpon>201905291500494_updateUsuarioTelefone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906021949573_doacao.resx">
+      <DependentUpon>201906021949573_doacao.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
