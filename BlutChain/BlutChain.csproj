@@ -437,6 +437,7 @@
     <Content Include="Views\Doacao\RegistrarDoacao.cshtml" />
     <Content Include="Views\Usuario\AlterarUsuario.cshtml" />
     <Content Include="Views\Usuario\PaginaInicial.cshtml" />
+    <Content Include="Views\Agendamento\DetalheAgendamento.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
