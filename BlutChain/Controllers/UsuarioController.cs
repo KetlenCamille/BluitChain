@@ -96,8 +96,8 @@ namespace BlutChain.Controllers
 
         public ActionResult HistoricoDoacao()
         {
-            int idUsuarioSessao = Sessao.retornarUsuario();
-            return View(AgendamentoDAO.HistoricoDoacaoPorUsuario(idUsuarioSessao));
+            ViewBag.Data = DateTime.Now;
+            return View(AgendamentoDAO.HistoricoDoacaoPorUsuario(Sessao.retornarUsuario()));
         }
 
         public ActionResult PaginaInicial()

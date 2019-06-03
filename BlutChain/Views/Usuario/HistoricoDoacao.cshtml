@@ -15,11 +15,10 @@
         </tr>
         @foreach (Agendamento agendamento in Model)
         {
-            <tr>
-                <td>@agendamento.DataAgendamento as @agendamento.HorarioAgendamento</td>
-
-                <td>@agendamento.HemobancoAgendamento.NomeFantasiaHemobanco</td>
-            </tr>
+        <tr>
+            <td>@agendamento.DataAgendamento as @agendamento.HorarioAgendamento</td>
+            <td>@agendamento.HemobancoAgendamento.NomeFantasiaHemobanco</td>  
+        </tr>
         }
     </table>
 
