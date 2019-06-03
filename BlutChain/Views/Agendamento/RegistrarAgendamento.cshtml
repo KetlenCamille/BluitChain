@@ -55,6 +55,15 @@
             @Html.DropDownList("Hemobancos", null,
                 " -- SELECIONE -- ", new { @class = "form-control" })
 
+            @* Passando as informações de endereço para a function codeAddress() no Layout para gerar o mapa com o marcador *@
+            <input id="address" type="hidden" value="@Model.HemobancoAgendamento.Logradouro +  @Model.HemobancoAgendamento.Numero +
+                   @Model.HemobancoAgendamento.Bairro + @Model.HemobancoAgendamento.Localidade + @Model.HemobancoAgendamento.CEP + 
+                   @Model.HemobancoAgendamento.Uf">
+            <div align="center">
+                <div id="map-canvas" style="height:400px;width:100%;">
+                </div>
+            </div>
+
 
             @Html.ValidationMessageFor(model => model.HemobancoAgendamento, null,
                 new { @class = "text-danger" })
