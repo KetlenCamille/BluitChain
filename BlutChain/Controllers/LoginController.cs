@@ -23,7 +23,7 @@ namespace BlutChain.Controllers
                     if (usuarioLogin != null)
                     {
                         FormsAuthentication.SetAuthCookie(usuarioLogin.CPFUsuario, false);
-                        return RedirectToAction("Home", "Index");
+                        return RedirectToAction("Index", "Usuario");
                     }
                 }
                 else if (usuario == 2)
@@ -32,7 +32,7 @@ namespace BlutChain.Controllers
                     if (hemobancoLogin != null)
                     {
                         FormsAuthentication.SetAuthCookie(hemobancoLogin.CNPJHemobanco, false);
-                        return RedirectToAction("Home", "Index");
+                        return RedirectToAction("Index", "Hemobanco");
                     }
                 }
             }

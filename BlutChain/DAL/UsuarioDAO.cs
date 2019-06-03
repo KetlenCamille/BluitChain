@@ -15,7 +15,7 @@ namespace BlutChain.DAL
         // Criar Usuário
         public static bool CadastrarUsuario(Usuario usuario)
         {
-            if(ValidaCPF(usuario.CPFUsuario))
+           if(ValidaCPF(usuario.CPFUsuario))
             {
                 if (BuscarUsuarioPorCPF(usuario))
                 {
