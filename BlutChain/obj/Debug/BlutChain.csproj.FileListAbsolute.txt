@@ -429,3 +429,5 @@ C:\Users\mirel\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.U
 C:\Users\mirel\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.TipoTelefoneHemobanco.resources
 C:\Users\mirel\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.updateUsuarioTelefone.resources
 C:\Users\mirel\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.doacao.resources
+C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.doacao.resources
+C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.UpdateUsuarioNotDataAnnotation.resources
