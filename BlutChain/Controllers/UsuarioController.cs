@@ -56,7 +56,12 @@ namespace BlutChain.Controllers
             return View(usuario);
         }
 
-        [Authorize]
+        public ActionResult AlterarUsuario(int id)
+        {
+            return View(UsuarioDAO.BuscarUsuarioPorId(id));
+        }
+
+        //[Authorize]
         [HttpPost]
         public ActionResult AlterarUsuario(Usuario usuarioAlterado)
         {
@@ -68,6 +73,7 @@ namespace BlutChain.Controllers
             usuarioOriginal.SexoUsuario = usuarioAlterado.SexoUsuario;
             usuarioOriginal.EmailUsuario = usuarioAlterado.EmailUsuario;
             usuarioOriginal.PesoUsuario = usuarioAlterado.PesoUsuario;
+            usuarioOriginal.Senha = usuarioAlterado.Senha;
             
             
             if (ModelState.IsValid)
