@@ -1,0 +1,145 @@
+﻿@model BlutChain.Models.Hemobanco
+
+@using (Html.BeginForm("CadastrarHemobanco", "Hemobanco", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+    <legend>Dados do Endereço</legend>
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CEP, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CEP, new { htmlAttributes = new { @class = "form-control", @placeholder = "CEP" } })
+                @Html.ValidationMessageFor(model => model.CEP, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Buscar" class="btn btn-success" formaction="PesquisarCEP" formmethod="post" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Logradouro, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Logradouro, new { htmlAttributes = new { @class = "form-control", @placeholder = "Rua", @readonly = "" } })
+                @Html.ValidationMessageFor(model => model.Logradouro, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Numero, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Numero, new { htmlAttributes = new { @class = "form-control", @placeholder = "Número da Residência" } })
+                @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Bairro, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Bairro, new { htmlAttributes = new { @class = "form-control", @placeholder = "Bairro", @readonly = "" } })
+                @Html.ValidationMessageFor(model => model.Bairro, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Localidade, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Localidade, new { htmlAttributes = new { @class = "form-control", @placeholder = "Cidade", @readonly = "" } })
+                @Html.ValidationMessageFor(model => model.Localidade, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Uf, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Uf, new { htmlAttributes = new { @class = "form-control", @placeholder = "Estado", @readonly = "" } })
+                @Html.ValidationMessageFor(model => model.Uf, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <legend>Dados Pessoais</legend>
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RazaoSocialHemobanco, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RazaoSocialHemobanco, new { htmlAttributes = new { @class = "form-control", @placeholder = "Razão Social do Hemobanco" } })
+                @Html.ValidationMessageFor(model => model.RazaoSocialHemobanco, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NomeFantasiaHemobanco, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NomeFantasiaHemobanco, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nome Fantasia do Hemobanco" } })
+                @Html.ValidationMessageFor(model => model.NomeFantasiaHemobanco, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CNPJHemobanco, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CNPJHemobanco, new { htmlAttributes = new { @class = "form-control", @placeholder = "CNPJ do Hemobanco" } })
+                @Html.ValidationMessageFor(model => model.CNPJHemobanco, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <br>
+        <b>Tipo Telefone: </b>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.DropDownList("TipoTelefoneHemobanco",  new List<SelectListItem>
+                {
+                    new SelectListItem{ Text = "Residencial", Value = "Residencial"},
+                    new SelectListItem{ Text = "Celular", Value = "Celular"}
+                 } , "Selecione", new { @class = "control-label col-md-2" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TelefoneHemobanco, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TelefoneHemobanco, new { htmlAttributes = new { @class = "form-control", @placeholder = "Telefone do Hemobanco" } })
+                @Html.ValidationMessageFor(model => model.TelefoneHemobanco, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <legend>Dados Login</legend>
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmailHemobanco, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EmailHemobanco, new { htmlAttributes = new { @class = "form-control", @placeholder = "Razão Social do Hemobanco" } })
+                @Html.ValidationMessageFor(model => model.EmailHemobanco, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control", @placeholder = "Senha" } })
+                @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ConfirmacaoDaSenha, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.ConfirmacaoDaSenha, new { htmlAttributes = new { @class = "form-control", @placeholder = "Confirme sua senha" } })
+                @Html.ValidationMessageFor(model => model.ConfirmacaoDaSenha, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" value="Cadastrar" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}

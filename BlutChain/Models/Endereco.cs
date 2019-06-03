@@ -13,16 +13,25 @@ namespace BlutChain.Models
         [Key]
         public int IdEndereco { get; set; }
 
-        public String Rua { get; set; }
+        [Display(Name = "Rua")]
+        public String Logradouro { get; set; }
 
+        [Required(ErrorMessage = "Campo Obrigatório!")]
+        [Display(Name = "Numero")]
         public int Numero { get; set; }
-        
+
+        [Display(Name = "Bairro")]
         public String Bairro { get; set; }
 
+        [Required(ErrorMessage = "Campo Obrigatório!")]
+        [MaxLength(8, ErrorMessage = "O campo deve ter no máximo 8 caracteres!")]
+        [Display(Name = "CEP")]
         public String CEP { get; set; }
 
-        public String Cidade { get; set; }
+        [Display(Name = "Cidade")]
+        public String Localidade { get; set; }
 
-        public char Estado { get; set; }
+        [Display(Name = "Estado")]
+        public String Uf { get; set; }
     }
 }

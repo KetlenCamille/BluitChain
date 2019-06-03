@@ -21,5 +21,7 @@ namespace BlutChain.Models
         public DbSet<TipoSanguineo> TipoSanguineos { get; set; }
 
         public DbSet<Telefone> Telefones { get; set; }
+
+        public DbSet<Agendamento> Agendamentos { get; set; }
     }
 }

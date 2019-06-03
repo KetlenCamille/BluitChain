@@ -1,0 +1,71 @@
+﻿@model IEnumerable<BlutChain.Models.Usuario>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar Usuário", "CadastrarUsuario", "Usuario")
+</p>
+<table class="table table-hover table-stripped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CPFUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataNascimentoUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SexoUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PesoUsuario)
+        </th>
+
+        <th></th>
+        <th></th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CPFUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataNascimentoUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SexoUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PesoUsuario)
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "AlterarUsuario", "Usuario",
+               new { id = item.IdUsuario }, null)
+        </td>
+
+        <td>
+            @Html.ActionLink("Remover", "ExcluirUsuario", "Usuario",
+            new { id = item.IdUsuario }, null)
+        </td>
+    </tr>
+    }
+
+</table>
+
