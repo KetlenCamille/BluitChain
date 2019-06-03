@@ -55,7 +55,7 @@ namespace BlutChain.DAL
 
         public static List<Agendamento> HistoricoDoacaoPorUsuario(int usuarioId)
         {
-            return context.Agendamentos.Include("Usuario").Where(x => x.UsuarioAgendamento.IdUsuario == usuarioId).ToList();
+            return context.Agendamentos.Where(x => x.UsuarioAgendamento.IdUsuario == usuarioId).ToList();
         }
 
         public static List<Agendamento> BuscarAgendamentoIgual(Agendamento agendamento)

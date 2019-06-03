@@ -25,7 +25,7 @@ namespace BlutChain.Controllers
                     {
                         FormsAuthentication.SetAuthCookie(usuarioLogin.CPFUsuario, false);
                         Sessao.setarUsuario(usuarioLogin.IdUsuario);
-                        return RedirectToAction("Index", "Usuario");
+                        return RedirectToAction("PaginaInicial", "Usuario");
                     }
                 }
                 else if (usuario == 2)
@@ -35,7 +35,7 @@ namespace BlutChain.Controllers
                     {
                         FormsAuthentication.SetAuthCookie(hemobancoLogin.CNPJHemobanco, false);
                         Sessao.setarHemobanco(hemobancoLogin.IdHemobanco);
-                        return RedirectToAction("Index", "Hemobanco");
+                        return RedirectToAction("PaginaInicial", "Hemobanco");
                     }
                 }
             }

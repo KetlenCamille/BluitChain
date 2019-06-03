@@ -99,5 +99,10 @@ namespace BlutChain.Controllers
             int idUsuarioSessao = Sessao.retornarUsuario();
             return View(AgendamentoDAO.HistoricoDoacaoPorUsuario(idUsuarioSessao));
         }
+
+        public ActionResult PaginaInicial()
+        {
+            return View();
+        }
     }
 }
