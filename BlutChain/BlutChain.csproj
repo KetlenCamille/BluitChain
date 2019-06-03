@@ -331,6 +331,7 @@
     <Content Include="Content\ViewContent\assets\css\images\Icones\transfusion.png" />
     <Content Include="Content\ViewContent\assets\css\images\Icones\water.png" />
     <Content Include="Content\ViewContent\assets\css\images\Icones\x-rays.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Logo.png" />
     <Content Include="Content\ViewContent\assets\css\main.css" />
     <Content Include="Content\ViewContent\assets\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\ViewContent\assets\js\breakpoints.min.js" />
@@ -423,6 +424,8 @@
     <Content Include="Views\Hemobanco\Index.cshtml" />
     <Content Include="Views\Hemobanco\CadastrarHemobanco.cshtml" />
     <Content Include="Views\Hemobanco\AlterarHemobanco.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

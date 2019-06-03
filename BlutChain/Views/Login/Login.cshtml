@@ -1,10 +1,11 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<!-- Header -->
 
 @using (Html.BeginForm("Login", "Login", FormMethod.Post))
 {
-    <fieldset>
+    <fieldset style="padding-top:55px; padding-left:155px">
         <legend>Login</legend>
         @Html.AntiForgeryToken()
 
@@ -28,7 +29,7 @@
                 <div>
                     <input type="radio" name="usuario" id="radioDoador" value="1" />
                     @Html.Label("Doador")
-                
+
                     <input type="radio" name="usuario" id="radioDoador" value="2" />
                     @Html.Label("Hemobanco")
                 </div>
