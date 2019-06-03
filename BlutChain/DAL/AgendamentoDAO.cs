@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using BlutChain.Models;
+using BlutChain.Utils;
 
 namespace BlutChain.DAL
 {
