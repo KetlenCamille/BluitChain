@@ -28,7 +28,12 @@ namespace BlutChain.Controllers
             ViewBag.Hemobancos = new MultiSelectList(HemobancoDAO.ListarTodosHemobancos(), "IdHemobanco", "NomeFantasiaHemobanco");
             return View();
         }
-        
+
+        public ActionResult AgendamentoDetalhe(int id)
+        {
+            return View(AgendamentoDAO.BuscarAgendamentoPorID(id));
+        }
+
 
         [HttpPost]
         public ActionResult RegistrarAgendamento([Bind(Include = "IdAgendamento,DataAgendamento,HorarioAgendamento, IdUsuario, IdHemobanco")] Agendamento agendamento, int? hemobancos)

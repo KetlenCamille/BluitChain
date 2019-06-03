@@ -20,7 +20,7 @@
             Horário de Agendamento
         </th>
         <th>
-            Nome Fantasia
+            Hemobanco
         </th>
         <th>
             Nome do Usuário
@@ -52,13 +52,13 @@
                 @Html.DisplayFor(modelItem => agendamento.UsuarioAgendamento.NomeUsuario)
             </td>
             <td>
-                @Html.ActionLink("Editar", "EditarAgendamento", "Agendamento", new { id = agendamento.IdAgendamento })
+                @Html.ActionLink("Editar", "EditarAgendamento", "Agendamento", new { id = agendamento.IdAgendamento }, null)
             </td>
             <td>
-                @Html.ActionLink("Detalhe", "DetalheAgendamento", "Agendamento", new { id = agendamento.IdAgendamento })
+                @Html.ActionLink("Detalhe", "AgendamentoDetalhe", "Agendamento", new { id = agendamento.IdAgendamento }, null)
             </td>
             <td>
-                @Html.ActionLink("Deletar", "Delete", "Agendamento", new { id = agendamento.IdAgendamento })
+                @Html.ActionLink("Deletar", "Delete", "Agendamento", new { id = agendamento.IdAgendamento }, null)
             </td>
         </tr>
     }
