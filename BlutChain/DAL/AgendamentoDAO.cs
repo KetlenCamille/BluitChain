@@ -25,7 +25,7 @@ namespace BlutChain.DAL
 
         public static List<Agendamento> ListarAgendamentos()
         {
-            return context.Agendamentos.ToList();
+            return context.Agendamentos.Include("UsuarioAgendamento").Include("HemobancoAgendamento").ToList();
         }
 
         public static Agendamento BuscarAgendamentoPorID(int? id)

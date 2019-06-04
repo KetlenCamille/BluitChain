@@ -525,3 +525,4 @@ C:\Users\psico\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.csproj.CopyC
 C:\Users\psico\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.dll
 C:\Users\psico\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.pdb
 C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.UpdateProject.resources
+C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.updateDatabaseII.resources

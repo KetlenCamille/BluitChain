@@ -17,7 +17,7 @@ namespace BlutChain.Models
         public DateTime DataAgendamento { get; set; }
 
         [Display(Name = "Horário")]
-        public DateTime HorarioAgendamento { get; set; }
+        public String HorarioAgendamento { get; set; }
 
         [Display(Name = "Usuário")]
         public Usuario UsuarioAgendamento { get; set; }
