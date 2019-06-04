@@ -172,7 +172,6 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\Agendamento.cs" />
-    <Compile Include="Controllers\DoacaoController.cs" />
     <Compile Include="Controllers\EnderecoController.cs" />
     <Compile Include="Controllers\HemobancoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -182,7 +181,6 @@
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DAL\AgendamentoDAO.cs" />
-    <Compile Include="DAL\DoacaoDAO.cs" />
     <Compile Include="DAL\EnderecoDAO.cs" />
     <Compile Include="DAL\HemobancoDAO.cs" />
     <Compile Include="DAL\SingletonContext.cs" />
@@ -264,14 +262,6 @@
     <Compile Include="Migrations\201905291500494_updateUsuarioTelefone.Designer.cs">
       <DependentUpon>201905291500494_updateUsuarioTelefone.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906021949573_doacao.cs" />
-    <Compile Include="Migrations\201906021949573_doacao.Designer.cs">
-      <DependentUpon>201906021949573_doacao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906030231074_UpdateUsuarioNotDataAnnotation.cs" />
-    <Compile Include="Migrations\201906030231074_UpdateUsuarioNotDataAnnotation.Designer.cs">
-      <DependentUpon>201906030231074_UpdateUsuarioNotDataAnnotation.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Agendamento.cs" />
     <Compile Include="Models\Doacao.cs" />
@@ -341,6 +331,7 @@
     <Content Include="Content\ViewContent\assets\css\images\Icones\transfusion.png" />
     <Content Include="Content\ViewContent\assets\css\images\Icones\water.png" />
     <Content Include="Content\ViewContent\assets\css\images\Icones\x-rays.png" />
+    <Content Include="Content\ViewContent\assets\css\images\Logo.png" />
     <Content Include="Content\ViewContent\assets\css\main.css" />
     <Content Include="Content\ViewContent\assets\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\ViewContent\assets\js\breakpoints.min.js" />
@@ -433,9 +424,8 @@
     <Content Include="Views\Hemobanco\Index.cshtml" />
     <Content Include="Views\Hemobanco\CadastrarHemobanco.cshtml" />
     <Content Include="Views\Hemobanco\AlterarHemobanco.cshtml" />
-    <Content Include="Views\Doacao\Index.cshtml" />
-    <Content Include="Views\Doacao\RegistrarDoacao.cshtml" />
-    <Content Include="Views\Usuario\AlterarUsuario.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -524,12 +514,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905291500494_updateUsuarioTelefone.resx">
       <DependentUpon>201905291500494_updateUsuarioTelefone.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906021949573_doacao.resx">
-      <DependentUpon>201906021949573_doacao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906030231074_UpdateUsuarioNotDataAnnotation.resx">
-      <DependentUpon>201906030231074_UpdateUsuarioNotDataAnnotation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using BlutChain.Models;
+using BlutChain.Utils;
 
 namespace BlutChain.DAL
 {
@@ -52,9 +53,9 @@ namespace BlutChain.DAL
             context.SaveChanges();
         }
 
-        public static List<Agendamento> HistoricoDoacaoPorUsuario(int usuarioId)
+        public static List<Agendamento> HistoricoDoacaoPorUsuario(int? usuarioId)
         {
-            return context.Agendamentos.Include("Usuario").Where(x => x.UsuarioAgendamento.IdUsuario == usuarioId).ToList();
+            return context.Agendamentos.Include("UsuarioAgendamento").Include("HemobancoAgendamento").Where(x => x.UsuarioAgendamento.IdUsuario == usuarioId).ToList();
         }
 
         public static List<Agendamento> BuscarAgendamentoIgual(Agendamento agendamento)

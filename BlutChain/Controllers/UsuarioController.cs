@@ -96,8 +96,13 @@ namespace BlutChain.Controllers
 
         public ActionResult HistoricoDoacao()
         {
-            int idUsuarioSessao = Int32.Parse(Sessao.RetonarUsuarioId());
-            return View(AgendamentoDAO.HistoricoDoacaoPorUsuario(idUsuarioSessao));
+            ViewBag.Data = DateTime.Now;
+            return View(AgendamentoDAO.HistoricoDoacaoPorUsuario(Sessao.retornarUsuario()));
+        }
+
+        public ActionResult PaginaInicial()
+        {
+            return View();
         }
     }
 }

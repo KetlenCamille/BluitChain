@@ -1,0 +1,50 @@
+﻿@model BlutChain.Models.Agendamento
+
+@{
+    ViewBag.Title = "DetalheAgendamento";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalhes Agendamento</h2>
+
+<table style="margin-left: 30px">
+    <tr>
+        <td colspan="2">
+            <h4>@Model.UsuarioAgendamento</h4>
+        </td>
+    </tr>
+    <tr>
+        <td style="vertical-align: top; padding-left: 30px">
+            <b>Detalhes Agendamento: </b>
+            <br />
+            @Model.HemobancoAgendamento<br />
+            <b>Horário: </b>@Model.HorarioAgendamento<br />
+            <b>Hemobanco: </b>@Model.HemobancoAgendamento.NomeFantasiaHemobanco<br />
+            <b>Localização do Hemobanco: </b><br />
+            <b>@Model.HemobancoAgendamento.Logradouro</b><br />
+            <b>Número: @Model.HemobancoAgendamento.Numero</b><br />
+            <b>Bairro: @Model.HemobancoAgendamento.Bairro</b><br />
+            <b>Cidade: @Model.HemobancoAgendamento.Localidade</b><br />
+            <b>CEP: @Model.HemobancoAgendamento.CEP</b><br />
+            <b>UF: @Model.HemobancoAgendamento.Uf</b><br />
+            <b>Telefone do Hemobanco:</b><br />
+            <b>@Model.HemobancoAgendamento.TipoTelefoneHemobanco</b>
+            <b>@Model.HemobancoAgendamento.TelefoneHemobanco</b>
+        </td>
+    </tr>
+    <tr>
+        <td style="vertical-align: top; padding-left: 30px">
+            <br />
+            <br />
+            @* Passando as informações de endereço para a function codeAddress() no Layout para gerar o mapa com o marcador *@
+            <input id="address" type="hidden" value="@Model.HemobancoAgendamento.Logradouro +
+                   @Model.HemobancoAgendamento.Numero + @Model.HemobancoAgendamento.Bairro +
+                   @Model.HemobancoAgendamento.Localidade + @Model.HemobancoAgendamento.CEP +
+                   @Model.HemobancoAgendamento.Uf">
+            <div align="center">
+                <div id="map-canvas" style="height:400px;width:100%;">
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>

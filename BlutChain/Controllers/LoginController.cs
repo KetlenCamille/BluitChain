@@ -1,5 +1,6 @@
 ﻿using BlutChain.DAL;
 using BlutChain.Models;
+using BlutChain.Utils;
 using System.Web.Mvc;
 using System.Web.Security;
 
@@ -23,7 +24,8 @@ namespace BlutChain.Controllers
                     if (usuarioLogin != null)
                     {
                         FormsAuthentication.SetAuthCookie(usuarioLogin.CPFUsuario, false);
-                        return RedirectToAction("Index", "Usuario");
+                        Sessao.setarUsuario(usuarioLogin.IdUsuario);
+                        return RedirectToAction("PaginaInicial", "Usuario");
                     }
                 }
                 else if (usuario == 2)
@@ -32,7 +34,8 @@ namespace BlutChain.Controllers
                     if (hemobancoLogin != null)
                     {
                         FormsAuthentication.SetAuthCookie(hemobancoLogin.CNPJHemobanco, false);
-                        return RedirectToAction("Index", "Hemobanco");
+                        Sessao.setarHemobanco(hemobancoLogin.IdHemobanco);
+                        return RedirectToAction("PaginaInicial", "Hemobanco");
                     }
                 }
             }
