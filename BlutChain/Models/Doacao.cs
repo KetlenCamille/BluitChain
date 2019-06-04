@@ -16,5 +16,8 @@ namespace BlutChain.Models
         public TipoSanguineo TipoSanguineoDoacao { get; set; }
 
         public Hemobanco HemobancoDoacao { get; set; }
+
+        public Usuario UsuarioDoacao { get; set; }
+
     }
 }
