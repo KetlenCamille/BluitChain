@@ -262,6 +262,10 @@
     <Compile Include="Migrations\201905291500494_updateUsuarioTelefone.Designer.cs">
       <DependentUpon>201905291500494_updateUsuarioTelefone.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906041251077_UpdateProject.cs" />
+    <Compile Include="Migrations\201906041251077_UpdateProject.Designer.cs">
+      <DependentUpon>201906041251077_UpdateProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Agendamento.cs" />
     <Compile Include="Models\Doacao.cs" />
@@ -514,6 +518,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905291500494_updateUsuarioTelefone.resx">
       <DependentUpon>201905291500494_updateUsuarioTelefone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906041251077_UpdateProject.resx">
+      <DependentUpon>201906041251077_UpdateProject.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
