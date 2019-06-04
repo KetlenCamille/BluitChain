@@ -390,6 +390,7 @@
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\mapa.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Content\ViewContent\assets\css\images\doação-de-sangue-832x520.jpg" />
     <Content Include="Content\ViewContent\assets\css\images\overlay.png" />

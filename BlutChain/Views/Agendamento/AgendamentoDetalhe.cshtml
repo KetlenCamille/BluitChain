@@ -1,20 +1,37 @@
 ﻿@model BlutChain.Models.Agendamento
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-<table class="table">
+
+<h2>Detalhe Agendamento</h2>
+<table style="margin-left: 30px">
     <tr>
-        <th>
-            Data
-        </th>
-        <th>
-            Hemobanco
-        </th>
-        <th>
-            Endereço
-        </th>
+        <td>
+            <h4>Usuário: @Model.UsuarioAgendamento.NomeUsuario</h4>
+        </td>
     </tr>
 
     <tr>
-        <td>@Html.DisplayFor(modelItem => Model.DataAgendamento) @Model.HorarioAgendamento</td>
-        <td> @Model.HemobancoAgendamento.NomeFantasiaHemobanco</td>
-        <td> @Model.HemobancoAgendamento.Logradouro, @Model.HemobancoAgendamento.Numero - @Model.HemobancoAgendamento.Bairro, @Model.HemobancoAgendamento.Localidade - @Model.HemobancoAgendamento.Uf, CEP: @Model.HemobancoAgendamento.CEP </td>
+        <td style="vertical-align: top; padding-left: 30px">
+            <b>Detalhes Agendamento:</b><br />
+            <b>Data: </b> @Model.DataAgendamento<br />
+            <b>Hora: </b> @Model.HorarioAgendamento
+            <br />
+            <b>Hemobanco: </b><br />
+            <b>Nome do Hemobanco: </b> @Model.HemobancoAgendamento.NomeFantasiaHemobanco<br />
+            <b>Rua: </b> @Model.HemobancoAgendamento.Logradouro<br />
+            <b>Número: </b> @Model.HemobancoAgendamento.Numero<br />
+            <b>Bairo: </b> @Model.HemobancoAgendamento.Bairro<br />
+            <b>Cidade: </b> @Model.HemobancoAgendamento.Localidade<br />
+            <b>CEP: </b> @Model.HemobancoAgendamento.CEP<br />
+            <b>UF: </b> @Model.HemobancoAgendamento.Uf<br /><br />
+        </td>
     </tr>
+    <tr>
+        <td>
+            <input id="address" type="hidden" value="@Model.HemobancoAgendamento.Logradouro + @Model.HemobancoAgendamento.Numero + @Model.HemobancoAgendamento.Bairro + @Model.HemobancoAgendamento.Localidade + @Model.HemobancoAgendamento.CEP +@Model.HemobancoAgendamento.Uf">
+                <div align="center" id="map_canvas" style="height:400px;width:100%;"> </div>
+        </td>
+    </tr>
+</table>
