@@ -56,7 +56,12 @@ namespace BlutChain.Controllers
             return View(usuario);
         }
 
-        [Authorize]
+        public ActionResult AlterarUsuario(int id)
+        {
+            return View(UsuarioDAO.BuscarUsuarioPorId(id));
+        }
+
+        //[Authorize]
         [HttpPost]
         public ActionResult AlterarUsuario(Usuario usuarioAlterado)
         {
@@ -68,6 +73,7 @@ namespace BlutChain.Controllers
             usuarioOriginal.SexoUsuario = usuarioAlterado.SexoUsuario;
             usuarioOriginal.EmailUsuario = usuarioAlterado.EmailUsuario;
             usuarioOriginal.PesoUsuario = usuarioAlterado.PesoUsuario;
+            usuarioOriginal.Senha = usuarioAlterado.Senha;
             
             
             if (ModelState.IsValid)
@@ -90,8 +96,13 @@ namespace BlutChain.Controllers
 
         public ActionResult HistoricoDoacao()
         {
-            int idUsuarioSessao = Int32.Parse(Sessao.RetonarUsuarioId());
-            return View(AgendamentoDAO.HistoricoDoacaoPorUsuario(idUsuarioSessao));
+            ViewBag.Data = DateTime.Now;
+            return View(AgendamentoDAO.HistoricoDoacaoPorUsuario(Sessao.retornarUsuario()));
+        }
+
+        public ActionResult PaginaInicial()
+        {
+            return View();
         }
     }
 }

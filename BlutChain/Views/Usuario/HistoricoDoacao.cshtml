@@ -12,14 +12,15 @@
         <tr>
             <th>Data</th>
             <th>Hemobanco</th>
+            <th>Endereço</th>
         </tr>
         @foreach (Agendamento agendamento in Model)
         {
-            <tr>
-                <td>@agendamento.DataAgendamento as @agendamento.HorarioAgendamento</td>
-
-                <td>@agendamento.HemobancoAgendamento.NomeFantasiaHemobanco</td>
-            </tr>
+        <tr>
+            <td>@Html.DisplayFor(modelItem => agendamento.DataAgendamento) as @Html.DisplayFor(modelItem => agendamento.HorarioAgendamento)</td>
+            <td>@Html.DisplayFor(modelItem => agendamento.HemobancoAgendamento.NomeFantasiaHemobanco)</td>
+            <td> @agendamento.HemobancoAgendamento.Logradouro, @agendamento.HemobancoAgendamento.Numero - @agendamento.HemobancoAgendamento.Bairro, @agendamento.HemobancoAgendamento.Localidade - @agendamento.HemobancoAgendamento.Uf, CEP: @agendamento.HemobancoAgendamento.CEP </td>
+        </tr>
         }
     </table>
 
