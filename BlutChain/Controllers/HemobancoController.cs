@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using BlutChain.DAL;
 using BlutChain.Models;
+using BlutChain.Utils;
 using Newtonsoft.Json;
 
 namespace BlutChain.Controllers
@@ -120,6 +121,17 @@ namespace BlutChain.Controllers
             }
 
             return RedirectToAction("CadastrarHemobanco", "Hemobanco");
+        }
+
+        public ActionResult PaginaInicial()
+        {
+            return View();
+        }
+
+        public ActionResult AgendaHemobanco()
+        {
+            ViewBag.Data = DateTime.Now;
+            return View(AgendamentoDAO.AgendamentosHemobanco(Sessao.retornarHemobanco()));
         }
 
     }

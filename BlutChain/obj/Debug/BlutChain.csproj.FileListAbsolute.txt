@@ -638,3 +638,10 @@ C:\Users\TC823783\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.csproj.Co
 C:\Users\TC823783\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.csproj.CopyComplete
 C:\Users\TC823783\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.dll
 C:\Users\TC823783\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.pdb
+C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.MigrationUpdate.resources
+C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.UpdateHemobanco.resources
+C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.UpdateMigration.resources
+C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.TipoTelefoneHemobanco.resources
+C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.updateUsuarioTelefone.resources
+C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.UpdateProject.resources
+C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.updateDatabaseII.resources

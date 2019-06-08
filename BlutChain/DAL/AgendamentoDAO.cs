@@ -64,5 +64,15 @@ namespace BlutChain.DAL
             return context.Agendamentos.Where(x => x.DataAgendamento == agendamento.DataAgendamento && x.HorarioAgendamento == agendamento.HorarioAgendamento).ToList();
             
         }
+
+        internal static object AgendamentosUsuario(int idUsu)
+        {
+            return context.Agendamentos.Where(x => x.UsuarioAgendamento.IdUsuario == idUsu).ToList();
+        }
+
+        internal static object AgendamentosHemobanco(int idHem)
+        {
+            return context.Agendamentos.Where(x => x.HemobancoAgendamento.IdHemobanco == idHem).ToList();
+        }
     }
 }
