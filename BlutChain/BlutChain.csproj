@@ -390,6 +390,7 @@
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\mapa.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Content\ViewContent\assets\css\images\doação-de-sangue-832x520.jpg" />
     <Content Include="Content\ViewContent\assets\css\images\overlay.png" />
@@ -435,6 +436,10 @@
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Agendamento\AgendamentoDetalhe.cshtml" />
+    <Content Include="Views\Usuario\PaginaInicial.cshtml" />
+    <Content Include="Views\Usuario\Agendamentos.cshtml" />
+    <Content Include="Views\Hemobanco\AgendaHemobanco.cshtml" />
+    <Content Include="Views\Hemobanco\PaginaInicial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

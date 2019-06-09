@@ -104,5 +104,11 @@ namespace BlutChain.Controllers
         {
             return View();
         }
+
+        public ActionResult Agendamentos()
+        {
+            ViewBag.Data = DateTime.Now;
+            return View(AgendamentoDAO.AgendamentosUsuario(Sessao.retornarUsuario()));
+        }
     }
 }
