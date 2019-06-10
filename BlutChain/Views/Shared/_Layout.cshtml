@@ -10,12 +10,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link href="~/Content/ViewContent/assets/css/main.css" rel="stylesheet" />
     <link href="~/Content/ViewContent/assets/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="~/Content/ViewContent/assets/js/main.js" rel="stylesheet" />
+    @*<link href="~/Content/ViewContent/assets/js/main.js" rel="stylesheet" />*@
 
 
 </head>
 <body>
     @RenderPage("~/Views/Shared/_Header.cshtml")
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        var geocoder;
+        var map;
+        var marker;
+        function initMap() {
+            var latlng = new google.maps.LatLng(searchAddress());
+        var mapOptions =
+            {
+            zoom: 15,
+        center: latlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+            var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+            google.maps.event.addDomListener(window, "load", initMap);
+        }
+        
+//Recebe as infomações passadas na página AgendamentoDetalhe para gerar o mapa e marcador e transforma em lagitude e longitude para o método Geometry, caso o endereço passado
+//por parâmetro esteja correto ele retorna o mapa e marcador, caso dê erro, ele dá mensagem de erro no status
+        function searchAddress() {
+
+            var address = document.getElementById('address').value;
+
+            var geocoder = new google.maps.Geocoder();
+
+            geocoder.geocode({ address: address }, function (results, status) {
+
+                if (status == google.maps.GeocoderStatus.OK) {
+
+                    var myResult = results[0].geometry.location; // referência ao valor LatLng
+
+                    createMarker(myResult); // adicionar chamada à função que adiciona o marcador
+
+                }
+            });
+        }
+
+        function createMarker(latlng) {
+
+            // Se o utilizador efetuar outra pesquisa é necessário limpar a variável marker
+            if (marker != undefined && marker != '') {
+                marker.setMap(null);
+                marker = '';
+            }
+
+            marker = new google.maps.Marker({
+                map: map,
+                position: latlng
+            });
+
+        }
+
+    </script>
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpbsdLaCvNpC0jObCLKvRSH8eFXwuZ5Yk&callback=initMap">
+    </script>
 
     @RenderBody()
 
