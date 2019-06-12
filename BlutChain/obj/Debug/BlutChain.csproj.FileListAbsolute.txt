@@ -500,7 +500,6 @@ C:\Users\psico\Source\Repos\BlutChain\BlutChain\bin\Antlr3.Runtime.pdb
 C:\Users\psico\Source\Repos\BlutChain\BlutChain\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\psico\Source\Repos\BlutChain\BlutChain\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\psico\Source\Repos\BlutChain\BlutChain\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\psico\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.csprojAssemblyReference.cache
 C:\Users\psico\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.CreateDatabase.resources
 C:\Users\psico\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.AtualizaçãoBanco.resources
 C:\Users\psico\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.Update.resources
@@ -524,3 +523,5 @@ C:\Users\psico\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.csproj.CoreC
 C:\Users\psico\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.csproj.CopyComplete
 C:\Users\psico\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.dll
 C:\Users\psico\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.pdb
+C:\Users\psico\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.csprojAssemblyReference.cache
+C:\Users\psico\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.BlutChainDB.resources

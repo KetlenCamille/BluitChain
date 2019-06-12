@@ -37,14 +37,15 @@ namespace BlutChain.Controllers
 
         [HttpPost]
         public ActionResult RegistrarAgendamento([Bind(Include = "IdAgendamento,DataAgendamento,HorarioAgendamento, IdUsuario, IdHemobanco")] Agendamento agendamento, int? hemobancos)
-        {   
+        {
             ViewBag.Hemobancos = new MultiSelectList(HemobancoDAO.ListarTodosHemobancos(), "IdHemobanco", "NomeFantasiaHemobanco");
             agendamento.HemobancoAgendamento = HemobancoDAO.BuscarHemobancoPorID(hemobancos);
 
             agendamento.UsuarioAgendamento = UsuarioDAO.BuscarUsuarioPorId(Sessao.retornarUsuario());
             if (ModelState.IsValid)
             {
-                if (AgendamentoDAO.BuscarAgendamentoIgual(agendamento) != null) { 
+                if (AgendamentoDAO.BuscarAgendamentoIgual(agendamento) != null)
+                {
 
                     if (AgendamentoDAO.CadastrarAgendamento(agendamento))
                     {

@@ -171,7 +171,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\Agendamento.cs" />
+    <Compile Include="Controllers\AgendamentoController.cs" />
     <Compile Include="Controllers\EnderecoController.cs" />
     <Compile Include="Controllers\HemobancoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -262,6 +262,10 @@
     <Compile Include="Migrations\201905291500494_updateUsuarioTelefone.Designer.cs">
       <DependentUpon>201905291500494_updateUsuarioTelefone.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906041300275_BlutChainDB.cs" />
+    <Compile Include="Migrations\201906041300275_BlutChainDB.Designer.cs">
+      <DependentUpon>201906041300275_BlutChainDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Agendamento.cs" />
     <Compile Include="Models\Doacao.cs" />
@@ -280,7 +284,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\ViewContent\assets\css\font-awesome.min.css" />
     <Content Include="Content\ViewContent\assets\css\images\Icones\aids.png" />
     <Content Include="Content\ViewContent\assets\css\images\Icones\ambulance.png" />
     <Content Include="Content\ViewContent\assets\css\images\Icones\apple.png" />
@@ -332,15 +335,6 @@
     <Content Include="Content\ViewContent\assets\css\images\Icones\water.png" />
     <Content Include="Content\ViewContent\assets\css\images\Icones\x-rays.png" />
     <Content Include="Content\ViewContent\assets\css\images\Logo.png" />
-    <Content Include="Content\ViewContent\assets\css\main.css" />
-    <Content Include="Content\ViewContent\assets\fonts\fontawesome-webfont.svg" />
-    <Content Include="Content\ViewContent\assets\js\breakpoints.min.js" />
-    <Content Include="Content\ViewContent\assets\js\browser.min.js" />
-    <Content Include="Content\ViewContent\assets\js\jquery.dropotron.min.js" />
-    <Content Include="Content\ViewContent\assets\js\jquery.min.js" />
-    <Content Include="Content\ViewContent\assets\js\jquery.scrollex.min.js" />
-    <Content Include="Content\ViewContent\assets\js\main.js" />
-    <Content Include="Content\ViewContent\assets\js\util.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -365,18 +359,6 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <Content Include="Content\ViewContent\assets\fonts\fontawesome-webfont.eot" />
-    <Content Include="Content\ViewContent\assets\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Content\ViewContent\assets\fonts\fontawesome-webfont.woff" />
-    <Content Include="Content\ViewContent\assets\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Content\ViewContent\assets\fonts\FontAwesome.otf" />
-    <Content Include="Content\ViewContent\assets\sass\libs\_breakpoints.scss" />
-    <Content Include="Content\ViewContent\assets\sass\libs\_functions.scss" />
-    <Content Include="Content\ViewContent\assets\sass\libs\_html-grid.scss" />
-    <Content Include="Content\ViewContent\assets\sass\libs\_mixins.scss" />
-    <Content Include="Content\ViewContent\assets\sass\libs\_vars.scss" />
-    <Content Include="Content\ViewContent\assets\sass\libs\_vendor.scss" />
-    <Content Include="Content\ViewContent\assets\sass\main.scss" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -514,6 +496,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905291500494_updateUsuarioTelefone.resx">
       <DependentUpon>201905291500494_updateUsuarioTelefone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906041300275_BlutChainDB.resx">
+      <DependentUpon>201906041300275_BlutChainDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
