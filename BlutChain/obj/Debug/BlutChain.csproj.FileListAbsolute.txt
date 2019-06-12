@@ -645,3 +645,10 @@ C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.T
 C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.updateUsuarioTelefone.resources
 C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.UpdateProject.resources
 C:\Users\ricar\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.updateDatabaseII.resources
+C:\Users\Aluno\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.csprojAssemblyReference.cache
+C:\Users\Aluno\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.UpdateHemobanco.resources
+C:\Users\Aluno\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.UpdateMigration.resources
+C:\Users\Aluno\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.TipoTelefoneHemobanco.resources
+C:\Users\Aluno\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.updateUsuarioTelefone.resources
+C:\Users\Aluno\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.UpdateProject.resources
+C:\Users\Aluno\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.updateDatabaseII.resources
