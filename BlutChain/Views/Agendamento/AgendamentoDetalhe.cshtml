@@ -15,9 +15,10 @@
     <tr>
         <td style="vertical-align: top; padding-left: 30px">
             <b>Detalhes Agendamento:</b><br />
-            <b>Data: </b> @Model.DataAgendamento<br />
+            <b>Data: </b> @Html.DisplayFor(modelItem => Model.DataAgendamento)<br />
             <b>Hora: </b> @Model.HorarioAgendamento
             <br />
+            <br>
             <b>Hemobanco: </b><br />
             <b>Nome do Hemobanco: </b> @Model.HemobancoAgendamento.NomeFantasiaHemobanco<br />
             <b>Rua: </b> @Model.HemobancoAgendamento.Logradouro<br />

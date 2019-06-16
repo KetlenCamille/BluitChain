@@ -50,7 +50,8 @@ namespace BlutChain.Controllers
 
         public ActionResult Logout()
         {
-            FormsAuthentication.SignOut();
+            Sessao.setarUsuario(0);
+            Sessao.setarHemobanco(0);
             return RedirectToAction("Index", "Home");
         }
     }

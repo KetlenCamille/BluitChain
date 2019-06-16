@@ -49,15 +49,19 @@ namespace BlutChain.Controllers
                 if (UsuarioDAO.CadastrarUsuario(usuario))
                 {
                     ModelState.AddModelError("", "Usuário cadastrado com sucesso!");
-                    return RedirectToAction("Index", "Usuario");
+                    return RedirectToAction("Index", "Home");
                 }
             }
             ModelState.AddModelError("", "Esse usuário já existe ou o CPF está inválido!");
             return View(usuario);
         }
 
-        public ActionResult AlterarUsuario(int id)
+        public ActionResult AlterarUsuario(int? id)
         {
+            if(id == null)
+            {
+                id = Sessao.retornarUsuario();
+            }
             return View(UsuarioDAO.BuscarUsuarioPorId(id));
         }
 

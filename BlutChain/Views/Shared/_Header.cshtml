@@ -1,4 +1,5 @@
-﻿<header id="header" class="alt">
+﻿@using BlutChain.Utils
+<header id="header" class="alt">
 
     <h1><img src="~/Content/ViewContent/assets/css/images/Logo.png" width="133px" height="80px" /></h1>
 
@@ -13,7 +14,7 @@
                     <a class="dropdown-item waves-effect waves-light" href="/Hemobanco/CadastrarHemobanco">Hemobanco</a>
                 </div>
             </li>
-            @if (!Request.IsAuthenticated)
+            @if (Sessao.retornarUsuario() == 0 && Sessao.retornarHemobanco() == 0)
             {
                 <li class="nav-item active" style="margin-left:10px">
                     @Html.ActionLink("Login", "Login", "Login", null,

@@ -136,7 +136,7 @@ namespace BlutChain.DAL
         }
 
         //Buscar usuário por ID
-        public static Usuario BuscarUsuarioPorId(int id)
+        public static Usuario BuscarUsuarioPorId(int? id)
         {
             return context.Usuarios.Find(id);
         }
