@@ -125,7 +125,7 @@ namespace BlutChain.Controllers
         public ActionResult RemoverAgendamento(int id)
         {
             AgendamentoDAO.ExcluirAgendamento(AgendamentoDAO.BuscarAgendamentoPorID(id));
-            return RedirectToAction("Index", "Agendamento");
+            return RedirectToAction("PaginaInicial", "Usuario");
         }
 
         public ActionResult AgendamentoDetalhe(int id)

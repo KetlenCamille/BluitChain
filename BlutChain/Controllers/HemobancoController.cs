@@ -55,8 +55,12 @@ namespace BlutChain.Controllers
         }
 
         //[Authorize]
-        public ActionResult AlterarHemobanco(int id)
+        public ActionResult AlterarHemobanco(int? id)
         {
+            if(id == null)
+            {
+                id = Sessao.retornarHemobanco();
+            }
             return View(HemobancoDAO.BuscarHemobancoPorID(id));
         }
 
@@ -128,10 +132,16 @@ namespace BlutChain.Controllers
             return View();
         }
 
+        public ActionResult AgendamentoHemobancoHistorico()
+        {
+            ViewBag.Data = DateTime.Now;
+            return View(AgendamentoDAO.AgendamentosHemobancoHistorico(Sessao.retornarHemobanco()));
+        }
+
         public ActionResult AgendaHemobanco()
         {
             ViewBag.Data = DateTime.Now;
-            return View(AgendamentoDAO.AgendamentosHemobanco(Sessao.retornarHemobanco()));
+            return View(AgendamentoDAO.AgendamentosHemobancoDia(Sessao.retornarHemobanco()));
         }
 
     }

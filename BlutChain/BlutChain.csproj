@@ -424,8 +424,6 @@
     <Content Include="Views\Endereco\AlterarEndereco.cshtml" />
     <Content Include="Views\Endereco\Index.cshtml" />
     <Content Include="Views\Agendamento\RegistrarAgendamento.cshtml" />
-    <Content Include="Views\Agendamento\Delete.cshtml" />
-    <Content Include="Views\Agendamento\Edit.cshtml" />
     <Content Include="Views\Agendamento\Index.cshtml" />
     <Content Include="Views\Usuario\HistoricoDoacao.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
@@ -439,6 +437,8 @@
     <Content Include="Views\Usuario\Agendamentos.cshtml" />
     <Content Include="Views\Hemobanco\AgendaHemobanco.cshtml" />
     <Content Include="Views\Hemobanco\PaginaInicial.cshtml" />
+    <Content Include="Views\Agendamento\EditarAgendamento.cshtml" />
+    <Content Include="Views\Hemobanco\AgendamentoHemobancoHistorico.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
