@@ -67,7 +67,8 @@ namespace BlutChain.DAL
 
         internal static object AgendamentosUsuario(int idUsu)
         {
-            return context.Agendamentos.Where(x => x.UsuarioAgendamento.IdUsuario == idUsu).ToList();
+            DateTime today = DateTime.Today;
+            return context.Agendamentos.Where(x => x.UsuarioAgendamento.IdUsuario == idUsu && x.DataAgendamento >= today).ToList();
         }
 
         internal static object AgendamentosHemobanco(int idHem)
