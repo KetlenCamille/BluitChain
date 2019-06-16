@@ -32,11 +32,26 @@ namespace BlutChain.Controllers
         [HttpPost]
         public ActionResult RegistrarAgendamento([Bind(Include = "IdAgendamento,DataAgendamento,HorarioAgendamento, IdUsuario, IdHemobanco")] Agendamento agendamento, int? hemobancos)
         {
+            
             ViewBag.Hemobancos = new MultiSelectList(HemobancoDAO.ListarTodosHemobancos(), "IdHemobanco", "NomeFantasiaHemobanco");
             agendamento.HemobancoAgendamento = HemobancoDAO.BuscarHemobancoPorID(hemobancos);
 
-            //agendamento.UsuarioAgendamento = UsuarioDAO.BuscarUsuarioPorId(Sessao.retornarUsuario());
-            agendamento.UsuarioAgendamento = UsuarioDAO.BuscarUsuarioPorId(2);
+            agendamento.UsuarioAgendamento = UsuarioDAO.BuscarUsuarioPorId(Sessao.retornarUsuario());
+
+            int idade = DateTime.Today.Year - agendamento.UsuarioAgendamento.DataNascimentoUsuario.Year;
+
+            if (agendamento.UsuarioAgendamento.PesoUsuario < 50)
+            {
+                ModelState.AddModelError("", "Seu peso incompatível!");
+            }
+            else if( idade < 16 || idade > 69 )
+            {
+                ModelState.AddModelError("", "Sua idade é incompatível!");
+            }
+            else if(agendamento.DataAgendamento < DateTime.Today)
+            {
+                ModelState.AddModelError("", "A data informada é inválida!");
+            }
             if (ModelState.IsValid)
             {
                 if (AgendamentoDAO.BuscarAgendamentoIgual(agendamento) != null)
@@ -44,7 +59,7 @@ namespace BlutChain.Controllers
 
                     if (AgendamentoDAO.CadastrarAgendamento(agendamento))
                     {
-                        return RedirectToAction("Index", "Agendamento");
+                        return RedirectToAction("PaginaInicial", "Usuario");
                     }
                     ModelState.AddModelError("", "Erro ao registrar agendamento!");
                     return View(agendamento);
@@ -74,6 +89,22 @@ namespace BlutChain.Controllers
         public ActionResult EditarAgendamento([Bind(Include = "IdAgendamento,DataAgendamento,HorarioAgendamento, IdUsuario, IdHemobanco")] Agendamento agendamentoAlterado)
         {
             Agendamento agendamentoOriginal = AgendamentoDAO.BuscarAgendamentoPorID(agendamentoAlterado.IdAgendamento);
+
+
+            int idade = DateTime.Today.Year - agendamentoAlterado.UsuarioAgendamento.DataNascimentoUsuario.Year;
+
+            if (agendamentoAlterado.UsuarioAgendamento.PesoUsuario < 50)
+            {
+                ModelState.AddModelError("", "Seu peso incompatível!");
+            }
+            else if (idade < 16 || idade > 69)
+            {
+                ModelState.AddModelError("", "Sua idade é incompatível!");
+            }
+            else if (agendamentoAlterado.DataAgendamento < DateTime.Today)
+            {
+                ModelState.AddModelError("", "A data informada é inválida!");
+            }
 
             agendamentoOriginal.DataAgendamento = agendamentoAlterado.DataAgendamento;
             agendamentoOriginal.HorarioAgendamento = agendamentoAlterado.HorarioAgendamento;
