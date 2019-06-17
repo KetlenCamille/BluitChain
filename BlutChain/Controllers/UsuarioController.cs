@@ -69,14 +69,14 @@ namespace BlutChain.Controllers
         [HttpPost]
         public ActionResult AlterarUsuario(Usuario usuarioAlterado)
         {
-            if(usuarioAlterado.TipoSanguineoUsuario.FatorRH == null || usuarioAlterado.TipoSanguineoUsuario.GrupoSanguineo == null )
-            {
-                ModelState.AddModelError("", "Informe seu tipo sanguíneo!");
-            }
-            if (usuarioAlterado.Senha== null || usuarioAlterado.ConfirmacaoDaSenha == null)
-            {
-                ModelState.AddModelError("", "Informe a senha!");
-            }
+            //if(usuarioAlterado.TipoSanguineoUsuario.FatorRH == null || usuarioAlterado.TipoSanguineoUsuario.GrupoSanguineo == null )
+            //{
+                //ModelState.AddModelError("", "Informe seu tipo sanguíneo!");
+            //}
+            //if (usuarioAlterado.Senha== null || usuarioAlterado.ConfirmacaoDaSenha == null)
+            //{
+                //ModelState.AddModelError("", "Informe a senha!");
+            //}
 
             Usuario usuarioOriginal = UsuarioDAO.BuscarUsuarioPorId(usuarioAlterado.IdUsuario);
 

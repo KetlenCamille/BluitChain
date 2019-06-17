@@ -56,14 +56,20 @@ namespace BlutChain.DAL
         public static List<Agendamento> HistoricoDoacaoPorUsuario(int? usuarioId)
         {
             DateTime today = DateTime.Today;
-            return context.Agendamentos.Include("UsuarioAgendamento").Include("HemobancoAgendamento").Where(x => x.UsuarioAgendamento.IdUsuario == usuarioId && x.DataAgendamento < today ).ToList();
+            return context.Agendamentos.Include("UsuarioAgendamento").Include("HemobancoAgendamento").Where(x => x.UsuarioAgendamento.IdUsuario == usuarioId && x.DataAgendamento < today).ToList();
         }
 
-        public static List<Agendamento> BuscarAgendamentoIgual(Agendamento agendamento)
+        public static bool BuscarAgendamentoIgual(Agendamento agendamento)
         {
-
-            return context.Agendamentos.Where(x => x.DataAgendamento == agendamento.DataAgendamento && x.HorarioAgendamento == agendamento.HorarioAgendamento).ToList();
-            
+            List<Agendamento> agendamentos = context.Agendamentos.Where(x => x.DataAgendamento == agendamento.DataAgendamento && x.HorarioAgendamento == agendamento.HorarioAgendamento && x.HemobancoAgendamento.IdHemobanco == agendamento.HemobancoAgendamento.IdHemobanco).ToList();
+            if (agendamentos.Count == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         internal static object AgendamentosUsuario(int idUsu)
