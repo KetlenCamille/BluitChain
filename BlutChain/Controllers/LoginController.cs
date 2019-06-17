@@ -47,5 +47,11 @@ namespace BlutChain.Controllers
             ModelState.AddModelError("", "CPF/CNPJ ou senha inválidos");
             return View();
         }
+
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

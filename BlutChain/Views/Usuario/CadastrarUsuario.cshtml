@@ -8,9 +8,9 @@
 @using (Html.BeginForm("CadastrarUsuario", "Usuario", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-}
+
 <div class="form-horizontal">
-    <h2 style="text-align:center;padding-top:15px">Cadastrar Usuario</h2>
+    <h3>Cadastrar Usuario</h3>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
@@ -32,9 +32,9 @@
         </div>
     </div>
 
-    <div class="form-group" >
+    <div class="form-group">
         @Html.LabelFor(model => model.DataNascimentoUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10"style="width:35%">
+        <div class="col-md-10">
             @Html.EditorFor(model => model.DataNascimentoUsuario, new { htmlAttributes = new { @class = "form-control", @placeholder = "Data de Nascimento do Usuário (dd/mm/aaaa)" } })
             @Html.ValidationMessageFor(model => model.DataNascimentoUsuario, "", new { @class = "text-danger" })
         </div>
@@ -42,7 +42,7 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.SexoUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10"style="width:35%">
+        <div class="col-md-10">
             @Html.DropDownList("SexoUsuario", new List<SelectListItem>
             {
                 new SelectListItem{ Text = "Feminino", Value = "Feminino"},
@@ -53,16 +53,16 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.PesoUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10"style="width:35%">
+        <div class="col-md-10">
             @Html.EditorFor(model => model.PesoUsuario, new { htmlAttributes = new { @class = "form-control", @placeholder = "Peso do Usuário" } })
             @Html.ValidationMessageFor(model => model.PesoUsuario, "", new { @class = "text-danger" })
         </div>
     </div>
 
     <br>
-    <b style="padding-left:310px">Tipo Telefone: </b>
+    @Html.LabelFor(model => model.TipoTelefoneUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
     <div class="form-group">
-        <div class="formularioCad" style="padding-left:235px">
+        <div class="col-md-10">
             @Html.DropDownList("TipoTelefoneUsuario",  new List<SelectListItem>
             {
                 new SelectListItem{ Text = "Residencial", Value = "Residencial"},
@@ -74,70 +74,69 @@
     <div class="form-group">
         @Html.LabelFor(model => model.TelefoneUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.TelefoneUsuario, new { htmlAttributes = new { @class = "form-control", @placeholder = "Telefone do Hemobanco" } })
+            @Html.EditorFor(model => model.TelefoneUsuario, new { htmlAttributes = new { @class = "form-control", @placeholder = "Telefone do Usuário" } })
             @Html.ValidationMessageFor(model => model.TelefoneUsuario, "", new { @class = "text-danger" })
         </div>
     </div>
 
-    <legend style="text-align:center; font-size:25px">Informar Tipo Sanguíneo</legend>
-
-    <b style="padding-left:310px">@Html.DisplayNameFor(model => model.TipoSanguineoUsuario.GrupoSanguineo):</b>
     <br>
-    <div class="formularioCad" style="padding-left:275px">
-        @Html.DropDownList("GrupoSanguineo", new List<SelectListItem>
-        {
-            new SelectListItem{ Text = "A", Value = "A"},
-            new SelectListItem{ Text = "B", Value = "B"},
-            new SelectListItem{ Text = "AB", Value = "AB"},
-            new SelectListItem{ Text = "O", Value = "O"}
-        }, "Selecione o Grupo Sanguíneo")
-    </div>
+    <h3>Tipo Sanguíneo</h3>
+    <hr />
+    <b>@Html.DisplayNameFor(model => model.TipoSanguineoUsuario.GrupoSanguineo):</b>
     <br>
-    <h3>@Html.DisplayNameFor(model => model.TipoSanguineoUsuario.FatorRH): </h3>
-        <div class="formularioCad" style="padding-left:275px">
-        @Html.DropDownList("FatorRH", new List<SelectListItem>
-        {
-            new SelectListItem{ Text = "+", Value = "+"},
-            new SelectListItem{ Text = "-", Value = "-"}
-        }, "Selecione o Fator RH")
-     </div>
+    @Html.DropDownList("GrupoSanguineo", new List<SelectListItem>
+    {
+        new SelectListItem{ Text = "A", Value = "A"},
+        new SelectListItem{ Text = "B", Value = "B"},
+        new SelectListItem{ Text = "AB", Value = "AB"},
+        new SelectListItem{ Text = "O", Value = "O"}
+    }, "Selecione o Grupo Sanguíneo")
+    <br>
+    <br>
+    <b>@Html.DisplayNameFor(model => model.TipoSanguineoUsuario.FatorRH): </b>
     <br />
-    
-        <h3 padding-top:20px; padding-bottom:20px">Dados Login</h3>
+    @Html.DropDownList("FatorRH", new List<SelectListItem>
+    {
+        new SelectListItem{ Text = "+", Value = "+"},
+        new SelectListItem{ Text = "-", Value = "-"}
+    }, "Selecione o Fator RH")
 
-        <div class="form-horizontal">
-            <div class="form-group">
-                @Html.LabelFor(model => model.EmailUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.EmailUsuario, new { htmlAttributes = new { @class = "form-control", @placeholder = "Razão Social do Hemobanco" } })
-                    @Html.ValidationMessageFor(model => model.EmailUsuario, "", new { @class = "text-danger" })
-                </div>
+    <br>
+    <h3>Dados Login</h3>
+    <hr />
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmailUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EmailUsuario, new { htmlAttributes = new { @class = "form-control", @placeholder = "E-mail do Usuário" } })
+                @Html.ValidationMessageFor(model => model.EmailUsuario, "", new { @class = "text-danger" })
             </div>
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.PasswordFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control", @placeholder = "Senha" } })
-                    @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control", @placeholder = "Senha" } })
+                @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
             </div>
+        </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.ConfirmacaoDaSenha, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.PasswordFor(model => model.ConfirmacaoDaSenha, new { htmlAttributes = new { @class = "form-control", @placeholder = "Confirme sua senha" } })
-                    @Html.ValidationMessageFor(model => model.ConfirmacaoDaSenha, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ConfirmacaoDaSenha, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.ConfirmacaoDaSenha, new { htmlAttributes = new { @class = "form-control", @placeholder = "Confirme sua senha" } })
+                @Html.ValidationMessageFor(model => model.ConfirmacaoDaSenha, "", new { @class = "text-danger" })
             </div>
+        </div>
 
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Cadastrar" class="btn btn-default" />
-                </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Cadastrar" class="btn btn-default" />
             </div>
         </div>
     </div>
-    }
+</div>
+}
 
 
 

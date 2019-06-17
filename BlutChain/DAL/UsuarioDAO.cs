@@ -146,5 +146,15 @@ namespace BlutChain.DAL
         {
             return context.Usuarios.FirstOrDefault(x => x.CPFUsuario.Equals(CPFCNPJ) && x.Senha.Equals(Senha));
         }
+
+        //Calculando a quantos dias foi a última doação do usuário
+        public static int CalculoDiasDoacao(string dataInicial)
+        {
+            string dataFinal = DateTime.Today.ToString();
+
+            TimeSpan date = Convert.ToDateTime(dataFinal) - Convert.ToDateTime(dataInicial);
+
+            return date.Days;
+        }
     }
 }

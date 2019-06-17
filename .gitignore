@@ -3,3 +3,9 @@
 ################################################################################
 
 .vs/
+/BlutChain/Content
+/BlutChain/fonts
+/BlutChain/obj/Debug
+/BlutChain/Scripts/esm
+/BlutChain/Scripts/umd
+/BlutChain/Scripts

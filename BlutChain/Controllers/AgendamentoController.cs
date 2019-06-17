@@ -29,19 +29,14 @@ namespace BlutChain.Controllers
             return View();
         }
 
-        public ActionResult AgendamentoDetalhe(int id)
-        {
-            return View(AgendamentoDAO.BuscarAgendamentoPorID(id));
-        }
-
-
         [HttpPost]
         public ActionResult RegistrarAgendamento([Bind(Include = "IdAgendamento,DataAgendamento,HorarioAgendamento, IdUsuario, IdHemobanco")] Agendamento agendamento, int? hemobancos)
         {
             ViewBag.Hemobancos = new MultiSelectList(HemobancoDAO.ListarTodosHemobancos(), "IdHemobanco", "NomeFantasiaHemobanco");
             agendamento.HemobancoAgendamento = HemobancoDAO.BuscarHemobancoPorID(hemobancos);
 
-            agendamento.UsuarioAgendamento = UsuarioDAO.BuscarUsuarioPorId(Sessao.retornarUsuario());
+            //agendamento.UsuarioAgendamento = UsuarioDAO.BuscarUsuarioPorId(Sessao.retornarUsuario());
+            agendamento.UsuarioAgendamento = UsuarioDAO.BuscarUsuarioPorId(2);
             if (ModelState.IsValid)
             {
                 if (AgendamentoDAO.BuscarAgendamentoIgual(agendamento) != null)
@@ -76,7 +71,7 @@ namespace BlutChain.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit([Bind(Include = "IdAgendamento,DataAgendamento,HorarioAgendamento, IdUsuario, IdHemobanco")] Agendamento agendamentoAlterado)
+        public ActionResult EditarAgendamento([Bind(Include = "IdAgendamento,DataAgendamento,HorarioAgendamento, IdUsuario, IdHemobanco")] Agendamento agendamentoAlterado)
         {
             Agendamento agendamentoOriginal = AgendamentoDAO.BuscarAgendamentoPorID(agendamentoAlterado.IdAgendamento);
 
@@ -94,6 +89,17 @@ namespace BlutChain.Controllers
                 ModelState.AddModelError("", "Erro ao editar agendamento!");
                 return View(agendamentoOriginal);
             }
+        }
+
+        public ActionResult RemoverAgendamento(int id)
+        {
+            AgendamentoDAO.ExcluirAgendamento(AgendamentoDAO.BuscarAgendamentoPorID(id));
+            return RedirectToAction("Index", "Agendamento");
+        }
+
+        public ActionResult AgendamentoDetalhe(int id)
+        {
+            return View(AgendamentoDAO.BuscarAgendamentoPorID(id));
         }
 
     }
