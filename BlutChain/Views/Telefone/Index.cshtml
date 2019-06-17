@@ -5,13 +5,12 @@
     DateTime data = ViewBag.Data;
 }
 
-<div>
+<class="formulario">
     <h2>Gerenciamento de Telefones</h2>
 
     @Html.ActionLink("Cadastrar Telefone", "CadastrarTelefone", "Telefone")
 
-    <table class="table table-hover table-striped"
-           style="margin-top:30px">
+    <table class="table" style="margin-left: 45px ; max-width:50%;">
         <tr>
             <th>Tipo</th>
             <th>Número</th>
@@ -38,7 +37,7 @@
 
     <p>Dados atualizados às: <b> @data </b></p>
 
-</div>
+</class>
 
 
 
