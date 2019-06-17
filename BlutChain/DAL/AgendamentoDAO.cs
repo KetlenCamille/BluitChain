@@ -55,24 +55,43 @@ namespace BlutChain.DAL
 
         public static List<Agendamento> HistoricoDoacaoPorUsuario(int? usuarioId)
         {
-            return context.Agendamentos.Include("UsuarioAgendamento").Include("HemobancoAgendamento").Where(x => x.UsuarioAgendamento.IdUsuario == usuarioId).ToList();
+            DateTime today = DateTime.Today;
+            return context.Agendamentos.Include("UsuarioAgendamento").Include("HemobancoAgendamento").Where(x => x.UsuarioAgendamento.IdUsuario == usuarioId && x.DataAgendamento < today).ToList();
         }
 
-        public static List<Agendamento> BuscarAgendamentoIgual(Agendamento agendamento)
+        public static bool BuscarAgendamentoIgual(Agendamento agendamento)
         {
-
-            return context.Agendamentos.Where(x => x.DataAgendamento == agendamento.DataAgendamento && x.HorarioAgendamento == agendamento.HorarioAgendamento).ToList();
-            
+            List<Agendamento> agendamentos = context.Agendamentos.Where(x => x.DataAgendamento == agendamento.DataAgendamento && x.HorarioAgendamento == agendamento.HorarioAgendamento && x.HemobancoAgendamento.IdHemobanco == agendamento.HemobancoAgendamento.IdHemobanco).ToList();
+            if (agendamentos.Count == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         internal static object AgendamentosUsuario(int idUsu)
         {
-            return context.Agendamentos.Where(x => x.UsuarioAgendamento.IdUsuario == idUsu).ToList();
+            DateTime today = DateTime.Today;
+            return context.Agendamentos.Where(x => x.UsuarioAgendamento.IdUsuario == idUsu && x.DataAgendamento >= today).ToList();
         }
 
-        internal static object AgendamentosHemobanco(int idHem)
+        internal static object AgendamentosHemobancoHistorico(int idHem)
         {
-            return context.Agendamentos.Where(x => x.HemobancoAgendamento.IdHemobanco == idHem).ToList();
+            DateTime today = DateTime.Today;
+            return context.Agendamentos.Include("UsuarioAgendamento").Where(x => x.HemobancoAgendamento.IdHemobanco == idHem && x.DataAgendamento < today).ToList();
+        }
+
+        public static List<Agendamento> AgendamentosHemobancoDia(int idHem)
+        {
+            DateTime today = DateTime.Today;
+            return context.Agendamentos.Include("UsuarioAgendamento").Where(x => x.HemobancoAgendamento.IdHemobanco == idHem && x.DataAgendamento >= today).ToList();
+        }
+        public static Agendamento UltimoAgendamento(int idUsuario)
+        {
+            return context.Agendamentos.OrderByDescending(x => x.UsuarioAgendamento.IdUsuario == idUsuario && x.DataAgendamento <= DateTime.Today).First();
         }
     }
 }

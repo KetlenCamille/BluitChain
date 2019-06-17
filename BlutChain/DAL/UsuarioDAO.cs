@@ -118,7 +118,7 @@ namespace BlutChain.DAL
         // Listar Usuários
         public static List<Usuario> ListarUsuarios()
         {
-            return context.Usuarios.ToList();
+            return context.Usuarios.Include("TipoSanguineoUsuario").ToList();
         }
 
         //Alterar dados usuário
@@ -136,7 +136,7 @@ namespace BlutChain.DAL
         }
 
         //Buscar usuário por ID
-        public static Usuario BuscarUsuarioPorId(int id)
+        public static Usuario BuscarUsuarioPorId(int? id)
         {
             return context.Usuarios.Find(id);
         }
@@ -148,10 +148,8 @@ namespace BlutChain.DAL
         }
 
         //Calculando a quantos dias foi a última doação do usuário
-        public static int CalculoDiasDoacao(string dataInicial)
+        public static int CalculoDiasDoacao(DateTime dataInicial, DateTime dataFinal)
         {
-            string dataFinal = DateTime.Today.ToString();
-
             TimeSpan date = Convert.ToDateTime(dataFinal) - Convert.ToDateTime(dataInicial);
 
             return date.Days;
