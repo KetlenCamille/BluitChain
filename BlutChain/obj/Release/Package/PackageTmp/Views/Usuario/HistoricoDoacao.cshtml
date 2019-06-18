@@ -1,0 +1,36 @@
+﻿@using BlutChain.Models
+@model List<Agendamento>
+
+@{
+    DateTime data = ViewBag.Data;
+}
+
+<div>
+    <h2>Seu histórico de Doação</h2>
+    <table class="table table-hover table-striped"
+           style="margin-top:30px">
+        <tr>
+            <th>Data</th>
+            <th>Hemobanco</th>
+            <th>Endereço</th>
+            <th>Detalhes</th>
+        </tr>
+        @foreach (Agendamento agendamento in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => agendamento.DataAgendamento) às @Html.DisplayFor(modelItem => agendamento.HorarioAgendamento)</td>
+                <td>@Html.DisplayFor(modelItem => agendamento.HemobancoAgendamento.NomeFantasiaHemobanco)</td>
+                <td> @agendamento.HemobancoAgendamento.Logradouro, @agendamento.HemobancoAgendamento.Numero - @agendamento.HemobancoAgendamento.Bairro, @agendamento.HemobancoAgendamento.Localidade - @agendamento.HemobancoAgendamento.Uf, CEP: @agendamento.HemobancoAgendamento.CEP </td>
+                <td>
+                    @Html.ActionLink("Detalhes", "AgendamentoDetalhe", "Agendamento", new { id = agendamento.IdAgendamento }, null)
+                </td>
+            </tr>
+        }
+    </table>
+    <p>Dados atualizados às: <b> @data </b></p>
+</div>
+
+<div>
+    @Html.ActionLink("Voltar", "PaginaInicial", "Usuario")
+</div>
+

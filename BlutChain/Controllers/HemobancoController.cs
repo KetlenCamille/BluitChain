@@ -43,7 +43,7 @@ namespace BlutChain.Controllers
                 if (HemobancoDAO.CadastrarHemobanco(hemobanco))
                 {
                     HemobancoDAO.CadastrarHemobanco(hemobanco);
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError("", "Já existe um hemobanco com este CNPJ ou o CNPJ está inválido!");
                 return View(hemobanco);

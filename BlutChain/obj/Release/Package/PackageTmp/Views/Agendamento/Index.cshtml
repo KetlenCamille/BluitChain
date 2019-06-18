@@ -1,0 +1,66 @@
+﻿@using BlutChain.Models
+@model List<Agendamento>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Registrar Agendamento", "RegistrarAgendamento", "Agendamento")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Data de Agendamento
+        </th>
+        <th>
+            Horário de Agendamento
+        </th>
+        <th>
+            Hemobanco
+        </th>
+        <th>
+            Nome do Usuário
+        </th>
+        <th>
+            Edit
+        </th>
+        <th>
+            Detalhes
+        </th>
+        <th>
+            Delete
+        </th>
+    </tr>
+
+    @foreach (Agendamento agendamento in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => agendamento.DataAgendamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => agendamento.HorarioAgendamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => agendamento.HemobancoAgendamento.NomeFantasiaHemobanco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => agendamento.UsuarioAgendamento.NomeUsuario)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "EditarAgendamento", "Agendamento", new { id = agendamento.IdAgendamento }, null)
+            </td>
+            <td>
+                @Html.ActionLink("Detalhe", "AgendamentoDetalhe", "Agendamento", new { id = agendamento.IdAgendamento }, null)
+            </td>
+            <td>
+                @Html.ActionLink("Deletar", "RemoverAgendamento", "Agendamento", new { id = agendamento.IdAgendamento }, null)
+            </td>
+        </tr>
+    }
+
+</table>

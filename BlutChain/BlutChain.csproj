@@ -387,6 +387,7 @@
     <Content Include="Content\ViewContent\assets\sass\libs\_vars.scss" />
     <Content Include="Content\ViewContent\assets\sass\libs\_vendor.scss" />
     <Content Include="Content\ViewContent\assets\sass\main.scss" />
+    <None Include="Properties\PublishProfiles\BlutChain20190617105144 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

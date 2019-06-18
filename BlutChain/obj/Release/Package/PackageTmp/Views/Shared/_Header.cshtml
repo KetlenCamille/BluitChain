@@ -1,0 +1,47 @@
+﻿@using BlutChain.Utils
+<header id="header" class="alt">
+
+    <h1><img src="~/Content/ViewContent/assets/css/images/Logo.png" width="133px" height="80px" /></h1>
+
+    <nav id="nav">
+        <ul>
+            <li><a href="/Home/Index">Inicio</a></li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastro</a>
+                <div class="dropdown-menu dropdown-info" style="background-color:gray">
+                    <a class="dropdown-item waves-effect waves-light" href="/Usuario/CadastrarUsuario">Doador</a>
+                    <a class="dropdown-item waves-effect waves-light" href="/Hemobanco/CadastrarHemobanco">Hemobanco</a>
+                </div>
+            </li>
+            @if (Sessao.retornarUsuario() != 0)
+            {
+                <li class="nav-item active" style="margin-left:10px">
+                    @Html.ActionLink("Página Inicial", "PaginaInicial", "Usuario", null,
+                    new { @class = "nav-link" })
+                </li>
+            }
+            @if (Sessao.retornarHemobanco() != 0)
+            {
+                <li class="nav-item active" style="margin-left:10px">
+                    @Html.ActionLink("Página Inicial", "PaginaInicial", "Hemobanco", null,
+                    new { @class = "nav-link" })
+                </li>
+            }
+            @if (Sessao.retornarUsuario() == 0 && Sessao.retornarHemobanco() == 0)
+            {
+                <li class="nav-item active" style="margin-left:10px">
+                    @Html.ActionLink("Login", "Login", "Login", null,
+                    new { @class = "nav-link" })
+                </li>
+            }
+            else
+            {
+                <li class="nav-item active" style="margin-left:10px">
+                    @Html.ActionLink("Logout", "Logout", "Login", null,
+                    new { @class = "nav-link" })
+                </li>
+            }
+        </ul>
+    </nav>
+</header>

@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Header -->
+
+@using (Html.BeginForm("Login", "Login", FormMethod.Post))
+{
+    <fieldset style="padding-top:55px; padding-left:155px">
+        <legend>Login</legend>
+        @Html.AntiForgeryToken()
+
+        <div>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.Label("CPF / CNPJ")
+                <div>
+                    @Html.TextBox("CPFCNPJ")
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("Senha")
+                <div>
+                    @Html.Password("Senha")
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <input type="radio" name="usuario" id="radioDoador" value="1" />
+                    @Html.Label("Doador")
+
+                    <input type="radio" name="usuario" id="radioDoador" value="2" />
+                    @Html.Label("Hemobanco")
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <input type="submit" value="Entrar" class="btn btn-success" />
+                </div>
+            </div>
+
+        </div>
+    </fieldset>
+
+}
+
