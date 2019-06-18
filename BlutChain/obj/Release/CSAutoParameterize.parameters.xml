@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
   <parameter name="BlutChain-Web.config Connection String" description="BlutChain A Cadeia de Conexão usada em web.config pelo aplicativo para acessar o banco de dados." defaultValue="BlutChain_ConnectionString" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\Ketlen\\Source\\Repos\\BlutChain\\BlutChain\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='BlutChain']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Ketlen\\Source\\Repos\\BlutChain2\\BlutChain\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='BlutChain']/@connectionString" />
   </parameter>
   <parameter name="BlutChain_DatabasePublish-Web.config Connection String" description="BlutChain_DatabasePublish A Cadeia de Conexão usada em web.config pelo aplicativo para acessar o banco de dados." defaultValue="BlutChain_DatabasePublish.ConnetionString" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\Ketlen\\Source\\Repos\\BlutChain\\BlutChain\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='BlutChain_DatabasePublish']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Ketlen\\Source\\Repos\\BlutChain2\\BlutChain\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='BlutChain_DatabasePublish']/@connectionString" />
   </parameter>
 </parameters>
