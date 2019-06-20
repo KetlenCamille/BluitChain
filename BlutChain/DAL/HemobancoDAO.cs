@@ -49,7 +49,7 @@ namespace BlutChain.DAL
         //Listar Hemobancos
         public static List<Hemobanco> ListarTodosHemobancos()
         {
-            return context.Hemobancos.ToList();
+            return context.Hemobancos.Where(x => x.ehInativo != "S").ToList();
         }
 
         //Alterar dados Hemobanco

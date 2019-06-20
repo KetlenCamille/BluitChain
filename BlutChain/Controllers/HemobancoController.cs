@@ -37,6 +37,8 @@ namespace BlutChain.Controllers
         {
             /*[Bind(Include = "IdHemobanco, RazaoSocialHemobanco, NomeFantasiaHemobanco, CNPJHemobanco," +
             "EmailHemobanco, EnderecoHemobanco, TelefoneHemobanco")] Hemobanco hemobanco*/
+            hemobanco.ehInativo = "N";
+
             if (ModelState.IsValid)
             {
                 if (HemobancoDAO.CadastrarHemobanco(hemobanco))
@@ -79,7 +81,7 @@ namespace BlutChain.Controllers
             hemobancoOriginal.Bairro = hemobancoAlterado.Bairro;
             hemobancoOriginal.Localidade = hemobancoAlterado.Localidade;
             hemobancoOriginal.Uf = hemobancoAlterado.Uf;
-            //hemobancoOriginal.EnderecoHemobanco = hemobancoAlterado.EnderecoHemobanco;
+            hemobancoOriginal.ehInativo = "N";
             hemobancoOriginal.EmailHemobanco = hemobancoAlterado.EmailHemobanco;
 
             if (ModelState.IsValid)
@@ -95,8 +97,10 @@ namespace BlutChain.Controllers
 
         public ActionResult ExcluirHemobanco(int id)
         {
-            HemobancoDAO.ExcluirHemobanco(id);
-            return RedirectToAction("Index");
+            Hemobanco hemobancoExcluir = HemobancoDAO.BuscarHemobancoPorID(id);
+            hemobancoExcluir.ehInativo = "S";
+            HemobancoDAO.AlterarHemobanco(hemobancoExcluir);
+            return RedirectToAction("Index", "Hemobanco");
         }
 
         [HttpPost]

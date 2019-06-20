@@ -280,6 +280,10 @@
     <Compile Include="Migrations\201906202217437_addEhInativoUsuario.Designer.cs">
       <DependentUpon>201906202217437_addEhInativoUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906202317481_ehInativoHemobanco.cs" />
+    <Compile Include="Migrations\201906202317481_ehInativoHemobanco.Designer.cs">
+      <DependentUpon>201906202317481_ehInativoHemobanco.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Agendamento.cs" />
     <Compile Include="Models\Doacao.cs" />
@@ -533,6 +537,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906202217437_addEhInativoUsuario.resx">
       <DependentUpon>201906202217437_addEhInativoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906202317481_ehInativoHemobanco.resx">
+      <DependentUpon>201906202317481_ehInativoHemobanco.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
