@@ -118,6 +118,12 @@ namespace BlutChain.Controllers
             return View();
         }
 
+        public ActionResult PaginaInicialAdm()
+        {
+            return View();
+        }
+        
+
         public ActionResult Agendamentos()
         {
             ViewBag.Data = DateTime.Now;
