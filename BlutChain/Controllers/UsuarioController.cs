@@ -108,7 +108,7 @@ namespace BlutChain.Controllers
             Usuario usuarioExcluir = UsuarioDAO.BuscarUsuarioPorId(id);
             usuarioExcluir.EhInativo = "S";
             UsuarioDAO.AlterarUsuario(usuarioExcluir);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Usuario");
         }
 
         public ActionResult HistoricoDoacao()
