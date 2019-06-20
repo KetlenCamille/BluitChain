@@ -42,7 +42,8 @@ namespace BlutChain.Controllers
             TipoSanguineo tpPesquisado = new TipoSanguineo();
             tpPesquisado = TipoSanguineoDAO.BuscarTipoSanguineoPorNome(tipoSanguineo.GrupoSanguineo, tipoSanguineo.FatorRH);
             usuario.TipoSanguineoUsuario = TipoSanguineoDAO.BuscarTipoSanguineoPorID(tpPesquisado.IdTipoSanguineo);
-       
+
+            usuario.EhInativo = "N";
 
             if (ModelState.IsValid)
             {
@@ -87,6 +88,7 @@ namespace BlutChain.Controllers
             usuarioOriginal.EmailUsuario = usuarioAlterado.EmailUsuario;
             usuarioOriginal.PesoUsuario = usuarioAlterado.PesoUsuario;
             usuarioOriginal.Senha = usuarioAlterado.Senha;
+            usuarioOriginal.EhInativo = "N";
             
             
             if (ModelState.IsValid)
@@ -103,8 +105,10 @@ namespace BlutChain.Controllers
 
         public ActionResult ExcluirUsuario(int id)
         {
-            UsuarioDAO.ExcluirUsuario(id);
-            return RedirectToAction("Index");
+            Usuario usuarioExcluir = UsuarioDAO.BuscarUsuarioPorId(id);
+            usuarioExcluir.EhInativo = "S";
+            UsuarioDAO.AlterarUsuario(usuarioExcluir);
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult HistoricoDoacao()

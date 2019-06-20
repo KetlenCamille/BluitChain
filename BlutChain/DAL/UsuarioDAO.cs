@@ -118,7 +118,7 @@ namespace BlutChain.DAL
         // Listar Usuários
         public static List<Usuario> ListarUsuarios()
         {
-            return context.Usuarios.Include("TipoSanguineoUsuario").ToList();
+            return context.Usuarios.Include("TipoSanguineoUsuario").Where(x => x.EhInativo != "S").ToList();
         }
 
         //Alterar dados usuário

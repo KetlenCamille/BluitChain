@@ -62,5 +62,7 @@ namespace BlutChain.Models
         [Display(Name = "Confirmar senha")]
         [NotMapped]
         public string ConfirmacaoDaSenha { get; set; }
+
+        public string EhInativo { get; set; }
     }
 }
