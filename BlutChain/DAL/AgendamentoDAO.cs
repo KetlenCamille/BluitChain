@@ -87,8 +87,15 @@ namespace BlutChain.DAL
         public static List<Agendamento> AgendamentosHemobancoDia(int idHem)
         {
             DateTime today = DateTime.Today;
+            return context.Agendamentos.Include("UsuarioAgendamento").Where(x => x.HemobancoAgendamento.IdHemobanco == idHem && x.DataAgendamento == today).ToList();
+        }
+
+        public static List<Agendamento> AgendamentosHemobancoFuturos(int idHem)
+        {
+            DateTime today = DateTime.Today;
             return context.Agendamentos.Include("UsuarioAgendamento").Where(x => x.HemobancoAgendamento.IdHemobanco == idHem && x.DataAgendamento >= today).ToList();
         }
+
         public static Agendamento UltimoAgendamento(int idUsuario)
         {
             return context.Agendamentos.OrderByDescending(x => x.UsuarioAgendamento.IdUsuario == idUsuario && x.DataAgendamento <= DateTime.Today).First();

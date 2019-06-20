@@ -92,7 +92,7 @@ namespace BlutChain.Controllers
             if (ModelState.IsValid)
             {
                 UsuarioDAO.AlterarUsuario(usuarioOriginal);
-                return RedirectToAction("Index");
+                return RedirectToAction("PaginaInicial", "Usuario");
 
             }
             else

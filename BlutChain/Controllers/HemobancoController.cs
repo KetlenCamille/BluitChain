@@ -85,8 +85,7 @@ namespace BlutChain.Controllers
             if (ModelState.IsValid)
             {
                 HemobancoDAO.AlterarHemobanco(hemobancoOriginal);
-                return RedirectToAction("Index");
-
+                return RedirectToAction("PaginaInicial", "Hemobanco");
             }
             else
             {
@@ -143,5 +142,10 @@ namespace BlutChain.Controllers
             return View(AgendamentoDAO.AgendamentosHemobancoDia(Sessao.retornarHemobanco()));
         }
 
+        public ActionResult AgendamentosHemobancoFuturos()
+        {
+            ViewBag.Data = DateTime.Now;
+            return View(AgendamentoDAO.AgendamentosHemobancoFuturos(Sessao.retornarHemobanco()));
+        }
     }
 }

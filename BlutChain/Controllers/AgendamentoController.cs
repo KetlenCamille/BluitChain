@@ -77,7 +77,7 @@ namespace BlutChain.Controllers
 
                     if (AgendamentoDAO.CadastrarAgendamento(agendamento))
                     {
-                        return RedirectToAction("PaginaInicial", "Usuario");
+                        return RedirectToAction("Agendamentos", "Usuario");
                     }
                     ModelState.AddModelError("", "Erro ao registrar agendamento!");
                     return View(agendamento);
@@ -91,16 +91,7 @@ namespace BlutChain.Controllers
 
         public ActionResult EditarAgendamento(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Agendamento agendamento = AgendamentoDAO.BuscarAgendamentoPorID(id);
-            if (agendamento == null)
-            {
-                return HttpNotFound();
-            }
-            return View(agendamento);
+            return View(AgendamentoDAO.BuscarAgendamentoPorID(id));
         }
 
         [HttpPost]
