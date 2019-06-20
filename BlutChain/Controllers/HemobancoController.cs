@@ -28,7 +28,6 @@ namespace BlutChain.Controllers
         //[Authorize]
         public ActionResult CadastrarHemobanco()
         {
-            ViewBag.Telefones = TelefoneDAO.ListarTodos();
             return View((Hemobanco)TempData["Hemobanco"]);
         }
 

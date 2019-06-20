@@ -272,6 +272,10 @@
     <Compile Include="Migrations\201906041345410_updateDatabaseII.Designer.cs">
       <DependentUpon>201906041345410_updateDatabaseII.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906201617296_alterCEPHemobanco.cs" />
+    <Compile Include="Migrations\201906201617296_alterCEPHemobanco.Designer.cs">
+      <DependentUpon>201906201617296_alterCEPHemobanco.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Agendamento.cs" />
     <Compile Include="Models\Doacao.cs" />
@@ -365,7 +369,7 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <None Include="Properties\PublishProfiles\BlutChain20190617105144 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\BlutChain20190620021601 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -422,6 +426,7 @@
     <Content Include="Views\Hemobanco\AgendamentoHemobancoHistorico.cshtml" />
     <Content Include="Views\Doacao\Index.cshtml" />
     <Content Include="Views\Doacao\RegistrarDoacao.cshtml" />
+    <Content Include="Views\Usuario\AlterarUsuario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -516,6 +521,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906041345410_updateDatabaseII.resx">
       <DependentUpon>201906041345410_updateDatabaseII.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906201617296_alterCEPHemobanco.resx">
+      <DependentUpon>201906201617296_alterCEPHemobanco.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

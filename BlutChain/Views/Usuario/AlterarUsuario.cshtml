@@ -9,133 +9,130 @@
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <h2>Cadastrar Usuario</h2>
-    @Html.HiddenFor(model => model.IdUsuario)
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-    <h3>Dados Pessoais</h3>
-    <hr />
-    <div class="form-group">
-        @Html.LabelFor(model => model.NomeUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.NomeUsuario, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nome do Usuário" } })
-            @Html.ValidationMessageFor(model => model.NomeUsuario, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.CPFUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.CPFUsuario, new { htmlAttributes = new { @class = "form-control", @placeholder = "CPF do Usuário" } })
-            @Html.ValidationMessageFor(model => model.CPFUsuario, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.DataNascimentoUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.DataNascimentoUsuario, new { htmlAttributes = new { @class = "form-control", @placeholder = "Data de Nascimento do Usuário" } })
-            @Html.ValidationMessageFor(model => model.DataNascimentoUsuario, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.SexoUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownList("SexoUsuario", new List<SelectListItem>
-            {
-                new SelectListItem{ Text = "Feminino", Value = "Feminino"},
-                new SelectListItem{ Text = "Masculino", Value = "Masculino"},
-            }, "Selecione", new { @class = "form-control" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.PesoUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.PesoUsuario, new { htmlAttributes = new { @class = "form-control", @placeholder = "Peso do Usuário" } })
-            @Html.ValidationMessageFor(model => model.PesoUsuario, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <br>
-    <b>Tipo Telefone: </b>
-    <div class="form-group">
-        <div class="col-md-10">
-            @Html.DropDownList("TipoTelefoneUsuario",  new List<SelectListItem>
-            {
-                new SelectListItem{ Text = "Residencial", Value = "Residencial"},
-                new SelectListItem{ Text = "Celular", Value = "Celular"}
-             } , "Selecione", new { @class = "control-label col-md-2" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.TelefoneUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.TelefoneUsuario, new { htmlAttributes = new { @class = "form-control", @placeholder = "Telefone do Hemobanco" } })
-            @Html.ValidationMessageFor(model => model.TelefoneUsuario, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <legend>Informar Tipo Sanguíneo</legend>
-
-    <b>@Html.DisplayNameFor(model => model.TipoSanguineoUsuario.GrupoSanguineo):</b>
-    <br>
-    @Html.DropDownList("GrupoSanguineo", new List<SelectListItem>
-    {
-        new SelectListItem{ Text = "A", Value = "A"},
-        new SelectListItem{ Text = "B", Value = "B"},
-        new SelectListItem{ Text = "AB", Value = "AB"},
-        new SelectListItem{ Text = "O", Value = "O"}
-    }, "Selecione o Grupo Sanguíneo")
-    <br>
-    <br>
-    <b>@Html.DisplayNameFor(model => model.TipoSanguineoUsuario.FatorRH): </b>
-    <br />
-    @Html.DropDownList("FatorRH", new List<SelectListItem>
-    {
-        new SelectListItem{ Text = "+", Value = "+"},
-        new SelectListItem{ Text = "-", Value = "-"}
-    }, "Selecione o Fator RH")
-
-    <legend>Dados Login</legend>
-
     <div class="form-horizontal">
+        <h2>Alterar Usuario</h2>
+        @Html.HiddenFor(model => model.IdUsuario)
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <h3>Dados Pessoais</h3>
+        <hr />
         <div class="form-group">
-            @Html.LabelFor(model => model.EmailUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.NomeUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.EmailUsuario, new { htmlAttributes = new { @class = "form-control", @placeholder = "Razão Social do Hemobanco" } })
-                @Html.ValidationMessageFor(model => model.EmailUsuario, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.NomeUsuario, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nome do Usuário" } })
+                @Html.ValidationMessageFor(model => model.NomeUsuario, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CPFUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.PasswordFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control", @placeholder = "Senha" } })
-                @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.CPFUsuario, new { htmlAttributes = new { @class = "form-control", @placeholder = "CPF do Usuário" } })
+                @Html.ValidationMessageFor(model => model.CPFUsuario, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ConfirmacaoDaSenha, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.DataNascimentoUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.PasswordFor(model => model.ConfirmacaoDaSenha, new { htmlAttributes = new { @class = "form-control", @placeholder = "Confirme sua senha" } })
-                @Html.ValidationMessageFor(model => model.ConfirmacaoDaSenha, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.DataNascimentoUsuario, new { htmlAttributes = new { @class = "form-control", @placeholder = "Data de Nascimento do Usuário" } })
+                @Html.ValidationMessageFor(model => model.DataNascimentoUsuario, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Salvar" class="btn btn-default" />
+            @Html.LabelFor(model => model.SexoUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("SexoUsuario", new List<SelectListItem>
+                {
+                    new SelectListItem{ Text = "Feminino", Value = "Feminino"},
+                    new SelectListItem{ Text = "Masculino", Value = "Masculino"},
+                }, "Selecione", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PesoUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PesoUsuario, new { htmlAttributes = new { @class = "form-control", @placeholder = "Peso do Usuário" } })
+                @Html.ValidationMessageFor(model => model.PesoUsuario, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <br>
+        <b>Tipo Telefone: </b>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.DropDownList("TipoTelefoneUsuario",  new List<SelectListItem>
+                {
+                    new SelectListItem{ Text = "Residencial", Value = "Residencial"},
+                    new SelectListItem{ Text = "Celular", Value = "Celular"}
+                 } , "Selecione", new { @class = "control-label col-md-2" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TelefoneUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TelefoneUsuario, new { htmlAttributes = new { @class = "form-control", @placeholder = "Telefone do Hemobanco" } })
+                @Html.ValidationMessageFor(model => model.TelefoneUsuario, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <legend>Informar Tipo Sanguíneo</legend>
+
+        <b>@Html.DisplayNameFor(model => model.TipoSanguineoUsuario.GrupoSanguineo):</b>
+        <br>
+        @Html.DropDownList("GrupoSanguineo", new List<SelectListItem>
+        {
+            new SelectListItem{ Text = "A", Value = "A"},
+            new SelectListItem{ Text = "B", Value = "B"},
+            new SelectListItem{ Text = "AB", Value = "AB"},
+            new SelectListItem{ Text = "O", Value = "O"}
+        }, "Selecione o Grupo Sanguíneo")
+        <br>
+        <br>
+        <b>@Html.DisplayNameFor(model => model.TipoSanguineoUsuario.FatorRH): </b>
+        <br />
+        @Html.DropDownList("FatorRH", new List<SelectListItem>
+        {
+            new SelectListItem{ Text = "+", Value = "+"},
+            new SelectListItem{ Text = "-", Value = "-"}
+        }, "Selecione o Fator RH")
+
+        <legend>Dados Login</legend>
+
+        <div class="form-horizontal">
+            <div class="form-group">
+                @Html.LabelFor(model => model.EmailUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.EmailUsuario, new { htmlAttributes = new { @class = "form-control", @placeholder = "Razão Social do Hemobanco" } })
+                    @Html.ValidationMessageFor(model => model.EmailUsuario, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control", @placeholder = "Senha" } })
+                    @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ConfirmacaoDaSenha, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(model => model.ConfirmacaoDaSenha, new { htmlAttributes = new { @class = "form-control", @placeholder = "Confirme sua senha" } })
+                    @Html.ValidationMessageFor(model => model.ConfirmacaoDaSenha, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Salvar" class="btn btn-default" />
+                </div>
             </div>
         </div>
     </div>
-</div>
 }
-
-
-

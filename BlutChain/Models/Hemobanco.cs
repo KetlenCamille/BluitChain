@@ -44,7 +44,7 @@ namespace BlutChain.Models
         public String Bairro { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório!")]
-        [MaxLength(8, ErrorMessage = "O campo deve ter no máximo 8 caracteres!")]
+        [MaxLength(10, ErrorMessage = "O campo deve ter no máximo 10 caracteres!")]
         [Display(Name = "CEP")]
         public String CEP { get; set; }
 

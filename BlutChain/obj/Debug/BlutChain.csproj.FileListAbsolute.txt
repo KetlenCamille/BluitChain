@@ -652,3 +652,4 @@ C:\Users\psico\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.csproj.CoreC
 C:\Users\psico\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.csproj.CopyComplete
 C:\Users\psico\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.dll
 C:\Users\psico\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.pdb
+C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Debug\BlutChain.Migrations.alterCEPHemobanco.resources
