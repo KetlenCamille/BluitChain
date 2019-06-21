@@ -52,23 +52,28 @@ namespace BlutChain.Controllers
             {
                 ModelState.AddModelError("", "A data informada é inválida!");
             }
+
             Agendamento agendamentoPesq = new Agendamento();
             // Buscar último agendamento realizado
-            //agendamentoPesq = AgendamentoDAO.UltimoAgendamento(Sessao.retornarUsuario());
+            agendamentoPesq = AgendamentoDAO.UltimoAgendamento(Sessao.retornarUsuario());
 
-            // Data agendamento - última doação
-            //int dias = UsuarioDAO.CalculoDiasDoacao(agendamentoPesq.DataAgendamento, agendamento.DataAgendamento);
-            //if (dias != 0)
-            //{
-                //if (agendamento.UsuarioAgendamento.SexoUsuario.Equals("Feminino") && dias < 90)
-                //{
-                    //ModelState.AddModelError("", "Sua última doação é inferior a 90 dias!");
-                //}
-                //else if (agendamento.UsuarioAgendamento.SexoUsuario.Equals("Masculino") && UsuarioDAO.CalculoDiasDoacao(agendamentoPesq.DataAgendamento, agendamento.DataAgendamento) < 60)
-                //{
-                    //ModelState.AddModelError("", "Sua última doação é inferior a 60 dias!");
-                //}
-            //}
+            if (agendamentoPesq != null)
+            {
+                // Data agendamento - última doação
+                int dias = UsuarioDAO.CalculoDiasDoacao(agendamentoPesq.DataAgendamento, agendamento.DataAgendamento);
+
+                if (dias != 0)
+                {
+                    if (agendamento.UsuarioAgendamento.SexoUsuario.Equals("Feminino") && dias < 90)
+                    {
+                        ModelState.AddModelError("", "Sua última doação é inferior a 90 dias!");
+                    }
+                    else if (agendamento.UsuarioAgendamento.SexoUsuario.Equals("Masculino") && dias < 60)
+                    {
+                        ModelState.AddModelError("", "Sua última doação é inferior a 60 dias!");
+                    }
+                }
+            }
 
             if (ModelState.IsValid)
             {
@@ -114,21 +119,33 @@ namespace BlutChain.Controllers
             {
                 ModelState.AddModelError("", "A data informada é inválida!");
             }
-            Agendamento agendamentoPesq = new Agendamento();
-            agendamentoPesq = AgendamentoDAO.UltimoAgendamento(Sessao.retornarUsuario());
-            if (agendamentoPesq.UsuarioAgendamento.SexoUsuario.Equals("Feminino") && UsuarioDAO.CalculoDiasDoacao(agendamentoPesq.DataAgendamento, agendamentoOriginal.DataAgendamento) < 90)
-            {
-                ModelState.AddModelError("", "Sua última doação é inferior a 90 dias!");
-            }
-            else if (agendamentoPesq.UsuarioAgendamento.SexoUsuario.Equals("Masculino") && UsuarioDAO.CalculoDiasDoacao(agendamentoPesq.DataAgendamento, agendamentoOriginal.DataAgendamento) < 60)
-            {
-                ModelState.AddModelError("", "Sua última doação é inferior a 60 dias!");
-            }
 
             agendamentoOriginal.DataAgendamento = agendamentoAlterado.DataAgendamento;
             agendamentoOriginal.HorarioAgendamento = agendamentoAlterado.HorarioAgendamento;
             agendamentoOriginal.UsuarioAgendamento = agendamentoAlterado.UsuarioAgendamento;
             agendamentoOriginal.HemobancoAgendamento = agendamentoAlterado.HemobancoAgendamento;
+
+            Agendamento agendamentoPesq = new Agendamento();
+            // Buscar último agendamento realizado
+            agendamentoPesq = AgendamentoDAO.UltimoAgendamento(Sessao.retornarUsuario());
+
+            /*if (agendamentoPesq != null)
+            {
+                // Data agendamento - última doação
+                int dias = UsuarioDAO.CalculoDiasDoacao(agendamentoPesq.DataAgendamento, agendamentoOriginal.DataAgendamento);
+
+                if (dias != 0)
+                {
+                    if (agendamentoOriginal.UsuarioAgendamento.SexoUsuario.Equals("Feminino") && dias < 90)
+                    {
+                        ModelState.AddModelError("", "Sua última doação é inferior a 90 dias!");
+                    }
+                    else if (agendamentoOriginal.UsuarioAgendamento.SexoUsuario.Equals("Masculino") && dias < 60)
+                    {
+                        ModelState.AddModelError("", "Sua última doação é inferior a 60 dias!");
+                    }
+                }
+            }*/
 
             if (AgendamentoDAO.EditarAgendamento(agendamentoOriginal))
             {
