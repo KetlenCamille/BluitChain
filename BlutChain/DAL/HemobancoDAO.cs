@@ -36,7 +36,7 @@ namespace BlutChain.DAL
         //Buscar por CNPJ
         public static bool BuscarHemobancoPorCNPJ(Hemobanco hemobanco)
         {
-            if(context.Hemobancos.FirstOrDefault(x => x.CNPJHemobanco.Equals(hemobanco.CNPJHemobanco)) == null)
+            if(context.Hemobancos.FirstOrDefault(x => x.CNPJHemobanco.Equals(hemobanco.CNPJHemobanco) && x.ehInativo != "S") == null)
             {
                 return true;
             }

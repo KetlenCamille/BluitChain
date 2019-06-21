@@ -25,6 +25,7 @@ namespace BlutChain.Controllers
         [HttpPost]
         public ActionResult CadastrarTipoSanguineo(TipoSanguineo tipoSanguineo)
         {
+            tipoSanguineo.ehInativo = "N";
             if(TipoSanguineoDAO.BuscarTipoSanguineoPorNome(tipoSanguineo.GrupoSanguineo, tipoSanguineo.FatorRH) == null)
             {
                 if (TipoSanguineoDAO.CadastrarTipoSanguineo(tipoSanguineo))
@@ -39,7 +40,9 @@ namespace BlutChain.Controllers
 
         public ActionResult RemoverTipoSanguineo(int id)
         {
-            TipoSanguineoDAO.ExcluirTipoSanguineo(TipoSanguineoDAO.BuscarTipoSanguineoPorID(id));
+            TipoSanguineo tipoSanguineoExcluir = TipoSanguineoDAO.BuscarTipoSanguineoPorID(id);
+            tipoSanguineoExcluir.ehInativo = "S";
+            TipoSanguineoDAO.AlterarTipoSanguineo(tipoSanguineoExcluir);
             return RedirectToAction("Index", "TipoSanguineo");
         }
 
@@ -55,6 +58,7 @@ namespace BlutChain.Controllers
 
             tipoSanguineoOriginal.FatorRH = tipoSanguineoAlterado.FatorRH;
             tipoSanguineoOriginal.GrupoSanguineo = tipoSanguineoAlterado.GrupoSanguineo;
+            tipoSanguineoAlterado.ehInativo = "N";
 
             if(TipoSanguineoDAO.AlterarTipoSanguineo(tipoSanguineoOriginal))
             {

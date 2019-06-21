@@ -225,3 +225,4 @@ C:\Users\Ketlen\Source\Repos\BlutChain2\BlutChain\obj\Release\BlutChain.pdb
 C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Release\BlutChain.Migrations.alterCEPHemobanco.resources
 C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Release\BlutChain.Migrations.addEhInativoUsuario.resources
 C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Release\BlutChain.Migrations.ehInativoHemobanco.resources
+C:\Users\Ketlen\Source\Repos\BlutChain\BlutChain\obj\Release\BlutChain.Migrations.addEhInativoTipoSang.resources

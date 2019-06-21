@@ -38,7 +38,7 @@ namespace BlutChain.DAL
         // Buscar Usuário Por CPF
         public static bool BuscarUsuarioPorCPF(Usuario usuario)
         {
-            if (context.Usuarios.FirstOrDefault(x => x.CPFUsuario.Equals(usuario.CPFUsuario)) == null)
+            if (context.Usuarios.FirstOrDefault(x => x.CPFUsuario.Equals(usuario.CPFUsuario) && x.EhInativo != "S") == null)
             {
                 return true;
             }

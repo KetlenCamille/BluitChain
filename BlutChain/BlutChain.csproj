@@ -284,6 +284,10 @@
     <Compile Include="Migrations\201906202317481_ehInativoHemobanco.Designer.cs">
       <DependentUpon>201906202317481_ehInativoHemobanco.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906202346290_addEhInativoTipoSang.cs" />
+    <Compile Include="Migrations\201906202346290_addEhInativoTipoSang.Designer.cs">
+      <DependentUpon>201906202346290_addEhInativoTipoSang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Agendamento.cs" />
     <Compile Include="Models\Doacao.cs" />
@@ -540,6 +544,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906202317481_ehInativoHemobanco.resx">
       <DependentUpon>201906202317481_ehInativoHemobanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906202346290_addEhInativoTipoSang.resx">
+      <DependentUpon>201906202346290_addEhInativoTipoSang.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

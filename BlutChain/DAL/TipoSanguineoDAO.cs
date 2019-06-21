@@ -24,7 +24,7 @@ namespace BlutChain.DAL
 
         public static List<TipoSanguineo> ListarTodos()
         {
-            return context.TipoSanguineos.ToList();
+            return context.TipoSanguineos.Where(x => x.ehInativo != "S").ToList();
         }
 
         public static bool AlterarTipoSanguineo (TipoSanguineo tipoSanguineo)
@@ -52,7 +52,7 @@ namespace BlutChain.DAL
 
         public static TipoSanguineo BuscarTipoSanguineoPorNome(string grupoSanguineo, string fatorRH)
         {
-            return context.TipoSanguineos.FirstOrDefault(x => x.FatorRH.ToLower().Contains(fatorRH.ToLower()) && x.GrupoSanguineo.ToLower().Contains(grupoSanguineo.ToLower()));
+            return context.TipoSanguineos.FirstOrDefault(x => x.FatorRH.ToLower().Contains(fatorRH.ToLower()) && x.GrupoSanguineo.ToLower().Contains(grupoSanguineo.ToLower()) && x.ehInativo != "S");
         }
     }
 }

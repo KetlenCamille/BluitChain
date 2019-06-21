@@ -20,5 +20,7 @@ namespace BlutChain.Models
         [Required(ErrorMessage = "Campo Obrigatório!")]
         [Display(Name = "Fator RH")]
         public String FatorRH { get; set; }
+
+        public String ehInativo { get; set; }
     }
 }
