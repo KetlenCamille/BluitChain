@@ -1,6 +1,23 @@
-﻿<h2 style="padding-top:70px">Painel do Usuário</h2>
+﻿@using BlutChain.Models
+@model Usuario
+
+@{ 
+    int dias = ViewBag.Dias;
+}
+
+<h2 style="padding-top:70px">Painel do Usuário</h2>
 <nav id="nav" style="margin-left:60px">
 
+    @Html.DisplayFor(modelItem => modelItem.NomeUsuario), voce doou a @dias dias!
+
+    @if (Model.SexoUsuario.Equals("Feminino") && dias >= 90)
+    {
+        <p>Salve uma vida! @Html.ActionLink("Agende uma doação", "RegistrarAgendamento", "Agendamento")  no Hemobanco mais próximo de voce... </p>
+    }
+    @if (Model.SexoUsuario.Equals("Masculino") && dias >= 60)
+    {
+        <p>Salve uma vida! @Html.ActionLink("Agende uma doação", "RegistrarAgendamento", "Agendamento")  no Hemobanco mais próximo de voce... </p>
+    }
 
     <li><a href="Agendamentos"> Meus Agendamentos</a> </li>
 

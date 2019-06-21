@@ -119,7 +119,16 @@ namespace BlutChain.Controllers
 
         public ActionResult PaginaInicial()
         {
-            return View();
+            Agendamento agendamentoPesq = new Agendamento();
+            // Buscar último agendamento realizado
+            agendamentoPesq = AgendamentoDAO.UltimoAgendamento(Sessao.retornarUsuario());
+
+            if (agendamentoPesq != null)
+            {
+                // Data agendamento - última doação
+                ViewBag.Dias = UsuarioDAO.CalculoDiasDoacao(agendamentoPesq.DataAgendamento, DateTime.Today);
+            }
+            return View(UsuarioDAO.BuscarUsuarioPorId(Sessao.retornarUsuario()));
         }
 
         public ActionResult PaginaInicialAdm()
