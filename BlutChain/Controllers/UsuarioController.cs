@@ -16,7 +16,7 @@ namespace BlutChain.Controllers
 
         // GET: Usuario
         public ActionResult Index()
-        {
+        { 
             return View(UsuarioDAO.ListarUsuarios());
         }
 
@@ -116,6 +116,29 @@ namespace BlutChain.Controllers
             ViewBag.Data = DateTime.Now;
             return View(AgendamentoDAO.HistoricoDoacaoPorUsuario(Sessao.retornarUsuario()));
         }
+
+        public ActionResult ConsultaCertificado()
+        {
+            if (AgendamentoDAO.HistoricoDoacaoPorUsuario(Sessao.retornarUsuario()) != null)
+            {
+                return RedirectToAction("EmitirCertificado", "Usuario");
+            }
+            else
+            {
+                ModelState.AddModelError("", "Usuário não possui doações registradas no sistema!");
+                return View();
+            }
+        }
+
+        public ActionResult EmitirCertificado()
+        {
+            Usuario usu = UsuarioDAO.BuscarUsuarioPorId(Sessao.retornarUsuario());
+            //Agendamento age = AgendamentoDAO.UltimoAgendamento(Sessao.retornarUsuario());
+            //int usu = Sessao.retornarUsuario();
+            return View(usu);
+        }
+
+
 
         public ActionResult PaginaInicial()
         {

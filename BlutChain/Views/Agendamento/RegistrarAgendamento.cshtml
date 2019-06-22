@@ -18,7 +18,7 @@
     <b>Data do Agendamento: </b>
     <div class="form-group">
         <div class="col-md-10">
-            @Html.EditorFor(model => model.DataAgendamento, new { htmlAttributes = new { @class = "form-control", @placeholder = "dd/mm/aa" } })
+            @Html.EditorFor(model => model.DataAgendamento, new { htmlAttributes = new { @class = "form-control", @placeholder = "mm/dd/aaaa" } })
             @Html.ValidationMessageFor(model => model.DataAgendamento, "", new { @class = "text-danger" })
         </div>
     </div>

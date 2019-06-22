@@ -100,5 +100,6 @@ namespace BlutChain.DAL
         {
             return context.Agendamentos.OrderByDescending(x => x.UsuarioAgendamento.IdUsuario == idUsuario && x.DataAgendamento <= DateTime.Today).First();
         }
+
     }
 }
