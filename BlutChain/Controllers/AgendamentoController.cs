@@ -96,14 +96,16 @@ namespace BlutChain.Controllers
 
         public ActionResult EditarAgendamento(int? id)
         {
+            ViewBag.Hemobancos = new MultiSelectList(HemobancoDAO.ListarTodosHemobancos(), "IdHemobanco", "NomeFantasiaHemobanco");
             return View(AgendamentoDAO.BuscarAgendamentoPorID(id));
         }
 
         [HttpPost]
-        public ActionResult EditarAgendamento([Bind(Include = "IdAgendamento,DataAgendamento,HorarioAgendamento, IdUsuario, IdHemobanco")] Agendamento agendamentoAlterado)
+        public ActionResult EditarAgendamento([Bind(Include = "IdAgendamento,DataAgendamento,HorarioAgendamento, IdUsuario, IdHemobanco")] Agendamento agendamentoAlterado, int? hemobancos)
         {
             Agendamento agendamentoOriginal = AgendamentoDAO.BuscarAgendamentoPorID(agendamentoAlterado.IdAgendamento);
-
+            ViewBag.Hemobancos = new MultiSelectList(HemobancoDAO.ListarTodosHemobancos(), "IdHemobanco", "NomeFantasiaHemobanco");
+            
 
             int idade = DateTime.Today.Year - agendamentoOriginal.UsuarioAgendamento.DataNascimentoUsuario.Year;
 
@@ -122,8 +124,8 @@ namespace BlutChain.Controllers
 
             agendamentoOriginal.DataAgendamento = agendamentoAlterado.DataAgendamento;
             agendamentoOriginal.HorarioAgendamento = agendamentoAlterado.HorarioAgendamento;
-            agendamentoOriginal.UsuarioAgendamento = agendamentoAlterado.UsuarioAgendamento;
-            agendamentoOriginal.HemobancoAgendamento = agendamentoAlterado.HemobancoAgendamento;
+            agendamentoOriginal.UsuarioAgendamento = UsuarioDAO.BuscarUsuarioPorId(Sessao.retornarUsuario());
+            agendamentoOriginal.HemobancoAgendamento = HemobancoDAO.BuscarHemobancoPorID(hemobancos);
 
             Agendamento agendamentoPesq = new Agendamento();
             // Buscar último agendamento realizado
@@ -149,7 +151,8 @@ namespace BlutChain.Controllers
 
             if (AgendamentoDAO.EditarAgendamento(agendamentoOriginal))
             {
-                return RedirectToAction("Index");
+                ModelState.AddModelError("", "Agendamento editado com sucesso!");
+                return View(agendamentoOriginal);
             }
             else
             {

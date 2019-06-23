@@ -154,5 +154,6 @@ namespace BlutChain.DAL
 
             return date.Days;
         }
+       
     }
 }

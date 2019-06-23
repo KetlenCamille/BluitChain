@@ -441,6 +441,7 @@
     <Content Include="Views\Usuario\AlterarUsuario.cshtml" />
     <Content Include="Views\Hemobanco\AgendamentosHemobancoFuturos.cshtml" />
     <Content Include="Views\Usuario\PaginaInicialAdm.cshtml" />
+    <Content Include="Views\Usuario\EmitirCertificado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
