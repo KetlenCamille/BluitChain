@@ -151,6 +151,10 @@ namespace BlutChain.Controllers
                 // Data agendamento - última doação
                 ViewBag.Dias = UsuarioDAO.CalculoDiasDoacao(agendamentoPesq.DataAgendamento, DateTime.Today);
             }
+            else
+            {
+                ViewBag.Dias = 0;
+            }
             return View(UsuarioDAO.BuscarUsuarioPorId(Sessao.retornarUsuario()));
         }
 

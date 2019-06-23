@@ -8,13 +8,16 @@
 <h2 style="padding-top:70px">Painel do Usuário</h2>
 <nav id="nav" style="margin-left:60px">
 
-    @if (dias < 0)
+    @if (dias < 0 && dias == 3)
     {
 
     }
-    else
+    else if (dias == 0)
     {
-       <p> @Model.NomeUsuario, você doou a @dias dia(s)!</p>
+        <p> @Model.NomeUsuario, você doou hoje!</p>
+    }
+    else{
+        <p> @Model.NomeUsuario, você doou a @dias dia(s)!</p>
     }
 
 

@@ -13,6 +13,7 @@
             <th>Razão Social</th>
             <th>Nome Fantasia</th>
             <th>Telefone</th>
+            <th>CNPJ</th>
             <th></th>
             <th></th>
         </tr>
@@ -22,7 +23,7 @@
                 <td>@hemobanco.RazaoSocialHemobanco</td>
                 <td>@hemobanco.NomeFantasiaHemobanco</td>
                 <td>@hemobanco.TelefoneHemobanco (@hemobanco.TipoTelefoneHemobanco)</td>
-
+                <td>@hemobanco.CNPJHemobanco</td>
                 <td>
                     @Html.ActionLink("Alterar", "AlterarHemobanco", "Hemobanco",
                        new { id = hemobanco.IdHemobanco }, null)

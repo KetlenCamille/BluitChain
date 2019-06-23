@@ -98,8 +98,11 @@ namespace BlutChain.DAL
 
         public static Agendamento UltimoAgendamento(int idUsuario)
         {
+            if(HistoricoDoacaoPorUsuario(idUsuario) == null)
+            {
+                return null;
+            }
             return context.Agendamentos.OrderByDescending(x => x.UsuarioAgendamento.IdUsuario == idUsuario && x.DataAgendamento <= DateTime.Today).First();
         }
-
     }
 }

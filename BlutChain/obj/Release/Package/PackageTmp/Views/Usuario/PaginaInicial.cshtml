@@ -8,7 +8,18 @@
 <h2 style="padding-top:70px">Painel do Usuário</h2>
 <nav id="nav" style="margin-left:60px">
 
-    @Html.DisplayFor(modelItem => modelItem.NomeUsuario), você doou a @dias dia(s)!
+    @if (dias < 0 && dias == 3)
+    {
+
+    }
+    else if (dias == 0)
+    {
+        <p> @Model.NomeUsuario, você doou hoje!</p>
+    }
+    else{
+        <p> @Model.NomeUsuario, você doou a @dias dia(s)!</p>
+    }
+
 
     @if (Model.SexoUsuario.Equals("Feminino") && dias >= 90)
     {

@@ -61,8 +61,8 @@ namespace BlutChain.Controllers
             {
                 // Data agendamento - última doação
                 int dias = UsuarioDAO.CalculoDiasDoacao(agendamentoPesq.DataAgendamento, agendamento.DataAgendamento);
-
-                if (dias != 0)
+              
+                if (dias > 0 && dias != 3)
                 {
                     if (agendamento.UsuarioAgendamento.SexoUsuario.Equals("Feminino") && dias < 90)
                     {
@@ -151,8 +151,11 @@ namespace BlutChain.Controllers
 
             if (AgendamentoDAO.EditarAgendamento(agendamentoOriginal))
             {
-                ModelState.AddModelError("", "Agendamento editado com sucesso!");
-                return View(agendamentoOriginal);
+                if(Sessao.retornarUsuario() == 0)
+                {
+                    return RedirectToAction("PaginaInicialAdm", "Usuario");
+                }
+                return RedirectToAction("Agendamentos", "Usuario");
             }
             else
             {
