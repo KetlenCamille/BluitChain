@@ -1,0 +1,41 @@
+﻿@model BlutChain.Models.Usuario
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<!DOCTYPE html>
+
+<div>
+    <h2>Certificado de Doação de Sangue</h2>
+    <table class="table table-hover table-striped"
+           style="margin-top:30px">
+
+
+        Declaramos para os devidos fins que o(a) Sr(a) @Html.DisplayFor(model => model.NomeUsuario), inscrito no CPF
+        sob o nº @Html.DisplayFor(model => model.CPFUsuario), doou sangue voluntariamente a um de nossos hemobancos
+        credenciados.
+        .
+        <br />
+        <br />
+        CID Z52.0
+        <br />
+        <br />
+        <br />
+        Curitiba - Paraná
+        <br />
+        <br />
+        <h4><p>Blut Chain</p></h4>
+
+    </table>
+
+</div>
+
+<div>
+    @Html.ActionLink("Voltar", "PaginaInicial", "Usuario")
+</div>
+
+
+
+

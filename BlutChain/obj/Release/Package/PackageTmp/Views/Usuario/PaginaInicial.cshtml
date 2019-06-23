@@ -8,7 +8,7 @@
 <h2 style="padding-top:70px">Painel do Usuário</h2>
 <nav id="nav" style="margin-left:60px">
 
-    @Html.DisplayFor(modelItem => modelItem.NomeUsuario), voce doou a @dias dia(s)!
+    @Html.DisplayFor(modelItem => modelItem.NomeUsuario), você doou a @dias dia(s)!
 
     @if (Model.SexoUsuario.Equals("Feminino") && dias >= 90)
     {
@@ -24,6 +24,8 @@
     <li> <a href="HistoricoDoacao">Histórico de Doação</a></li>
 
     <li> <a href="/Agendamento/RegistrarAgendamento">Efetuar Agendamento</a></li>
+
+    <li> <a href="EmitirCertificado">Emitir Certificado</a></li>
 
     <li><a href="AlterarUsuario">Alterar Cadastro</a></li>
     </ul>

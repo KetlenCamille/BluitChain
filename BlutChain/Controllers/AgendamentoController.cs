@@ -163,7 +163,21 @@ namespace BlutChain.Controllers
 
         public ActionResult RemoverAgendamento(int id)
         {
-            AgendamentoDAO.ExcluirAgendamento(AgendamentoDAO.BuscarAgendamentoPorID(id));
+            Agendamento agendamentoPesq = AgendamentoDAO.BuscarAgendamentoPorID(id);
+            if(agendamentoPesq.DataAgendamento < DateTime.Today)
+            {
+                ViewBag.Erro =  "Não se pode excluir agendamento com data inferior de hoje!";
+                if (Sessao.retornarUsuario() == 0)
+                {
+                    return RedirectToAction("Index", "Agendamento");
+                }
+                return RedirectToAction("PaginaInicial", "Usuario");
+            }
+            AgendamentoDAO.ExcluirAgendamento(agendamentoPesq);
+            if(Sessao.retornarUsuario() == 0)
+            {
+                return RedirectToAction("PaginaInicialAdm", "Usuario");
+            }
             return RedirectToAction("PaginaInicial", "Usuario");
         }
 

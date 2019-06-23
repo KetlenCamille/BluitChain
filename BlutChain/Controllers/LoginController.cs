@@ -10,6 +10,7 @@ namespace BlutChain.Controllers
     {
         public ActionResult Login()
         {
+         
             return View();
         }
 
@@ -22,6 +23,7 @@ namespace BlutChain.Controllers
                 {
                     if(CPFCNPJ == "admin" && Senha == "admin")
                     {
+                        Sessao.setarUsuario(0);
                         return RedirectToAction("PaginaInicialAdm", "Usuario");
                     }
 
@@ -55,8 +57,8 @@ namespace BlutChain.Controllers
 
         public ActionResult Logout()
         {
-            Sessao.setarUsuario(0);
-            Sessao.setarHemobanco(0);
+            Sessao.setarUsuario(-1);
+            Sessao.setarHemobanco(-1);
             return RedirectToAction("Index", "Home");
         }
     }

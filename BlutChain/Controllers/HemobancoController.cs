@@ -87,6 +87,10 @@ namespace BlutChain.Controllers
             if (ModelState.IsValid)
             {
                 HemobancoDAO.AlterarHemobanco(hemobancoOriginal);
+                if (Sessao.retornarUsuario() == 0)
+                {
+                    return RedirectToAction("PaginaInicialAdm", "Usuario");
+                }
                 return RedirectToAction("PaginaInicial", "Hemobanco");
             }
             else
@@ -100,7 +104,11 @@ namespace BlutChain.Controllers
             Hemobanco hemobancoExcluir = HemobancoDAO.BuscarHemobancoPorID(id);
             hemobancoExcluir.ehInativo = "S";
             HemobancoDAO.AlterarHemobanco(hemobancoExcluir);
-            return RedirectToAction("Index", "Hemobanco");
+            if (Sessao.retornarUsuario() == 0)
+            {
+                return RedirectToAction("PaginaInicialAdm", "Usuario");
+            }
+            return RedirectToAction("PaginaInicial", "Hemobanco");
         }
 
         [HttpPost]

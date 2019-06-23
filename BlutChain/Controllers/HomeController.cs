@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlutChain.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,8 @@ namespace BlutChain.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
+            Sessao.setarUsuario(-1);
+            Sessao.setarHemobanco(-1);
 
             return View();
         }
